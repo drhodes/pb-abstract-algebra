@@ -1,0 +1,522 @@
+<!-- -*- mode: web -*- -->
+<macros>
+    <define-macro name="lecture-head" vars="title">
+        <head>
+            <meta charset="utf-8">
+            <meta http-equiv="x-ua-compatible" content="ie=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            
+            <title>[[title]]</title>
+            
+            <link rel="stylesheet" href="../../media/css/main.css">
+            <link rel="icon" href="../../media/images/favicon.png">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            
+            <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+                  rel="stylesheet">
+
+			<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+			
+            <link rel="stylesheet" 
+                  href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.css" 
+                  integrity="sha384-K1E1xaIzoWihlXfiT5fcmLNabsnrl+dqc0errnRwtMX14tKRA9cCYNDGnXiHEZMs" 
+                  crossorigin="anonymous">
+            
+            <link rel="stylesheet" 
+                  href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" 
+                  integrity="sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww" 
+                  crossorigin="anonymous">
+            
+            <script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.js" 
+                    integrity="sha384-IolEJdmwZJpJkyCvXBnmGt8wXcP3nvRjxBjPv7/PWW7oODJhZ+qiY1sDpwgjcKLT" 
+                    crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" 
+                    integrity="sha384-hIoBPJpTUs74ddyc4bFZSM1TVlQDA60VBbJS0oA934VSz82sBx1X7kSx2ATBDIyd" 
+                    crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" 
+                    integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" 
+                    crossorigin="anonymous"></script>
+            
+            <script src="../../media/js/main.js"></script>
+            <!-- <script src="../../media/js/cube.js" type="module"></script> -->
+            
+            <script src="https://cdn.jsdelivr.net/npm/iframe-resizer@4.3.11/js/iframeResizer.min.js"></script>
+            
+            <script src="https://cdn.jsdelivr.net/npm/lucide@latest"></script>
+
+            <script type="importmap"> { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.173.0/build/three.module.js" } }</script>
+    
+  </script>
+        </head>        
+    </define-macro>
+    
+    <define-macro name="course">
+        <div class="course"> <contents/> </div>
+    </define-macro>
+    
+    <define-macro name="lecture" vars="title">
+        <div class="lecture" title="[[title]]"> <contents/> </div>
+    </define-macro>
+
+    <define-macro name="page" vars="title, path">
+        <outfile path="[[path]].html"> 
+	        <html lang="en">
+                <lecture-head title="[[title]]"></lecture-head>
+                
+	            <body>
+		            <layout title="[[title]]">	
+                        <div id="page-[[title]]" class="page" title="[[title]]" path="[[path]]">
+		                    <h3> <a href="#page-[[title]]">§</a> [[title]] </h3>
+		                    <contents/>
+                            <hr/>                            
+                            <patchup func="nav_prev_next" class="nav-prev-next"/>        
+                            <discussion topic="[[title]]" id="[[title]]"/>
+                            
+	                    </div>		                
+		            </layout>
+
+                    <script>sidebar_section_links()</script>
+	            </body>
+	        </html>            
+        </outfile>
+	</define-macro>
+    
+    <define-macro name="layout" vars="title">
+	    <div class="layout">      
+		    <sidebar/>
+		    <div class="main">
+		        <div class="layout-content">
+			        <!-- <center> <h2> [[title]] </h2> </center> -->
+			        <contents/>
+		        </div>
+		    </div>
+	    </div>
+	</define-macro>
+
+	<define-macro name="discussion" vars="topic, id">
+        <div class="giscussion">
+            <script src="https://giscus.app/client.js"
+                    data-repo="drhodes/pb700"
+                    data-repo-id="R_kgDONZDcuw"
+                    data-category="General"
+                    data-category-id="DIC_kwDONZDcu84Clk9b"
+                    data-mapping="pathname"
+                    data-strict="0"
+                    data-reactions-enabled="0"
+                    data-emit-metadata="0"
+                    data-input-position="bottom"
+                    data-theme="light"
+                    data-lang="en"
+                    data-loading="lazy"
+                    crossorigin="anonymous"
+                    async>             
+            </script>
+        </div>
+	</define-macro>
+
+    <define-macro name="wallpaper-groups">
+        <a href="http://www.clowder.net/hop/17walppr/17walppr.html">17 Wallpaper Groups</a>
+    </define-macro>
+
+    
+	<define-macro name="sidebar">
+	    <div class="sticky-top">
+            <div> 🛠️ under construction 🛠️ </div>
+            <h3> A derived work </h3>
+            <div class="logo-title"> Abstract Algebra  </div>
+            <div class="lecture-menu"></div>
+        </div>
+	</define-macro>
+
+	
+	<define-macro name="menu-lec" vars="n, title">
+	    <div><a href="../lecture[[n]]/motivation.html"> [[title]] </a></div>
+	</define-macro>
+	
+	<define-macro name="to-lec" vars="url, title">
+	    <div><a href="../lectures/[[url]].html"> [[title]] </a></div>
+	</define-macro>
+
+    <define-macro name="complex-number">
+		<a href="link to definition of complex number"><i>complex number</i></a>
+    </define-macro>
+
+    
+    <define-macro name="def" vars="num, name">
+        <div class="def">
+            <div class="def-head">
+                <span class="def-head-spacer"> <b>[[num]]</b> </span>
+                <b>definition: </b>
+                <span><i>[[name]]</i></span>                
+            </div>
+            <div class="def-body">
+                <contents/>
+            </div>
+        </div>
+    </define-macro>
+
+    <define-macro name="prop" vars="name">
+        <div>
+            <b>[[name]]</b> <br/>
+            <div class="indented">
+                <contents/>
+            </div>
+        </div>
+    </define-macro>
+
+    
+    <define-macro name="ex" vars="num, name">
+        <div class="ex">
+            <div class="ex-head">
+                <span class="ex-head-spacer"> <b>[[num]]</b> </span>
+                <b>example:</b>
+                <span> [[name]] </span>                
+            </div>
+            <div class="ex-body">
+                <contents/>
+            </div>
+        </div>
+    </define-macro>
+
+    <define-macro name="vid-cite" vars="author, youtubeid, start, end">
+        <!-- <vid-cite desc="binary-operation" author="Andrew Misseldine" youtubeid="SIdPG_CJ-G0" start="01:23" end="13:45"/> -->
+        <div class="vid-cite">
+            <div>
+                <span class="vid-cite-author">video author: [[author]], </span>
+                <span class="vid-cite-author">license: creative commons</span>
+            </div>
+            <vid youtubeid="[[youtubeid]]" start="[[start]]" end="[[end]]" />
+        </div>
+    </define-macro>
+
+
+    <define-macro name="mylib" vars="file, from, to">
+        <div>
+            <pre>
+                <patchup func="mylib_source" file="[[file]]" from="[[from]]" to="[[to]]"/>
+            </pre>
+        </div>
+    </define-macro>
+    
+    <define-macro name="lean-example" vars="file, namespace">
+        
+        <div>
+            <pre>
+                <patchup func="include_namespace" file="[[file]]" namespace="[[namespace]]"/>
+            </pre>
+        </div>
+    </define-macro>
+
+    
+    <define-macro name="mathlib" vars="file, from, to">
+        <div>
+            <div class="inline-mathlib">
+                <div> in file [[file]] from line [[from]] to [[to]] </div>
+            </div>
+            <pre>
+                <patchup func="mathlib_source" file="[[file]]" from="[[from]]" to="[[to]]"/>
+            </pre>
+        </div>
+    </define-macro>
+
+
+
+    
+    <define-macro name="undef">
+        <div id="[[this]]" class="undef">
+            <div class="sm"> informal definition </div><br/>
+            <contents/>
+        </div>
+    </define-macro>
+    
+    <define-macro name="fodef">
+        <div> <contents/> </div>
+    </define-macro>
+
+
+    
+	<define-macro name="vid" vars="youtubeid, start, end">
+	    <div id="[[this]]" class="vid">
+            <iframe id="iframe-[[this]]" type="text/html"
+                    class="vidframe"
+                    src="about:blank"
+                    frameborder="0"></iframe>
+
+            
+		    <div class="seek-text">
+		        lecture segment runs from
+		        <a href="asdf">[[start]] </a> to <a href="asdf">[[end]] </a>.
+		    </div>
+
+		    <br/>
+		    <script>
+		     vid_helper("[[this]]", "[[youtubeid]]", "[[start]]", "[[end]]");
+		    </script>
+	    </div>
+	</define-macro>
+
+    <define-macro name="prob" vars="n">
+        <div> <b>Problem [[n]]</b>: <contents/> </div>
+    </define-macro>
+
+    <define-macro name="note">
+        <div> <contents/> </div>
+    </define-macro>
+    
+	<define-macro name="leancode" vars="filename">
+	</define-macro>
+    
+
+	<define-macro name="starbox">
+	    <div class="starbox"><contents/></div>
+	</define-macro>
+
+	<define-macro name="bb">
+	    <span style="color: blue">
+		    <b>
+		        <contents/>
+		    </b>
+	    </span>
+	</define-macro>
+
+	<define-macro name="problem">
+        <div class="problem">
+            <b>Problem</b>
+            <contents/>
+        </div>
+	</define-macro>
+    
+	<define-macro name="center-box">
+	    <div style="text-align: center;">
+		    <pad-box size="20px">
+		        <contents/>
+		    </pad-box>
+	    </div>
+	</define-macro>
+    
+	<define-macro name="definition">
+	    <div class="definition" id="definition-[[this]]">
+            
+		    <div class="definition-title">
+		        <a class="definition-link" href="#definition-[[this]]">Definition</a>
+		        <span id="[[this]]-span" class="definition-number"> </span>
+		        <span>
+			        <contents/>
+		        </span>
+		    </div>
+            
+		    <script>
+		     defspan = document.getElementById("[[this]]-span");
+		     defspan.textContent = cur_def();
+		    </script>
+	    </div>
+	</define-macro>
+
+	<define-macro name="theorem">
+	    <div class="theorem">
+		    <div class="theorem-title">
+		        <b>Theorem </b>
+		        <span id="[[this]]-span" class="theorem-number"> </span>
+		        <contents/> 
+		    </div>
+
+		    <script>
+		     thmspan = document.getElementById("[[this]]-span");
+		     thmspan.textContent = cur_def();
+		    </script>
+	    </div>
+	</define-macro>
+	
+	<define-macro name="box-outline">
+	    <div style="border-style: solid; border-color: white; border-width: 1px;">
+		    <contents />
+	    </div>
+	</define-macro>
+
+	<define-macro name="sidenote">
+	    <span class="sidenote">
+		    <contents/>
+	    </span>
+	</define-macro>
+	
+	<define-macro name="wts">
+	    <span>
+		    <u>Want to show:
+		    </u>
+	    </span>
+	</define-macro>
+
+	<define-macro name="star" vars="n">
+	    <div> `(\star_[[n]])`
+		    <i>
+		        <contents/>
+		    </i>
+	    </div>      
+	</define-macro>
+
+	<define-macro name="align">
+	    <div>
+		    \[
+            \begin{align*}
+		    <contents/>
+            \end{align*}
+            \]
+	    </div>
+	</define-macro>
+    
+    <!-- replace anything in an ignore tag with an empty div -->
+	<define-macro name="ignore">
+	    <div></div>
+	</define-macro>
+
+	<define-macro name="quote" vars="who, context">
+	    <blockquote>
+		    <div>
+                ❝<contents/>❞		        
+		    </div>
+		    <footer>—[[who]],
+		        <cite>[[context]]
+		        </cite>
+		    </footer>
+	    </blockquote>
+	</define-macro>
+
+	<define-macro name="proof">
+        <div>
+            <button id="[[this]]-toggle-btn">
+                👁 Show Proof
+            </button>
+
+            <div id="[[this]]-proof" class="hidden">
+                <contents/> <qed/>
+            </div>
+
+            <script>
+             document.getElementById("[[this]]-toggle-btn").addEventListener("click", function () {
+                 const proof = document.getElementById("[[this]]-proof");
+                 proof.classList.toggle("hidden");
+                 this.innerHTML = proof.classList.contains("hidden") 
+                                ? '👁 Show Proof' 
+                                : '🙈 Hide Proof';
+             });
+            </script>
+        </div>
+        
+	</define-macro>
+
+
+	<define-macro name="show-hide">
+        <div>
+            <button id="[[this]]-toggle-btn">
+                👁  Show
+            </button>
+
+            <div id="[[this]]-proof" class="hidden">
+                <contents/> <qed/>
+            </div>
+
+            <script>
+             document.getElementById("[[this]]-toggle-btn").addEventListener("click", function () {
+                 const proof = document.getElementById("[[this]]-proof");
+                 proof.classList.toggle("hidden");
+                 this.innerHTML = proof.classList.contains("hidden") 
+                                ? '👁 Show Proof' 
+                                : '🙈 Hide Proof';
+             });
+            </script>
+        </div>        
+	</define-macro>
+
+    
+	<define-macro name="lean-proof" vars="file">
+        <div>
+            <pre>
+                <contents/>
+            </pre>
+        </div>
+	</define-macro>
+    
+	<define-macro name="qed">
+	    <div class="qed"> `\square`
+	    </div>
+	</define-macro>
+
+	<define-macro name="scribe" args="who">
+	    <div class="scribe">
+            <!-- There is an invisible unicode symbol on the next line -->
+            📝
+		    <!-- <span class="scribe-note"> <sup> (scribe note) </sup> </span> -->
+		    <contents/>
+	    </div>
+	</define-macro>
+
+	<define-macro name="term">
+	    <span class="term">
+		    <contents/>
+	    </span>
+	</define-macro>
+
+	<define-macro name="ref" vars="url">
+	    <span class="ref"> <a href="[[url]]" target="_blank"> ⮺ <contents/> </a> </span>
+	</define-macro>
+
+    <define-macro name="grothendieck-conf">
+        <ref url="https://youtu.be/-OjCMsqZ9ww?list=PLXlinOq24a9Q8GPa5_mQfLUEn8ZCg8pg-&t=1517">
+            Grothendieck Conference (2022) - Kevin Buzzard
+        </ref>
+    </define-macro>
+    
+	<define-macro name="ref-logic-and-proof" vars="url, chapter">
+	    <div>
+		    <ref url="[[url]]"> <span> Logic and Proof, chapter [[chapter]] </span> </ref>
+	    </div>
+	</define-macro>
+
+	<define-macro name="ref-mil" vars="url, chapter">
+	    <div>
+		    <ref url="[[url]]"> <span> Mathematics in Lean, chapter [[chapter]] </span> </ref>
+	    </div>
+	</define-macro>
+
+	<define-macro name="sm-ref-mcs" vars="url">
+	    <span> <ref url="[[url]]"> <span> <contents/>  </ref> <sub>[PDF]</sub> </span>
+	</define-macro>
+
+    
+	<define-macro name="ref-mop" vars="url, chapter">
+	    <div>
+		    <ref url="[[url]]"> <span> The Mechanics of Proof, chapter [[chapter]] </span> </ref>
+	    </div>
+	</define-macro>
+
+
+	<define-macro name="ref-htpi" vars="url, chapter">
+	    <div>
+		    <ref url="[[url]]"> <span> How To Prove It With Lean, chapter [[chapter]] </span> </ref>
+	    </div>
+	</define-macro>
+    
+	<define-macro name="fig" vars="text, fname">
+	    <div class="fig">
+		    <center><img src="/media/images/[[fname]]" width="75%" alt="[[text]]" /></center>
+		    <center><span class="fig-text">[[text]]</span></center>
+	    </div>
+	</define-macro>
+    
+	<!-- <lebl page="15"/> -->
+	<define-macro name="lebl" vars="page">
+	    <div class="book-ref">
+		    <a href="https://www.jirka.org/ra/realanal.pdf">
+		        ⮺ pg [[page]], Introduction to Real Analysis, Volume I
+		    </a>
+	    </div>
+	</define-macro>
+	
+	<define-macro name="warning">
+	    <div class="warning">
+		    <contents/>
+	    </div>
+	</define-macro>
+	
+</macros>

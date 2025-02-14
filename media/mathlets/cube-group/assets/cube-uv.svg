@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="118.04799mm"
+   height="157.30913mm"
+   viewBox="0 0 118.04799 157.30913"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="cube-uv.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     showguides="true"
+     inkscape:zoom="2.8284271"
+     inkscape:cx="40.12831"
+     inkscape:cy="368.75619"
+     inkscape:window-width="3840"
+     inkscape:window-height="2074"
+     inkscape:window-x="0"
+     inkscape:window-y="49"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <sodipodi:guide
+       position="59.023992,19.76286"
+       orientation="1,0"
+       id="guide344"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="19.76286,98.285137"
+       orientation="0,-1"
+       id="guide551"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="59.023991,59.024"
+       orientation="0,-1"
+       id="guide553"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="59.023991,137.54627"
+       orientation="0,-1"
+       id="guide555"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="98.114599,48.003227"
+       orientation="1,0"
+       id="guide557"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="19.76286,98.285135"
+       orientation="1,0"
+       id="guide559"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="59.023992,19.76286"
+       orientation="0,-1"
+       id="guide561"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="53.127752,71.431879"
+       orientation="1,0"
+       id="guide726"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0.13229166,-0.07007897)">
+    <rect
+       style="fill:#d4d9f6;fill-opacity:1;stroke:#000000;stroke-width:0.264583;stroke-linejoin:round;stroke-miterlimit:3.6;stroke-dasharray:0.264583, 0.264583;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
+       id="rect234"
+       width="39.261135"
+       height="39.261135"
+       x="39.261131"
+       y="0.20237063" />
+    <rect
+       style="fill:#d4d9f6;fill-opacity:1;stroke:#000000;stroke-width:0.264583;stroke-linejoin:round;stroke-miterlimit:3.6;stroke-dasharray:0.264583, 0.264583;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
+       id="rect234-3"
+       width="39.261135"
+       height="39.261135"
+       x="39.261131"
+       y="39.463501" />
+    <rect
+       style="fill:#d4d9f6;fill-opacity:1;stroke:#000000;stroke-width:0.264583;stroke-linejoin:round;stroke-miterlimit:3.6;stroke-dasharray:0.264583, 0.264583;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
+       id="rect234-6"
+       width="39.261135"
+       height="39.261135"
+       x="39.261131"
+       y="78.72464" />
+    <rect
+       style="fill:#d4d9f6;fill-opacity:1;stroke:#000000;stroke-width:0.264583;stroke-linejoin:round;stroke-miterlimit:3.6;stroke-dasharray:0.264583, 0.264583;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
+       id="rect234-3-7"
+       width="39.261135"
+       height="39.261135"
+       x="39.261131"
+       y="117.98578" />
+    <rect
+       style="fill:#d4d9f6;fill-opacity:1;stroke:#000000;stroke-width:0.264583;stroke-linejoin:round;stroke-miterlimit:3.6;stroke-dasharray:0.264583, 0.264583;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
+       id="rect234-3-7-5"
+       width="39.261135"
+       height="39.261135"
+       x="0"
+       y="39.463501" />
+    <rect
+       style="fill:#d4d9f6;fill-opacity:1;stroke:#000000;stroke-width:0.264583;stroke-linejoin:round;stroke-miterlimit:3.6;stroke-dasharray:0.264583, 0.264583;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
+       id="rect234-3-7-5-5"
+       width="39.261135"
+       height="39.261135"
+       x="78.52227"
+       y="39.463501" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.8473px;line-height:1.25;font-family:'Routed Gothic';-inkscape-font-specification:'Routed Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="51.281464"
+       y="66.859352"
+       id="text565"><tspan
+         sodipodi:role="line"
+         id="tspan563"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.8473px;font-family:'Routed Gothic';-inkscape-font-specification:'Routed Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
+         x="51.281464"
+         y="66.859352">U</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.8473px;line-height:1.25;font-family:'Routed Gothic';-inkscape-font-specification:'Routed Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="90.298622"
+       y="66.945442"
+       id="text565-7"><tspan
+         sodipodi:role="line"
+         id="tspan563-7"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.8473px;font-family:'Routed Gothic';-inkscape-font-specification:'Routed Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
+         x="90.298622"
+         y="66.945442">R</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.8473px;line-height:1.25;font-family:'Routed Gothic';-inkscape-font-specification:'Routed Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="12.129465"
+       y="67.035599"
+       id="text565-7-7"><tspan
+         sodipodi:role="line"
+         id="tspan563-7-3"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.8473px;font-family:'Routed Gothic';-inkscape-font-specification:'Routed Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
+         x="12.129465"
+         y="67.035599">L</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.8473px;line-height:1.25;font-family:'Routed Gothic';-inkscape-font-specification:'Routed Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="51.245377"
+       y="28.421452"
+       id="text565-7-6"><tspan
+         sodipodi:role="line"
+         id="tspan563-7-5"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.8473px;font-family:'Routed Gothic';-inkscape-font-specification:'Routed Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
+         x="51.245377"
+         y="28.421452">B</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.8473px;line-height:1.25;font-family:'Routed Gothic';-inkscape-font-specification:'Routed Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="51.560184"
+       y="106.33847"
+       id="text565-7-63"><tspan
+         sodipodi:role="line"
+         id="tspan563-7-9"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.8473px;font-family:'Routed Gothic';-inkscape-font-specification:'Routed Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
+         x="51.560184"
+         y="106.33847">F</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.8473px;line-height:1.25;font-family:'Routed Gothic';-inkscape-font-specification:'Routed Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="51.19495"
+       y="145.41873"
+       id="text565-7-4"><tspan
+         sodipodi:role="line"
+         id="tspan563-7-8"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.8473px;font-family:'Routed Gothic';-inkscape-font-specification:'Routed Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
+         x="51.19495"
+         y="145.41873">D</tspan></text>
+  </g>
+</svg>

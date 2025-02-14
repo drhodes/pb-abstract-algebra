@@ -1,0 +1,6 @@
+lxml
+pudb
+xmldiff
+livereload
+-e /home/derek/work/auxml/
+flask
