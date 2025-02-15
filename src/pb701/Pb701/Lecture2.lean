@@ -1,9 +1,31 @@
 import Lean
-import Mathlib.Tactic
+import Mathlib
 
 namespace Lecture2
 
 
+
+-----------------------------------------------------------------
+namespace Definition_1_2_12
+
+variable
+  (A : Set (Set ℕ))
+  (h : A = {{1}, {2}})
+
+
+
+example : Π i : ℕ, A = {1} ×ˢ {2} := by
+  normnum
+
+end Definition_1_2_12
+
+
+
+
+
+
+
+-----------------------------------------------------------------
 namespace Example_1_2_13
 open Set
 
@@ -14,7 +36,7 @@ variable
   (hb : B = {1, 2, 3})
   (hc : C = ∅)
 
--- Note: For sets in Mathlib, the cartesian product has a superscript: (×ˢ)
+-- Note: For sets in Mathlib, the cartesian product uses a superscript: (×ˢ)
 
 example : A ×ˢ B = {(x,1),(x,2),(x,3),(y,1),(y,2),(y,3)} := by sorry
 example : A ×ˢ C = ∅ := by sorry
@@ -33,8 +55,79 @@ end solution
 
 end Example_1_2_13
 
+-----------------------------------------------------------------
+namespace Example_1_2_20
+open Function
+
+noncomputable
+def f (x : ℝ) := x ^ 3
+
+example : Bijective f := by sorry
+
+noncomputable
+def g (x: ℝ) := Real.exp x
+
+example : Injective g := by sorry
+
+noncomputable
+def h (x: ℝ) := x ^ 2
+
+example : ¬ Injective h ∧ ¬ Surjective h := by sorry
+
+section solution
+
+variable (x y : ℝ)
+
+lemma odd_f : Function.Odd f := by
+  intro a
+  unfold f
+  ring
+
+lemma increasing_f (x y : ℝ) (h: x < y) : (f x) < (f y) := by
+  unfold f
+
+lemma inj_f : Injective f := by
+  intro x₁ x₂ hf
+  by_contra hc
+  push_neg at hc
+  rw [ne_iff_lt_or_gt] at hc
+  cases hc with
+  | inl h =>
+    have hinc := increasing_f x₁ x₂ h
+    have hn := ne_of_lt hinc
+    contradiction
+  | inr h =>
+    norm_num at h
+    have hinc := (increasing_f x₂ x₁ h)
+    have hn := (ne_of_lt hinc).symm
+    contradiction
+
+lemma sur_f : Surjective f := by sorry
+
+example (a b c d : ℝ) (hac : a = c) (hbd : b = d) : a * b = c * d := by
+  exact Mathlib.Tactic.LinearCombination'.mul_pf hac hbd
+
+lemma inj_f2 : Injective f := by
+  intro x y hf
+  unfold f at hf
+
+example : Function.Bijective f := by
+  constructor
+  · apply inj_f
+  · apply sur_f
+
+end solution
+
+end Example_1_2_20
+
+
 
 end Lecture2
+
+
+
+
+
 
 
 

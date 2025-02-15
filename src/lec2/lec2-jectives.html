@@ -1,0 +1,41 @@
+    <page title="Injective and Surjective" path="lecture2/jectives">
+        <vid desc="lecture1" youtubeid="1gQfUT6NDbI" start="00:00" end="10:29"/>
+        
+        <h3>Definition 1.2.19</h3>
+        <p>
+            Let `f: A \to B` be a function. Let `a_1, a_2 \in A`. We
+            say that `f` is <strong>injective</strong> or one‑to‑one
+            if `f(a_1) = f(a_2)` implies that `a_1 = a_2`; in other
+            words, for each `b \in f(A)` there is a unique `a \in A`
+            such that `f(a) = b`.
+        </p>
+        <p>
+            We say that `f` is <strong>surjective</strong>
+            or onto if the image of `f` equals the codomain of `f`
+            (`f(A) = B`), or in other words, for all `b \in B` there
+            exists an `a \in A` such that `f(a) = b`.
+        </p>
+        <p>
+            If `f` is both injective and surjective, then we say that
+            `f` is <strong>bijective</strong>.
+        </p>
+
+        <h4>Example 1.2.20</h4>
+        <p>
+            If `f: \mathbb{R} \to \mathbb{R}`, `g: \mathbb{R} \to
+            \mathbb{R}`, and `h: \mathbb{R} \to \mathbb{R}` are given
+            by `f(x) = x^3`, `g(x) = e^x`, and `h(x) = x^2`, then `f`
+            is bijective, `g` is injective but not surjective, and `h`
+            is neither injective nor surjective. <caution> On the other hand,
+            the mappings `g_1: \mathbb{R} \to (0, \infty)` and `h_1:
+            \mathbb{R} \to [0, \infty)` given by `g_1(x) = e^x` and
+            `h_2(x) = x^2` are both surjective maps but only `g_1` is
+            injective. If we consider `h_2: [0, \infty) \to [0,
+            \infty)` given by `h_2(x) = x^2`, then `h_2` is
+            bijective. For these reasons, the convention for defining
+            functions in calculus is very imprecise for higher
+            mathematics. </caution>
+        </p>
+
+        <lean-example file="src/pb701/Pb701/Lecture2.lean" namespace="Example_1_2_20"/>  
+    </page>

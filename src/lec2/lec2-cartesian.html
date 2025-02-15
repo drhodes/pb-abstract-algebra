@@ -1,0 +1,47 @@
+    <page title="Cartesian Product" path="lecture2/cartesian">
+        <quote who="Martin Luther King, Jr." context="">
+            The function of education is to teach one to think
+            intensively and to think critically. Intelligence plus
+            character – that is the goal of true education.
+        </quote>
+
+        <hr/>
+        
+        <vid desc="lecture2" youtubeid="JZB5_fKd2C8" start="00:00" end="6:28"/>
+        
+        <h2>1.2. Sets and Equivalence Relations (Cartesian Products) </h2>
+
+        <h3>Definition 1.2.12</h3>
+        <p>
+            Given sets `A` and `B`, we can define a new set 
+            `A \times B`, called the Cartesian product of `A` and `B`, as a set of ordered pairs. That is,
+        </p>
+        <p class="formula">
+            \[ A \times B = \{ (a, b) \mid a \in A \text{ and } b \in B \}. \]
+        </p>
+        <p>
+            We define the Cartesian product of `n` sets to be
+        </p>
+        <p class="formula">
+            \[\prod_{i=1}^{n} A_i = A_1 \times \dots \times A_n = \{ (a_1, \dots, a_n) \mid a_i \in A_i \text{ for } i = 1, \dots, n \}.\]
+        </p>
+        <p>
+            If `A = A_1 = A_2 = \dots = A_n`, we often write `A^n` for
+            `A \times \dots \times A` (with `A` written `n`
+            times). For example, the set `\mathbb{R}^3` consists of
+            all 3‑tuples of real numbers.
+        </p>
+
+        <h4>Example 1.2.13</h4>
+        <p>
+            If `A = \{x, y\}`, `B = \{1, 2, 3\}`, and `C = \varnothing`, then 
+            `A \times B` is the set
+            
+            \[A \times B = \{ (x, 1), (x, 2), (x, 3), (y, 1), (y, 2), (y, 3) \} \quad \text{and} \quad A \times C = \varnothing.\]
+        </p>
+
+        <hr/>
+        
+        <lean-example file="src/pb701/Pb701/Lecture2.lean" namespace="Example_1_2_13"/>
+        
+    </page>

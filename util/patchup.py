@@ -67,21 +67,22 @@ def build_the_sidebar(tree, curpage_title):
         node_lec_details.append(node_lec_summary)
         
         lec_title = lec.get("title")
-        node_lec_link = etree.Element("a", title=lec_title)
+        node_lec_link = etree.Element("a") #, title=lec_title)
         node_lec_link.text = lec_title
         
         node_lec_summary.append(node_lec_link)
         node_lec_details.append(node_lec_summary)
         
         on_first_page = True
-        node_page_ul = etree.Element("ul")
+        node_page_ul = etree.Element("ul")        
         for page in lec.xpath('.//*[@class="page"]'):
+            url = f"../{page.get('path')}.html"
             if on_first_page:
-                node_lec_link.set("href", page.get("path") + ".html")
+                node_lec_link.set("href", url)
                 on_first_page = False
             node_page_li = etree.Element("li")
             pagelink = etree.Element("a", title=lec_title)
-            pagelink.set("href", "../" + page.get("path") + ".html")
+            pagelink.set("href", url)
             node_page_ul.append(node_page_li)
             node_page_li.append(pagelink)
             pagelink.text = page.get("title")
@@ -210,3 +211,8 @@ def nav_prev_next(tree, el):
 
 
 
+def git_hash(tree, el):
+    from git import Repo
+    repo = Repo(search_parent_directories=True)        
+    el.tag = "span"
+    el.text = repo.head.object.hexsha

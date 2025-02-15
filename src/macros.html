@@ -71,12 +71,12 @@
 		                    <contents/>
                             <hr/>                            
                             <patchup func="nav_prev_next" class="nav-prev-next"/>        
+                            <div class="git-hash"> (course git hash <patchup func="git_hash"/>) </div>
                             <discussion topic="[[title]]" id="[[title]]"/>
                             
 	                    </div>		                
 		            </layout>
 
-                    <script>sidebar_section_links()</script>
 	            </body>
 	        </html>            
         </outfile>
@@ -128,20 +128,6 @@
             <div class="lecture-menu"></div>
         </div>
 	</define-macro>
-
-	
-	<define-macro name="menu-lec" vars="n, title">
-	    <div><a href="../lecture[[n]]/motivation.html"> [[title]] </a></div>
-	</define-macro>
-	
-	<define-macro name="to-lec" vars="url, title">
-	    <div><a href="../lectures/[[url]].html"> [[title]] </a></div>
-	</define-macro>
-
-    <define-macro name="complex-number">
-		<a href="link to definition of complex number"><i>complex number</i></a>
-    </define-macro>
-
     
     <define-macro name="def" vars="num, name">
         <div class="def">
@@ -156,14 +142,6 @@
         </div>
     </define-macro>
 
-    <define-macro name="prop" vars="name">
-        <div>
-            <b>[[name]]</b> <br/>
-            <div class="indented">
-                <contents/>
-            </div>
-        </div>
-    </define-macro>
 
     
     <define-macro name="ex" vars="num, name">
@@ -189,8 +167,7 @@
             <vid youtubeid="[[youtubeid]]" start="[[start]]" end="[[end]]" />
         </div>
     </define-macro>
-
-
+    
     <define-macro name="mylib" vars="file, from, to">
         <div>
             <pre>
@@ -364,6 +341,21 @@
             \]
 	    </div>
 	</define-macro>
+
+    <define-macro name="caution">
+        <span class="caution"> <contents/> </span>
+    </define-macro>
+
+    <define-macro name="hw" vars="psetnum, prob">
+        <page title="HW / Problem [[prob]]" path="lecture2/P[[prob]]">
+            <!-- <h1>P[[psetnum]].[[prob]]</h1> -->
+            <contents/>
+        </page>
+    </define-macro>
+
+    <define-macro name="hw2" vars="prob"> <hw psetnum="2" prob="[[prob]]"> <contents/> </hw> </define-macro>
+
+    
     
     <!-- replace anything in an ignore tag with an empty div -->
 	<define-macro name="ignore">
@@ -445,7 +437,6 @@
 	<define-macro name="scribe" args="who">
 	    <div class="scribe">
             <!-- There is an invisible unicode symbol on the next line -->
-            📝
 		    <!-- <span class="scribe-note"> <sup> (scribe note) </sup> </span> -->
 		    <contents/>
 	    </div>
@@ -457,6 +448,12 @@
 	    </span>
 	</define-macro>
 
+    <!-- why doesn't this work? -->
+    <!-- <define-macro name="hw2" vars="n">
+         <inline-html filename="src/psets/pset2/p-[[n]].html"/>
+         </define-macro> -->
+
+    
 	<define-macro name="ref" vars="url">
 	    <span class="ref"> <a href="[[url]]" target="_blank"> ⮺ <contents/> </a> </span>
 	</define-macro>
@@ -482,14 +479,12 @@
 	<define-macro name="sm-ref-mcs" vars="url">
 	    <span> <ref url="[[url]]"> <span> <contents/>  </ref> <sub>[PDF]</sub> </span>
 	</define-macro>
-
     
 	<define-macro name="ref-mop" vars="url, chapter">
 	    <div>
 		    <ref url="[[url]]"> <span> The Mechanics of Proof, chapter [[chapter]] </span> </ref>
 	    </div>
 	</define-macro>
-
 
 	<define-macro name="ref-htpi" vars="url, chapter">
 	    <div>
@@ -503,6 +498,10 @@
 		    <center><span class="fig-text">[[text]]</span></center>
 	    </div>
 	</define-macro>
+
+    <define-macro name="im" vars="src">
+	    <img src="/media/images/[[src]]" width="75%"/>
+    </define-macro>
     
 	<!-- <lebl page="15"/> -->
 	<define-macro name="lebl" vars="page">
@@ -518,5 +517,33 @@
 		    <contents/>
 	    </div>
 	</define-macro>
-	
+
+    <define-macro name="credit">
+        <div>
+            <img src="/media/images/by-nc-sa.png" width=100/>
+            <p class="reference">
+                These lecture notes are derived from <em>Abstract Algebra: Theory and Applications</em>
+                by Tom Judson, used under a GNU Free Documentation
+                License.
+            </p>
+            <p class="reference">
+                Video links: 
+                <a href="https://youtu.be/JZB5_fKd2C8" target="_blank">https://youtu.be/JZB5_fKd2C8</a>, 
+                <a href="https://youtu.be/8PX2Wi2apfI" target="_blank">https://youtu.be/8PX2Wi2apfI</a>, 
+                <a href="https://youtu.be/1gQfUT6NDbI" target="_blank">https://youtu.be/1gQfUT6NDbI</a>
+            </p>
+            <p class="reference">
+                More info:
+                
+                <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>, 
+                <a href="http://abstract.ups.edu/" target="_blank">http://abstract.ups.edu/</a>, 
+                <a href="http://abstract.ups.edu/aata/appendix-gfdl.html" target="_blank">GNU FDL Appendix</a>
+            </p>
+            <p class="reference">
+                &copy; Andrew Misseldine
+            </p>
+        </div>
+    </define-macro>
+
+
 </macros>

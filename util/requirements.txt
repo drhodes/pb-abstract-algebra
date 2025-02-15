@@ -2,5 +2,6 @@ lxml
 pudb
 xmldiff
 livereload
+gitpython
 -e /home/derek/work/auxml/
 flask

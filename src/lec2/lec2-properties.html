@@ -1,0 +1,51 @@
+
+
+<page title="Properties" path="lecture2/properties">
+        <vid desc="lecture1" youtubeid="_D48Iu6kJR8" start="00:00" end="8:42"/>
+        
+        <h3>Theorem 1.2.21</h3>
+        <p>
+            Let `f: A \to B`, `g: B \to C`, and `h: C \to D`. Then:
+        </p>
+        <ul>
+            <li>(a) The composition of mappings is associative, that is, 
+                \[(h \circ g) \circ f = h \circ (g \circ f).\]
+            </li>
+            <li>(b) If `f` and `g` are both surjective, then `g \circ f` is surjective;
+            </li>
+            <li>(c) If `f` and `g` are both injective, then `g \circ f` is injective;
+            </li>
+            <li>(d) If `f` and `g` are both bijective, then `g \circ f` is bijective.
+            </li>
+        </ul>
+        <proof>
+
+            <h4>Proof</h4>
+            <p>
+                Let `a \in A`. Then
+            </p>
+            <p class="formula">
+                \[[(h \circ g) \circ f](a) = (h \circ g)(f(a)) = h(g(f(a))) = h((g \circ f)(a)) = [h \circ (g \circ f)](a),\]
+            </p>
+            <p>
+                which proves (a).
+            </p>
+            <p>
+                Let `c \in C`. Since `g` is surjective, there exists
+                some `b \in B` such that `g(b) = c`. Likewise, since
+                `f` is surjective, there exists some `a \in A` such
+                that `f(a) = b`. Thus,
+            </p>
+            
+            <p class="formula">
+                \[(g \circ f)(a) = g(f(a)) = g(b) = c,\]
+            </p>
+            <p>
+                which proves (b). Part (c) is left as an exercise to
+                the student, and part (d) follows immediately from (b)
+                and (c).
+            </p>
+        </proof>
+        
+            <!-- Judson 1.4: 2, 17, 18, 20, 22 -->
+    </page>
