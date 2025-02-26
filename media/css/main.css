@@ -1,15 +1,47 @@
+@font-face {
+    font-family: "Computer Modern";
+    src: url('/media/font/cmunss.otf');
+}
+
+@font-face {
+    font-family: "Computer Modern";
+    src: url('/media/font/cmunsx.otf');
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Computer Modern";
+    src: url('/media/font/cmunsi.otf');
+    font-style: italic;
+}
+@font-face {
+    font-family: "Computer Modern";
+    src: url('/media/font/cmunbxo.otf');
+    font-weight: bold;
+    font-style: italic;
+}
 
 body {
-    font-family: "PT Serif";
+    font-family: "Computer Modern", sans-serif;
+    /* font-family: "PT Serif"; */
     font-size: 14pt;
-    margin: auto;
     background-color: #f9f9f4;
     color: #333;
+    width: 100%;
 }
 
 .git-hash {
     font-size: .7em;
     color: grey;
+}
+
+.course-title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.formalized {
+    font-size: 1.3em;
+    font-weight: bold;
 }
 
 .sticky {
@@ -66,14 +98,6 @@ pre {
 
 .katex { font-size: 1.2em !important; } 
 
-.layout {
-    display: flex;
-}
-
-.sidebar {
-    min-width: 250px;
-    padding-left: 10px;
-}
 
 .nav-prev-next {
     display: flex;
@@ -106,20 +130,55 @@ pre {
     padding: 10px;
 }
 
-.page {
-    background-color: #fff;
-    line-height: 1.4em;
-    padding-top: 30px;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-bottom: 30px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 100px;
-    filter: drop-shadow(0px 0px 1px #aaa);
-    border: 1px solid white;
-    width: 50em;
+
+.sidebar {
+    min-width: 250px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    flex-shrink: 0;
 }
+
+.layout {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.page {
+  background-color: #fff;
+  line-height: 1.4em;
+  padding: 30px 50px;
+  margin: 0 10px 100px 10px;
+  filter: drop-shadow(0px 0px 1px #aaa);
+  border: 1px solid white;
+  max-width: 800px;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  flex-grow: 1;
+}
+
+
+/* .page { */
+/*     background-color: #fff; */
+/*     line-height: 1.4em; */
+/*     padding-top: 30px; */
+/*     padding-left: 50px; */
+/*     padding-right: 50px; */
+/*     padding-bottom: 30px; */
+/*     margin-left: 10px; */
+/*     margin-right: 10px; */
+/*     margin-bottom: 100px; */
+/*     filter: drop-shadow(0px 0px 1px #aaa); */
+/*     border: 1px solid white; */
+
+    
+/*     max-width: 800px; /\* Never exceed 800px *\/ */
+/*     width: 100%; /\* Allows it to shrink *\/ */
+/*     min-width: 0; /\* Optional: Prevents it from shrinking too much *\/ */
+/*     box-sizing: border-box; */
+
+/* } */
 
 .seek-text {
     font-size: 10pt;
@@ -131,7 +190,6 @@ pre {
 }
 
 .vid iframe {
-    text-align: center; !important
 }
 
 .problem {
@@ -215,7 +273,7 @@ hr {
     margin-top: 1em;
     margin-bottom: 1em;
     border: none;
-    border-top: 0px 
+    border-top: 0px;
     color: #333;
     overflow: visible;
     text-align: center;
@@ -223,7 +281,7 @@ hr {
 
 hr:after {
     background: #0000;
-    content: '· ❖ ·';               
+    content: '· ❖ ·'; 
     position: relative;
 }
 
@@ -384,13 +442,20 @@ iframe.vidframe {
 
 .lecture-menu ul {
     list-style-type: none;
-    padding: 10px;
+    padding: 5px;
+    list-style: none;
 }
 
 .lecture-menu li {
     font-size: .9em;
+    /* list-style-image: url('/media/images/by-nc-sa.png'); */
     list-style-type: none;
+    list-style: none;
     padding: .2em;
+}
+
+summary::marker {
+    color: #ccc;
 }
 
 li.cur-page {
@@ -426,4 +491,46 @@ a {
 #toggle-btn i {
     width: 20px;
     height: 20px;
+}
+
+.spoiler-line {
+    background: black;
+    cursor: pointer;
+    display: block;
+    padding: 2px 5px;
+}
+.spoiler-line.revealed {
+    background: transparent;
+    color: white;
+}
+
+.todo {    
+    font-size: .8em;
+    background-color: yellow;
+    border-left: 2px solid black;
+    margin-bottom: 20px;
+    padding-right: 10px;
+    padding-left: .7em;
+}
+
+.todo-label {
+    display: inline-block;
+    font-size: .7em;
+    border-left: 2px solid black;
+    background: orange;
+    padding-left: .7em;
+    padding-right: .7em;
+}
+
+
+.outer-center-code {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-center-code {
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
 }
