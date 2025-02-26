@@ -1,0 +1,40 @@
+<page title="Binary Operations" path="lecture7/binary-operations">
+    <vid desc="lecture7" youtubeid="SIdPG_CJ-G0" start="00:00" end="13:45"/>
+
+  <h3>3.2. Definitions and Examples</h3>
+
+  <p>
+    In this chapter we introduce the most fundamental and most important structure in abstract algebra, the group.
+  </p>
+
+  <h4>Definition 3.2.1.</h4>
+  <p>
+    A binary operation `\circ` on a set `G` is a function 
+    `\circ : G \times G \to G`. For an element `(a,b) \in G \times G`, the image of `(a,b)` under 
+    `\circ` is denoted `a \circ b` (or just juxtaposition `ab` when the operation is clear from context), 
+    that is, `(a,b) \mapsto a \circ b`. We will use the notation `(G, \circ)` to denote that `G` is a set 
+    and `\circ` a binary operation on `G`.
+  </p>
+
+  <h4>Example 3.2.2.</h4>
+  <p>
+    Addition and multiplication are binary operations on `\mathbb{N}`, `\mathbb{Z}`, `\mathbb{Q}`, `\mathbb{R}`, 
+    and `\mathbb{C}`. Addition and multiplication also are binary operations on `\mathbb{Z}_n`, the set of congruence 
+    classes modulo `n`.
+  </p>
+  <p>
+    Vector addition is a binary operation on `\mathbb{R}^n`. On the other hand, scalar multiplication of vectors is not a 
+    binary operation because it is a product of a scalar and a vector producing a vector, i.e. `\mathbb{R} \times \mathbb{R}^n \to \mathbb{R}^n`. 
+    To be a binary operation, the two factors and the product must all be elements of the same set. Likewise, the dot product of two 
+    vectors is not a binary operation since it is a function of the form 
+    `\mathbb{R}^n \times \mathbb{R}^n \to \mathbb{R}` (the product is not a vector but a scalar). Conversely, the cross product on 
+    `\mathbb{R}^3` is a binary operation `\mathbb{R}^3 \times \mathbb{R}^3 \to \mathbb{R}^3` since the product of two vectors is a vector.
+  </p>
+  <p>
+    Matrix multiplication is a binary operation on the set of `n \times n` matrices with real scalars, 
+    `M_n(\mathbb{R})`, but not on the set of all matrices because the product of two matrices might be undefined if the dimensions 
+    are incompatible. This is just a special case of function composition. Recall that for sets `A` and `B`, the set `BA` consists 
+    of all functions `f: A \to B`. Then while function composition does not form a binary operation for all functions (since many composites are undefined), 
+    it does form a binary operation on `X`, that is, on functions of the form `f: X \to X`.
+  </p>
+</page>

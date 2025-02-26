@@ -1,0 +1,59 @@
+<page title="Euclid's Lemma" path="lecture6/lec6-eulids-lemma">
+    <vid desc="lecture6" youtubeid="jIEWXwN5Fl4" start="00:00" end="17:16"/>
+
+  <div class="corollary">
+    <div class="corollary-title">Corollary 2.2.5</div>
+    <p>Let `a` and `b` be two integers that are relatively prime. Then there exist integers `r` and `s` such that
+    \[
+    ar + bs = 1.
+    \]
+    </p>
+  </div>
+
+  <div class="definition">
+    <div class="definition-title">Definition 2.2.6</div>
+    <p>Let `p` be an integer such that `p > 1`. We say that `p` is a prime number if the only positive numbers that divide `p` are `1` and `p` itself. An integer `n > 1` that is not prime is said to be composite.</p>
+  </div>
+
+  <div class="lemma">
+    <div class="lemma-title">Lemma 2.2.7 (Euclid)</div>
+    <p>Let `a` and `b` be integers and `p` be a prime number. If `p \mid ab`, then either `p \mid a` or `p \mid b`.</p>
+    <p><b>Proof.</b> Suppose that `p \nmid a`. Then `\gcd(p, a) = 1`, which implies there exist integers `r` and `s` such that
+    \[
+    ar + ps = 1.
+    \]
+    Multiplying both sides by `b`, we get
+    \[
+    b = (ab)r + p(bs).
+    \]
+    Since `p` divides the right-hand side of the equation, we conclude that `p \mid b`. Therefore, `p \mid a` or `p \mid b`.</p>
+  </div>
+
+  <p>Euclid’s lemma is one of the most powerful properties of prime numbers. The following two theorems are consequences of Euclid’s lemma.</p>
+
+  <div class="theorem">
+    <div class="theorem-title">Theorem 2.2.8 (Euclid)</div>
+    <p>There exist infinitely many prime numbers.</p>
+    <p><b>Proof.</b> Suppose to the contrary that there are only finitely many primes, `p_1, p_2, \dots, p_r`. Let
+    \[
+    q = p_1p_2 \cdots p_r + 1.
+    \]
+    If `q` is composite, then by Euclid’s lemma it must be divisible by some prime, say `p_i`. But then
+    \[
+    p_i \mid \Bigl(q - p_1p_2 \cdots p_r\Bigr) = 1,
+    \]
+    which is a contradiction. Thus, `q` must be a prime number larger than every `p_i`, another contradiction. Therefore, there are infinitely many prime numbers.</p>
+  </div>
+
+  <div class="theorem">
+    <div class="theorem-title">Theorem 2.2.9 (Fundamental Theorem of Arithmetic)</div>
+    <p>Let `n` be an integer such that `n > 1`. Then</p>
+    <p>\[ n = p_1p_2 \cdots p_r, \]</p>
+    <p>where `p_1, \dots, p_r` are primes (not necessarily distinct). Furthermore, this factorization is unique; that is, if</p>
+    <p>\[ n = q_1q_2 \cdots q_s, \]</p>
+    <p>then `r = s` and the `q_i`'s are just the `p_i`'s rearranged.</p>
+  </div>
+
+  <h3>Homework</h3>
+  <p>Judson 2.4: 15, Pick 4 from (16, 20, 22–27)</p>
+</page>

@@ -1,0 +1,41 @@
+<page title="Solving Equations in Groups" path="lecture7/solving-equations-in-groups">
+    <vid desc="lecture7" youtubeid="bugD1a3OnCE" start="00:00" end="02:20"/>
+
+    <h4>Example 3.2.8.</h4>
+    <p>
+        Solve the equation 
+        `2x + 1 \equiv 5 \ (\text{mod } 7)`
+        for `x`.
+    </p>
+    <p>
+        To begin we apply the additive inverse of `1` to both sides of the equation:
+    </p>
+
+    <align>
+        (2x + 1) + (-1) &\equiv 5 + (-1) \ (\text{mod } 7) \\
+        2x + (1 + (-1)) &\equiv 4 \ (\text{mod } 7) \\
+        2x + 0 &\equiv 4 \ (\text{mod } 7) \\
+        2x &\equiv 4 \ (\text{mod } 7) \\
+    </align>    
+        Notice that to “move” `1` to the other side of the equation we
+        used inverses, associativity, and identity.
+    <p>
+        The Euclidean algorithm (or guess-and-check) can be used to show that 
+        \[ (4)(2) + (-1)(7) = 1. \]
+        Thus, `2^{-1} \equiv 4 \ (\text{mod } 7)`.
+    </p>
+    <p>
+        Multiplying both sides by `2^{-1}`:
+    </p>
+    
+    <align>
+        (4)(2x) &\equiv 4(4) \ (\text{mod } 7) \\
+        (4 \cdot 2)x &\equiv 16 \ (\text{mod } 7) \\
+        8x &\equiv 16 \ (\text{mod } 7) \\
+        x &\equiv 2 \ (\text{mod } 7) \\
+    </align>
+
+    <p> <b>Homework:</b> Judson 3.5 : 1, Pick 2 (7, 10, 12–14), Pick 2 (19–24) </p>
+</page>
+
+        

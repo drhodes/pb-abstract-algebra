@@ -1,0 +1,50 @@
+<page title="Divisibility of Integers" path="lecture6/lec6-the-division-algorithm">
+    <vid desc="lecture6" youtubeid="iuxgyDNIrS4" start="00:00" end="16:17"/>
+    <h2>2.2. The Division Algorithm</h2>
+
+    <div class="theorem">
+        <div class="theorem-title">Theorem 2.2.1 (The Division Algorithm)</div>
+        <p>If `a, b \in \mathbb{Z}` and if `b > 0`, then there are unique integers `q` and `r` such that</p>
+        <p>\[ a = qb + r \]</p>
+        <p>where</p>
+        <p>\[ 0 \le r < b \]</p>
+    </div>
+
+    <p><b>Proof.</b>
+        Let `S = \{a - bk \mid k \in \mathbb{Z},\; a - bk \ge 0\}`,
+        which is a subset of the natural numbers. If `a \ge 0`, then `a
+        - b \cdot 0 \in S`. If `a < 0`, then `a - b(2a) = a(1- 2b) \ge
+        0`, so `a - b(2a) \in S`. In either case, `S` is not empty. By
+        the well-ordering principle, there is a minimal element of `S`,
+        call it `r`. Let `q` be an integer for which `r = a - bq`.
+    </p>
+
+    <p>
+        We claim that `0 \le r < b`. By definition of `S`, it must be
+        that `r \ge 0`. Consider the number `a - b(q + 1)`, which is
+        smaller than `r`. Since `r` is minimal in `S`, we conclude
+        that `a - b(q + 1) < 0`, which implies that
+
+        \[ r - b < 0 \quad \text{or} \quad r < b.  \]
+
+        Therefore, there exist integers `q` and `r` such that `a = bq
+        + r` and `0 \le r < b`.
+    </p>
+
+    <p>
+        To show that these numbers are unique, suppose that
+
+        \[ a = bq + r \quad \text{and} \quad a = bq' + r', \]
+
+        with `0 \le r, r' < b`. Without loss of generality, assume
+        that `r' \ge r`. Then,
+
+        \[ bq + r = bq' + r' \quad \Rightarrow \quad b(q - q') = r' -
+        r \ge 0. \]
+        
+        Thus, `b` divides `r' - r` and since `r' - r < b` the only
+        possibility is `r' - r = 0`, so `r' = r` and consequently `q =
+        q'`.
+    </p>
+
+</page>
