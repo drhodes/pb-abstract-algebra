@@ -1,0 +1,236 @@
+
+<lecture title="L1: Introduction">
+    <page title="Introduction to Group Theory" path="lecture1/intro">
+        <vid desc="lecture1" youtubeid="RnqwFpyqJFw" start="00:00" end="10:00"/>
+        
+        <section data-timestamp="0:01">
+            <h4>Introduction to Group Theory <span class="timestamp">(0:01)</span></h4>
+            <div class="content">
+                <p>This lecture introduces mathematical group theory at a level
+                    suitable for enthusiastic undergraduates and first-year graduate
+                    students. The course focuses on examples rather than proofs and
+                    covers topics such as finite groups, symmetric groups, free
+                    groups, reflection groups, and more. Each video will link to the
+                    next lecture and the complete lecture playlist.</p>
+            </div>
+        </section>
+
+        <!-- What is a Group? -->
+        <section data-timestamp="0:53">
+            <h4>What Is a Group? <span class="timestamp">(0:53)</span></h4>
+            <div class="content">
+                <p>A group is defined as the collection of all symmetries of an
+                    object. A symmetry is a mapping from the object to itself that
+                    preserves its structure.</p>
+            </div>
+        </section>
+
+        <hr/>
+        <!-- Examples of Groups via Symmetries -->
+        <section data-timestamp="1:09">
+            <h1>Examples of Groups via Symmetries <span class="timestamp">(1:09)</span></h1>
+            
+            <!-- Platonic Solids -->
+            <section data-timestamp="1:13">
+                <h3>Platonic Solids <span class="timestamp">(1:13)</span></h3>
+                
+                <!-- Dodecahedron -->
+                <section data-timestamp="1:13">
+                    <h4>Dodecahedron <span class="timestamp">(1:13)</span></h4>
+                    <div class="content">
+                        <p>The dodecahedron can be rotated about several axes:</p>
+                        <ul>
+                            <li>Rotations by `1/5` of a revolution (order `5`).</li>
+                            <li>Rotations by `1/3` of a revolution (order `3`).</li>
+                            <li>Flips (order `2` symmetries).</li>
+                        </ul>
+                        <p>Counting the rotations: choosing one of 12 faces as the
+                            base and then 5 possible rotations per face gives `12 \times
+                            5 = 60` rotational symmetries. If reflections are included,
+                            the total symmetry count becomes `120`.</p>
+                    </div>
+                </section>
+                
+                <!-- Other Solids -->
+                <section data-timestamp="1:42">
+                    <h4>Other Solids <span class="timestamp">(1:42)</span></h4>
+                    <div class="content">
+                        <ul>
+                            <li><strong>Cube and Octahedron:</strong> Each has `24` symmetries.</li>
+                            <li><strong>Icosahedron:</strong> `60` symmetries.</li>
+                            <li><strong>Tetrahedron:</strong> `12` symmetries.</li>
+                        </ul>
+                        <p>
+                            Some solids share the same number of
+                            symmetries, indicating that their symmetry
+                            groups are isomorphic.
+                        </p>
+                    </div>
+                </section>
+            </section>
+            
+            <!-- Cyclic Groups -->
+            <section data-timestamp="3:52">
+                <h3>Cyclic Groups (Rotations of a Star) <span class="timestamp">(3:52)</span></h3>
+                <div class="content">
+                    <p>A star with five identical points has a cyclic
+                        symmetry: rotating it by multiples of 1/5 of a
+                        revolution produces a cyclic group of order
+                        `5`. In general, cyclic groups exist for any
+                        given order.</p>
+                </div>
+            </section>
+            
+            <!-- Group of Integers -->
+            <section data-timestamp="5:00">
+                <h4>The Group of Integers (`\mathbb{Z}`) <span class="timestamp">(5:00)</span></h4>
+                <div class="content">
+                    <p>Consider a line marked with regularly spaced
+                        points. Shifting all points by a fixed number
+                        corresponds to a symmetry. These shifts form a
+                        group isomorphic to the integers under
+                        addition.</p>
+                </div>
+            </section>
+            
+            <!-- Rubik's Cube -->
+            <section data-timestamp="6:03">
+                <h4>Rubik’s Cube <span class="timestamp">(6:03)</span></h4>
+                <div class="content">
+                    <p>The Rubik’s Cube is a famous example of a group
+                        with a very large number of symmetries. Its
+                        various twists and turns demonstrate complex
+                        group behavior, though the focus here is on
+                        understanding the idea of symmetry.</p>
+                </div>
+            </section>
+            
+            <!-- Symmetric Groups -->
+            <section data-timestamp="6:46">
+                <h4>Symmetric Groups <span class="timestamp">(6:46)</span></h4>
+                <div class="content">
+                    <p>For a set of six identical objects, any
+                        permutation is a symmetry. The number of
+                        symmetries is `6! = 720`, and this group is
+                        denoted as `S_6`, the symmetric group on six
+                        elements.</p>
+                </div>
+            </section>
+            
+            <!-- Linear Groups -->
+            <section data-timestamp="8:00">
+                <h4>Linear Groups (Symmetries of Vector Spaces) <span class="timestamp">(8:00)</span></h4>
+                <div class="content">
+                    <p>In a vector space (for example,
+                        `\mathbb{R}^3`), symmetries are given by
+                        linear maps that preserve vector addition and
+                        scalar multiplication. Only the invertible
+                        maps (matrices with nonzero determinant)
+                        qualify, forming the General Linear Group,
+                        denoted `GL_3(\mathbb{R})`.</p>
+                </div>
+            </section>
+            
+            <!-- Galois Theory and Complex Numbers -->
+            <section data-timestamp="9:48">
+                <h4>Galois Theory and Complex Numbers <span class="timestamp">(9:48)</span></h4>
+                <div class="content">
+                    <p>Considering the complex numbers `\mathbb{C}`,
+                        an important symmetry is complex conjugation
+                        (mapping `z = x + iy` to `x - iy`). This
+                        symmetry, which preserves addition and
+                        multiplication, forms a group of order `2` and
+                        is a basic example in Galois theory.</p>
+                </div>
+            </section>
+            
+            <!-- Groups in Physics -->
+            <section data-timestamp="11:11">
+                <h4>Groups in Physics <span class="timestamp">(11:11)</span></h4>
+                <div class="content">
+                    <p>In physics, groups describe space-time symmetries:</p>
+                    <ul>
+                        <li><strong>Lorentz Group:</strong> Symmetries of space-time when a point is fixed.</li>
+                        <li><strong>Poincaré Group:</strong> Symmetries when no point is fixed.</li>
+                    </ul>
+                    <p>Other important groups include `SU(3)`, which
+                        is relevant in quantum chromodynamics (the
+                        study of quarks).</p>
+                </div>
+            </section>
+            
+            <!-- Groups of Groups -->
+            <section data-timestamp="12:32">
+                <h4>Groups of Groups <span class="timestamp">(12:32)</span></h4>
+                <div class="content">
+                    <p>Groups can themselves have symmetries. For example, the
+                        cyclic group `\mathbb{Z}/5\mathbb{Z}` (with elements `0, 1, 2,
+                        3, 4` under addition modulo `5`) has nontrivial symmetries
+                        that preserve its group structure.</p>
+                </div>
+            </section>
+        </section>
+
+        <!-- Axioms for a Group -->
+        <section data-timestamp="14:13">
+            <h4>Axioms for a Group <span class="timestamp">(14:13)</span></h4>
+            <div class="content">
+                <p>A group is a set equipped with a binary operation (often
+                    called multiplication) satisfying three key axioms:</p>
+                <ol>
+                    <li><strong>Associativity:</strong> For all
+                    elements `a`, `b`, and `c`, ` (a \cdot b) \cdot c
+                    = a \cdot (b \cdot c) `.</li>
+                    <li><strong>Identity Element:</strong> There
+                    exists an element `e` (which may be denoted as
+                    `1`, `0`, or `E`) such that for every element `a`,
+                    `e \cdot a = a \cdot e = a`.</li>
+                    <li><strong>Inverses:</strong> Every element `a`
+                    has an inverse `a^{-1}` such that `a \cdot a^{-1}
+                    = a^{-1} \cdot a = e`.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Goals and Themes in Group Theory -->
+        <section data-timestamp="17:13">
+            <h4>Goals and Themes in Group Theory <span class="timestamp">(17:13)</span></h4>
+            <div class="content">
+                <p>The main goals in group theory include:</p>
+                <ul>
+                    <li>
+                        <strong>Classification:</strong> Classifying
+                        all “interesting” groups up to
+                        isomorphism. Two groups are isomorphic if
+                        there exists a bijective map between them that
+                        preserves the group operation, meaning they
+                        are essentially the same despite relabeling.
+                    </li>
+                    <li>
+                        <strong>Representation Theory:</strong> Studying
+                        the ways in which groups act on sets
+                        (permutation representations) or on vector
+                        spaces (linear representations). This provides
+                        insights into the structure of groups by
+                        relating them to well-understood groups like
+                        symmetric and general linear groups.
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Completeness of Group Axioms -->
+        <section data-timestamp="20:00">
+            <h4>Completeness of Group Axioms <span class="timestamp">(20:00)</span></h4>
+            <div class="content">
+                <p>The three axioms (associativity, identity,
+                inverses) form a complete set for defining a
+                group. That is, any set that satisfies these axioms is
+                isomorphic to the symmetry group of some mathematical
+                object. This result is known as Cayley’s Theorem and
+                will be explored further in subsequent lectures.</p>
+            </div>
+        </section>
+    </page>
+</lecture>
+
