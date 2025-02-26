@@ -1,0 +1,105 @@
+<page title="Modular Arithmetic" path="lecture4/mod-arith">    
+    <vid desc="lecture4" youtubeid="uL_g_t8BJ-Y" start="00:00" end="17:00"/>
+
+    <article id="def-1.2.37">
+        <h3>Definition 1.2.37</h3>
+        <p>
+            Let \( r \) and \( s \) be two integers and let \( n \) be a positive integer. We say that \( r \) is 
+            congruent to \( s \) modulo \( n \), denoted 
+            \( r \equiv s \ (\text{mod } n) \), if and only if 
+            \( r - s = kn \) for some \( k \in \mathbb{Z} \).
+        </p>
+    </article>
+
+    <article id="ex-1.2.38">
+        <h3>Example 1.2.38</h3>
+        <p>Compute the following residues:</p>
+        <ol type="a">
+            <li>
+                \( 10 \equiv 1 \ (\text{mod } 3) \) since 
+                \( 10 - 1 = 9 = 3 \cdot 3 \).
+            </li>
+            <li>
+                \( 15 \equiv 0 \ (\text{mod } 5) \) since 
+                \( 15 - 0 = 15 = 3 \cdot 5 \).
+            </li>
+            <li>
+                \( 15 \not\equiv 0 \ (\text{mod } 7) \) since 
+                \( 15 - 0 \) is not a multiple of 7.
+            </li>
+            <li>
+                \( 30 \equiv 48 \ (\text{mod } 9) \) since 
+                \( 30 - 48 = -18 = -2 \cdot 9 \).
+            </li>
+            <li>
+                \( 23 \equiv 2 \ (\text{mod } 7) \) since 
+                \( 23 - 2 = 21 = 3 \cdot 7 \).
+            </li>
+        </ol>
+    </article>
+
+    <article id="prop-1.2.39">
+        <h3>Proposition 1.2.39</h3>
+        <p>
+            Congruence modulo \( n \) is an equivalence relation on \( \mathbb{Z} \) for any positive integer \( n \).
+        </p>
+        <h4>Proof</h4>
+        <p>
+            Let \( r, s, t \in \mathbb{Z} \). Then:
+        </p>
+        <ol>
+            <li>
+                <strong>(Reflexive property)</strong> \( r - r = 0 = 0 \cdot n \), so 
+                \( r \equiv r \ (\text{mod } n) \).
+            </li>
+            <li>
+                <strong>(Symmetric property)</strong> If \( r \equiv s \ (\text{mod } n) \), then 
+                \( r - s = kn \) for some \( k \in \mathbb{Z} \). It follows that 
+                \( s - r = (-k)n \), hence \( s \equiv r \ (\text{mod } n) \).
+            </li>
+            <li>
+                <strong>(Transitive property)</strong> If \( r \equiv s \ (\text{mod } n) \) and 
+                \( s \equiv t \ (\text{mod } n) \), then \( r - s = kn \) and \( s - t = \ell n \) for some 
+                \( k, \ell \in \mathbb{Z} \). Adding these gives 
+                \( r - t = (k+\ell)n \), so \( r \equiv t \ (\text{mod } n) \).
+            </li>
+        </ol>
+    </article>
+
+    <article id="congruence-classes">
+        <h3>Congruence Classes Modulo 3</h3>
+        <p>
+            Considering the equivalence relation on the integers modulo 3, we have:
+        </p>
+        <ul>
+            <li>
+                \( [0] = \{ \dots, -3, 0, 3, 6, \dots \} \)
+            </li>
+            <li>
+                \( [1] = \{ \dots, -2, 1, 4, 7, \dots \} \)
+            </li>
+            <li>
+                \( [2] = \{ \dots, -1, 2, 5, 8, \dots \} \)
+            </li>
+        </ul>
+        <p>
+            Notice that 
+            \( [0] \cup [1] \cup [2] = \mathbb{Z} \)
+            and the sets are disjoint. Thus, they form a partition of \( \mathbb{Z} \). In general, there will be 
+            \( n \) congruence classes modulo \( n \), and each class can be represented by a unique natural number 
+            \( x \) such that \( 0 \leq x < n \). In fact, this representative \( x \) is just the remainder when the integer is divided by \( n \).
+        </p>
+        <p>
+            The set of all congruence classes modulo \( n \) is denoted \( \mathbb{Z}_n \) and contains \( n \) elements.
+        </p>
+    </article>
+
+    <article id="homework">
+        <h3>Homework</h3>
+        <p>
+            Judson 1.4: 21, 25, 26, 28, 29
+        </p>
+    </article>
+      </section>
+    </main>
+</page>

@@ -1,0 +1,85 @@
+<page title="Equivalence Relations" path="lecture4/equiv-rel">    
+    <vid desc="lecture4" youtubeid="UKXU9ej5lCk" start="00:00" end="17:00"/>
+    <h1>Lecture 4: Equivalence Classes</h1>
+    <header>
+        <quote who="Aristotle" context="">
+            The worst form of inequality is to try to make unequal things equal.
+        </quote>
+    </header>
+
+    <main>
+      <section id="sets-equivalence-relations">
+        <h2>1.2. Sets and Equivalence Relations</h2>
+
+        <article id="def-1.2.30">
+          <h3>Definition 1.2.30</h3>
+          <p>
+            An equivalence relation \( \sim \) on a set \( X \) is a relation 
+            \( \sim \subseteq X \times X \) such that:
+          </p>
+          <ol>
+            <li>
+              <strong>(Reflexive property)</strong> \( x \sim x \) for all \( x \in X \).
+            </li>
+            <li>
+              <strong>(Symmetric property)</strong> \( x \sim y \) implies \( y \sim x \).
+            </li>
+            <li>
+              <strong>(Transitive property)</strong> If \( x \sim y \) and \( y \sim z \), then \( x \sim z \).
+            </li>
+          </ol>
+          <p>
+            For any \( x \in X \), define the set 
+            \( [x] = \{ y \in X \mid x \sim y \} \). This set is called the equivalence class of 
+            \( x \) and each element of this set is called a representative of the equivalence class.
+          </p>
+        </article>
+
+        <article id="ex-1.2.31">
+          <h3>Example 1.2.31</h3>
+          <p>
+            Let \( X = \{ (a,b) \mid a,b \in \mathbb{Z},\, b \neq 0 \} \) and define a relation 
+            \( \sim \) on \( X \) by
+          </p>
+          <p>
+            \( (a,b) \sim (c,d) \) if and only if \( ad = bc \).
+          </p>
+          <p>
+            This relation is an equivalence relation on \( X \) because:
+          </p>
+          <ol>
+            <li>
+              <strong>(Reflexive property)</strong> Since \( ab = ab \), we have 
+              \( (a,b) \sim (a,b) \).
+            </li>
+            <li>
+              <strong>(Symmetric property)</strong> If \( (a,b) \sim (c,d) \) then \( ad = bc \),
+              which implies \( cb = da \) and so \( (c,d) \sim (a,b) \).
+            </li>
+            <li>
+              <strong>(Transitive property)</strong> If 
+              \( (a,b) \sim (c,d) \) and \( (c,d) \sim (e,f) \), then \( ad = bc \) and \( cf = de \).
+              Multiplying the first equation by \( f \) and the second by \( b \) yields
+              \( adf = bcf = bde \). Since \( d \neq 0 \), dividing by \( d \) gives \( af = be \),
+              so \( (a,b) \sim (e,f) \).
+            </li>
+          </ol>
+          <p>
+            Thus, the relation is an equivalence relation. The set of equivalence classes, 
+            denoted \( \mathbb{Q} = \{[x] \mid x \in X\} \), represents the rational numbers, 
+            with the ratio in lowest terms typically chosen as the representative for each class.
+          </p>
+        </article>
+
+        <hr/>
+
+        <todo>
+            <ul>
+                <li> track down the MoP chapter with relations and see what's up. </li>
+                <li>                 check the other sources MIL, FM </li>
+            </ul>
+
+        </todo>
+
+        <todo> example 1.2.31 </todo>
+</page>

@@ -1,0 +1,74 @@
+
+<page title="Properties of Set Algebra" path="lecture1/set-alg">
+	<vid desc="lecture1" youtubeid="bD_y_aSlgGY"  start="00:00" end="15:58"/>
+
+	<div class="proposition">
+		<p><strong>Proposition 1.2.11.</strong> For any sets `A, B, C \subseteq U`, the following properties hold:</p>
+        <todo> style these better </todo>
+		<ol>
+			<li><em>Idempotency:</em> `A \cup A = A` and `A \cap A = A`.</li>
+			<li><em>Identity:</em> `A \cup \varnothing = A` and `A \cap U = A`.</li>
+			<li><em>Absorption:</em> `A \cup U = U`, `A \cap \varnothing = \varnothing`, and `A \setminus \varnothing = A`.</li>
+			<li><em>Complements:</em> `A \cup A' = U`, `A \cap A' = \varnothing`, and `A \setminus A = \varnothing`.</li>
+			<li><em>Commutativity:</em> `A \cup B = B \cup A` and `A \cap B = B \cap A`.</li>
+			<li><em>Associativity:</em> `A \cup (B \cup C) = (A \cup B) \cup C` and `A \cap (B \cap C) = (A \cap B) \cap C`.</li>
+			<li><em>Distributivity:</em> `A \cup (B \cap C) = (A \cup B) \cap (A \cup C)` and `A \cap (B \cup C) = (A \cap B) \cup (A \cap C)`.</li>
+			<li><em>De Morgan’s Laws:</em> `(A \cap B)' = A' \cup B'` and `(A \cup B)' = A' \cap B'`.</li>
+		</ol>
+	</div>
+    
+	<p><strong>Proof.</strong>
+        Many of these identities are straightforward to prove and
+		several will be verified in the homework. To illustrate the
+		basic method for proving two sets are equal, we prove the
+		first distributive law:
+    </p>
+    
+    
+    <proof>
+
+        <p>`A \cup (B \cap C) = (A \cup B) \cap (A \cup C)`.</p>
+
+        <p>To prove that two sets are equal, we show that each is a subset of the other.</p>
+
+        <p>First, we show that `A \cup (B \cap C) \subseteq (A
+			\cup B) \cap (A \cup C)`. Let `x \in A \cup (B \cap
+			C)`. Then `x \in A` or `x \in (B \cap C)`. If `x \in A`,
+			since `A \subseteq A \cup B` and `A \subseteq A \cup C`,
+			it follows that `x \in (A \cup B) \cap (A \cup C)`. If
+			instead `x \in (B \cap C)`, then `x \in B` and `x \in
+			C`. Since `B \subseteq A \cup B` and `C \subseteq A \cup
+			C`, again `x \in (A \cup B) \cap (A \cup C)`. Thus, `A
+			\cup (B \cap C) \subseteq (A \cup B) \cap (A \cup C)`.
+        </p>
+        
+		<p>Next, we show that `(A \cup B) \cap (A \cup C)
+			\subseteq A \cup (B \cap C)`. Let `x \in (A \cup B) \cap
+			(A \cup C)`. Then `x \in A \cup B` and `x \in A \cup
+			C`. If `x \in A`, then clearly `x \in A \cup (B \cap
+			C)`. Otherwise, if `x \notin A`, then `x` must be in both
+			`B` and `C`, so `x \in B \cap C`, which implies `x \in A
+			\cup (B \cap C)`. Therefore, `(A \cup B) \cap (A \cup C)
+			\subseteq A \cup (B \cap C)`.</p>
+		<p>Combining these two inclusions, we conclude that `A \cup (B \cap C) = (A \cup B) \cap (A \cup C)`.</p>
+	</div>
+    
+    </proof>
+    
+    <todo>
+        In lean, two ways of proving set equality.  By
+        extensionality @ext, which says that two sets are the same if
+        they contain the same elements.
+    </todo>
+
+    <todo>
+        
+    </todo>
+    
+	<!-- <div class="homework">
+		 <p>Homework: Judson 1.4 : 1, Pick 2 from (4–10), Pick 2 from (12–16)</p>
+    </div> -->
+
+    
+    
+</page>

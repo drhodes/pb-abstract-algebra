@@ -1,0 +1,72 @@
+
+<page title="Subsets" path="lecture1/subsets">	
+	<vid desc="lecture1" youtubeid="Khu_fHMbe6Y"  start="00:00" end="10:20"/>
+
+	<div class="definition">
+		<p>
+            <b>Definition 1.2.4.</b>
+
+            Let `A` and `B` be two sets. If `A` and `B` have exactly
+			the same elements as each other, then `A = B`. If every
+			element of `A` is an element of `B`, then `A` is a subset
+			of `B`, denoted by `A \subseteq B`. For example, `\{1, 2\}
+			\subseteq \{1, 2, 3\}`.
+            
+        </p>
+	</div>
+
+	<p>
+        Note that it is always true that `\varnothing \subseteq A`
+		for any set `A`. The reason is that there exists no
+		counterexample – there is no element in `\varnothing`
+		which is not in `A`.
+    </p>
+
+	<p>
+        If `A \subseteq B` and `A \neq B`, then `A \subset B` and `A`
+		is a proper subset of `B`.
+    </p>
+    
+	<p>
+        <b>Example 1.2.5.</b>
+
+        Consider the three sets: let `A` be the set of all even
+		numbers, `B = \{2, 4, 6\}`, and `C = \{2, 3, 4,
+		6\}`. Here, `B \subseteq A` since every element of `B` is
+		an even number. However, `B \neq A` since `8 \in A` but `8
+		\notin B`, so `B \subset A`. It is also true that `B
+		\subset C`. On the other hand, `C \not\subseteq A` since
+		`3 \in C` but `3 \notin A`.
+    </p>
+
+    <hr/>
+
+    <todo>
+        find the relevent definitions for working with
+        lean subsets. Mention how the type <code> Set </code> is
+        requires a shift in thinking.
+
+        <p>
+            <center-code> (X : Set R) </center-code>
+        </p>
+
+        means that <code> X </code> may be any set of real numbers,
+        but only reals. It may not contains other sets of reals.
+    </todo>
+        
+
+    <todo>
+        example 1.2.5 in lean
+
+        Consider the three sets: let `A` be the set of all even
+		numbers, `B = \{2, 4, 6\}`, and `C = \{2, 3, 4,
+		6\}`. Here, `B \subseteq A` since every element of `B` is
+		an even number. However, `B \neq A` since `8 \in A` but `8
+		\notin B`, so `B \subset A`. It is also true that `B
+		\subset C`. On the other hand, `C \not\subseteq A` since
+		`3 \in C` but `3 \notin A`.
+
+    </todo>
+
+    
+</page>

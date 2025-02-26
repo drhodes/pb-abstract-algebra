@@ -1,0 +1,58 @@
+<page title="Invertible Functions are Bijective" path="lecture3/inv-func-bij">    
+    <vid desc="lecture3" youtubeid="_IZu1hYQFbU" start="00:00" end="10:47"/>
+    
+    <p>
+        <strong>Theorem 1.2.25.</strong> A mapping is invertible if and only if it is both one-to-one and onto.
+    </p>
+
+    <p>
+        <strong>Proof.</strong>
+
+        Let `f : A \to B`. If `f` is bijective, then for each `b \in
+        B` there is a unique `a \in A` such that `f(a) = b`. Define a
+        mapping `g : B \to A` such that `g(b) = a` exactly when `f(a)
+        = b`. By the uniqueness mentioned above, `g` is
+        well-defined. Next, note that `f \circ g =
+        \operatorname{id}_B` and `g \circ f =
+        \operatorname{id}_A`. Therefore, `f` is invertible.
+    </p>
+
+    <p>If `f` is invertible, then 
+        `f \circ f^{-1} = \operatorname{id}_B`, which is a surjective map. By exercise 1.3.22 (b), `f` is surjective. Likewise, 
+        `f^{-1} \circ f = \operatorname{id}_A`, which is an injective map. By exercise 1.3.22 (c), `f` is injective. Therefore, `f` is bijective.
+    </p>
+
+    <p><strong>Example 1.2.26.</strong> Let `A` be an `m \times n` matrix. Then this matrix naturally produces a linear transformation 
+        `T : \mathbb{R}^n \to \mathbb{R}^m` using the rule
+    </p>
+
+    <p class="center">
+        `T(x) = Ax`.
+    </p>
+
+    <p>
+
+        As was learned in Linear Algebra class, an `n \times n` matrix
+        `A` is invertible (i.e., it has an inverse `A^{-1}`) if and only
+        if `A` is nonsingular, that is, `Ax = b` has a unique
+        solution. Notice that this statement is a special case of the
+        previous theorem. We note that `A` being nonsingular is the same
+        thing as `T` being bijective. Note that `Ax = b` having a solution
+        means that `b` is the \text{Im}[x]age of some vector `x` via `T`, that is,
+        `T(x) = b`. This is surjectivity. Likewise, since `Ax = b` has a
+        unique solution means there is exactly one vector `x` such that
+        `Ax = b`. Thus, there is only one vector `x` such that `T(x) =
+        b`. This is injectivity.
+    </p>
+
+    <p>These lecture notes are derived from <em>Abstract Algebra: Theory and Applications</em> by Tom Judson used under a GNU Free Documentation License.</p>
+
+    <p>
+        <a href="https://youtu.be/r-IPV76_WkQ">https://youtu.be/r-IPV76_WkQ</a><br>
+        <a href="https://youtu.be/_IZu1hYQFbU">https://youtu.be/_IZu1hYQFbU</a><br>
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/">https://creativecommons.org/licenses/by-sa/4.0/</a><br>
+        <a href="http://abstract.ups.edu/">http://abstract.ups.edu/</a><br>
+        <a href="http://abstract.ups.edu/aata/appendix-gfdl.html">http://abstract.ups.edu/aata/appendix-gfdl.html</a>
+    </p>
+
+</page>

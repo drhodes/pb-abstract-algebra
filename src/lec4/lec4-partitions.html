@@ -1,0 +1,54 @@
+<page title="Partitions" path="lecture4/partitions">    
+    <vid desc="lecture4" youtubeid="DR2fB7m0hrU" start="00:00" end="17:00"/>
+
+    <article id="def-1.2.34">
+        <h3>Definition 1.2.34</h3>
+        <p>
+            A <em>partition</em> `P` of a set `X` is a collection of nonempty subsets 
+            `X_1, X_2, \dots` such that for `i \neq j`, `X_i \cap X_j = \emptyset` and
+        </p>
+        <p class="display-math">
+            \[
+            \bigcup_{k} X_k = X
+            \]
+        </p>
+    </article>
+
+    <article id="thm-1.2.35">
+        <h3>Theorem 1.2.35</h3>
+        <p>
+            Given an equivalence relation `\sim` on a set `X`, the equivalence classes of `X` 
+            form a partition of `X`. Conversely, if 
+            `P = \{X_k\}` is a partition of a set `X`, then there exists an equivalence relation on `X` 
+            whose equivalence classes are exactly the subsets `X_k`.
+        </p>
+        <h4>Proof</h4>
+        <p>
+            Suppose `\sim` is an equivalence relation on `X`. For any `x \in X`, the class `[x]` is 
+            nonempty because `x \in [x]` (by reflexivity). Also,
+        </p>
+        <p class="display-math">
+            \[
+            \bigcup_{x \in X} [x] = X
+            \]
+        </p>
+        <p>
+            since every `x \in X` belongs to its equivalence class. Finally, if 
+            `[x] \cap [y] \neq \emptyset`, then there exists an element `z` such that `z \in [x]` and 
+            `z \in [y]`. Then `z \sim x` and `z \sim y`. By symmetry, `x \sim z`, and by transitivity, 
+            `x \sim y`; hence, `[x] = [y]`. Thus, the equivalence classes form a partition of `X`.
+        </p>
+        <p>
+            Conversely, if `P` is a partition of `X`, define a relation on `X` by declaring 
+            `x \sim y` if and only if `x` and `y` belong to the same subset in `P`. This relation is 
+            clearly an equivalence relation, and its equivalence classes are exactly the subsets of `P`.
+        </p>
+    </article>
+
+    <article id="cor-1.2.36">
+        <h3>Corollary 1.2.36</h3>
+        <p>
+            Two equivalence classes of an equivalence relation are either disjoint or equal.
+        </p>
+    </article>
+</page>

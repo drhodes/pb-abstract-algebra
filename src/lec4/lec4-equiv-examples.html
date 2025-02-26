@@ -1,0 +1,53 @@
+<page title="Equivalence Examples" path="lecture4/equiv-examples">    
+    <vid desc="lecture4" youtubeid="hgl_jQqca6U" start="00:00" end="17:00"/>
+    
+    <article id="ex-1.2.32">
+        <h3>Example 1.2.32</h3>
+        <p>
+            Let \( A \) and \( B \) be \( n \times n \) matrices. We say that \( A \) is similar to \( B \), 
+            denoted \( A \sim B \), if there exists a nonsingular \( n \times n \) matrix \( P \) such that
+        </p>
+        <p>
+            \( A = P B P^{-1} \).
+        </p>
+        <p>
+            This is an equivalence relation on \( n \times n \) matrices because:
+        </p>
+        <ol>
+            <li>
+                <strong>(Reflexive property)</strong> \( A = I_n A I_n^{-1} \), where \( I_n \) is the 
+                \( n \times n \) identity matrix, so \( A \sim A \).
+            </li>
+            <li>
+                <strong>(Symmetric property)</strong> If \( A \sim B \), then \( A = P B P^{-1} \) for 
+                some invertible \( P \). Hence, \( B = P^{-1} A (P^{-1})^{-1} \), so \( B \sim A \).
+            </li>
+            <li>
+                <strong>(Transitive property)</strong> If \( A \sim B \) and \( B \sim C \), then there exist 
+                invertible matrices \( P \) and \( Q \) such that \( A = P B P^{-1} \) and \( B = Q C Q^{-1} \). 
+                Thus, \( A = (PQ) C (PQ)^{-1} \) and \( A \sim C \).
+            </li>
+        </ol>
+        <p>
+            Similar matrices share many linear algebraic properties, for example, they have the same determinants, 
+            traces, and eigenvalues. The Jordan Canonical Form is often chosen to represent these similarity classes.
+        </p>
+    </article>
+
+    <article id="ex-1.2.33">
+        <h3>Example 1.2.33</h3>
+        <p>
+            Let \( f, g: \mathbb{R} \to \mathbb{R} \) be two differentiable functions. Define 
+            \( f \sim g \) if and only if \( f' = g' \). This is an equivalence relation on the set of differentiable 
+            real-valued functions. From calculus, we know that \( f(x) = g(x) + C \), and typically the antiderivative 
+            with \( C = 0 \) is chosen as the representative of the equivalence class.
+        </p>
+    </article>
+
+    <hr/>
+
+    <todo> example 1.2.32 </todo>
+    <todo> example 1.2.33 </todo>
+    
+    
+</page>

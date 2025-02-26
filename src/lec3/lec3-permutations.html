@@ -1,0 +1,99 @@
+<page title="Permutations" path="lecture3/permutations">    
+    <vid desc="lecture3" youtubeid="ZOQb_50uN4c" start="00:00" end="16:25"/>
+
+
+    <p><strong>Definition 1.2.27.</strong> For any set `X`, a bijective mapping 
+        `\pi : X \to X` is called a <em>permutation</em> of `X`. The set of permutations on `X` is denoted `S_X`. When the set has the form `X = \{1, 2, \ldots, n\} \subset \mathbb{N}`, we denote the permutation set as `S_n`.
+    </p>
+
+    <p>
+        When working with permutations on a finite set `X`, it can be
+        convenient to use a two–row tableaux to express the
+        permutation, where the first row is an arrangement of the
+        elements of `X` and the second row is the images of the first
+        row with respect to `\pi`. Thus, the second row will be a
+        rearrangement of the elements of `X`, which is why these maps
+        are called permutations. For example, the permutation `\pi : X
+        \to X` where `X = \{1, \ldots, n\}` might have the form
+    </p>
+
+    <p class="center">
+        \[ \pi = \begin{pmatrix} 1 & 2 & \cdots & n \\ \pi(1) & \pi(2) & \cdots & \pi(n) \end{pmatrix}. \]
+    </p>
+
+    <p>
+        <b>Theorem 1.2.28.</b> Let `X` be a finite, nonempty set. Then `|S_X| = |X|!`.
+    </p>
+
+    <p><strong>Proof.</strong> Without loss of generality, we may
+        assume that `X = \{1, \ldots, n\}`, where `n = |X|`. Let `\pi
+        : X \to X` be a permutation. Then there are `n` choices for
+        the assignment `\pi(1)` since `1` can be mapped to any element
+        of `X`. Likewise, there are `n-1` choices for the assignment
+        `\pi(2)` since `2` can be mapped to any element of `X` other
+        than `\pi(1)` (to guarantee that `\pi` is
+        injective). Likewise, there are `n-3` choices for `\pi(3)`,
+        since it can be any element of `X` except `\pi(1)` and
+        `\pi(2)`. Continuing in this pattern, there will always be `n
+        - k + 1` choices for `\pi(k)`. Finally, the product of these
+        choices will give us the correct number of permutations which
+        is `n \cdot (n-1) \cdot (n-2) \cdots 1 = n!`.
+    </p>
+
+    <p><strong>Example 1.2.29.</strong> Suppose that `X = \{1, 2, 3\}`. Define a map 
+        `\pi : X \to X` by
+    </p>
+
+    
+    \[ \pi(1) = 2,\quad \pi(2) = 1,\quad \pi(3) = 3. \]
+
+    <p>
+        This is a bijective map and hence a permutation. In particular,
+        \[
+        \pi
+        = \begin{pmatrix} 1 & 2 & 3 \\ \pi(1) & \pi(2) & \pi(3) \end{pmatrix}
+        = \begin{pmatrix} 1 & 2 & 3 \\ 2 & 1 & 3 \end{pmatrix}.
+        \]
+    </p>
+
+    <p>There are five other elements of `S_3`:</p>
+    
+    <ul>
+        \[ \operatorname{id}_X = \begin{pmatrix} 1 & 2 & 3 \\ 1 & 2 & 3 \end{pmatrix},
+        \begin{pmatrix} 1 & 2 & 3 \\ 1 & 3 & 2 \end{pmatrix},
+        \begin{pmatrix} 1 & 2 & 3 \\ 2 & 3 & 1 \end{pmatrix},
+        \begin{pmatrix} 1 & 2 & 3 \\ 2 & 1 & 3 \end{pmatrix},
+        \begin{pmatrix} 1 & 2 & 3 \\ 3 & 2 & 1 \end{pmatrix},
+        \begin{pmatrix} 1 & 2 & 3 \\ 3 & 1 & 2 \end{pmatrix} \]
+    </ul>
+
+    <p>It is always possible to compose two permutations since they have the same domains as codomains, and this composite will itself be a permutation. A three-row tableaux can be used to compute their composite. The right two rows will be the same as the permutation on the right, but the third row will be the image of this second row by the permutation on the left. For example,
+    </p>
+
+    \[
+    \begin{pmatrix} 1 & 2 & 3 \\ 3 & 2 & 1 \end{pmatrix} \circ \begin{pmatrix} 1 & 2 & 3 \\ 2 & 1 & 3 \end{pmatrix}
+    = \begin{pmatrix} 1 & 2 & 3 \\ 2 & 1 & 3 \\ 2 & 3 & 1 \end{pmatrix}
+    = \begin{pmatrix} 1 & 2 & 3 \\ 2 & 3 & 1 \end{pmatrix}.
+    \]
+
+    <p>
+        Permutations always have inverses since they are
+        bijective. They can be easily constructed by reflecting the
+        above permutation tableaux (and reordering the elements, if
+        necessary). For example, `\pi^{-1} : X \to X` is given as
+    </p>
+
+    \[ \pi^{-1} = \begin{pmatrix} \pi(1) & \pi(2) & \pi(3) \\ 1 & 2 & 3 \end{pmatrix}
+    = \begin{pmatrix} 2 & 1 & 3 \\ 1 & 2 & 3 \end{pmatrix}
+    = \begin{pmatrix} 1 & 2 & 3 \\ 2 & 1 & 3 \end{pmatrix} = \pi. \]
+
+    <p>Interestingly enough, this permutation is equal to its own inverse, although this is not always the case.</p>
+
+    <p><strong>Homework:</strong> Judson 1.4 : 19, 23, 24</p>
+
+    <p>
+        <a href="https://youtu.be/ZOQb_50uN4c">https://youtu.be/ZOQb_50uN4c</a>
+    </p>
+
+
+</page>
