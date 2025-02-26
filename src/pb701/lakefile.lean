@@ -8,13 +8,11 @@ package «pb701» where
     ⟨`pp.unicode.fun, true⟩
   ]
 
-  -- add any additional package configuration options here
+-- require undergrad from git
+--    "https://github.com/drhodes/undergrad.git" @ "main"
 
-
-require mathlib from git
-  "https://github.com/leanprover-community/mathlib4.git"  @ "v4.15.0-rc1"
-
-
+require undergrad from git
+   "../../../undergrad" @ "main"
 
 @[default_target]
 lean_lib «Pb701» where

@@ -24,7 +24,8 @@ SITE=../builds/pb701-build/site
 
 LECTURE_BUILD_DIR=${SITE}/lectures
 
-${SITE}/lectures/%.html: venv ./src/%.html ${MACROS} 
+.PHONY: lectures 
+lectures: 
 	$(shell mkdir -p ${SITE}/lectures)
 	mkdir -p ${SITE}
 	${VENV} auxml \
@@ -33,13 +34,6 @@ ${SITE}/lectures/%.html: venv ./src/%.html ${MACROS}
 	-m ./src/macros.html \
 	-m ./src/common-macros.html \
 	--patchup ./util/patchup.py
-
-
-LECTURES := about lec1 intro lec2
-$(LECTURES): %: ${SITE}/lectures/%.html
-
-.PHONY: lectures 
-lectures: venv about ${LECTURES} media
 
 .PHONY: media
 media: ${SITE}/media

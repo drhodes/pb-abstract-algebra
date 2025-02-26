@@ -1,5 +1,5 @@
 import Lean
-import Mathlib
+--import Mathlib
 
 namespace Lecture2
 
@@ -10,18 +10,15 @@ namespace Definition_1_2_12
 
 variable
   (A : Set (Set ℕ))
+  (B C : Set ℕ)
   (h : A = {{1}, {2}})
 
+example : Π i : ℕ, A = {} := by
 
 
-example : Π i : ℕ, A = {1} ×ˢ {2} := by
-  normnum
+  sorry
 
 end Definition_1_2_12
-
-
-
-
 
 
 
@@ -59,66 +56,120 @@ end Example_1_2_13
 namespace Example_1_2_20
 open Function
 
-noncomputable
-def f (x : ℝ) := x ^ 3
+-- this first example depends heavily on real analysis
+noncomputable def f' (x : ℝ) := x ^ 3
+
+-- so instead let's do one that still address the concept but is not so analysis
+-- intensive.
+
+noncomputable def f (x : ℝ) := 2 * x
+noncomputable def g (x : ℝ) := Real.exp x
+noncomputable def h (x : ℝ) := x ^ 2
 
 example : Bijective f := by sorry
-
-noncomputable
-def g (x: ℝ) := Real.exp x
-
-example : Injective g := by sorry
-
-noncomputable
-def h (x: ℝ) := x ^ 2
-
+example : Injective g ∧ ¬ Surjective g := by sorry
 example : ¬ Injective h ∧ ¬ Surjective h := by sorry
 
 section solution
 
-variable (x y : ℝ)
-
-lemma odd_f : Function.Odd f := by
-  intro a
-  unfold f
-  ring
-
-lemma increasing_f (x y : ℝ) (h: x < y) : (f x) < (f y) := by
-  unfold f
-
-lemma inj_f : Injective f := by
-  intro x₁ x₂ hf
-  by_contra hc
-  push_neg at hc
-  rw [ne_iff_lt_or_gt] at hc
-  cases hc with
-  | inl h =>
-    have hinc := increasing_f x₁ x₂ h
-    have hn := ne_of_lt hinc
-    contradiction
-  | inr h =>
-    norm_num at h
-    have hinc := (increasing_f x₂ x₁ h)
-    have hn := (ne_of_lt hinc).symm
-    contradiction
-
-lemma sur_f : Surjective f := by sorry
-
-example (a b c d : ℝ) (hac : a = c) (hbd : b = d) : a * b = c * d := by
-  exact Mathlib.Tactic.LinearCombination'.mul_pf hac hbd
-
-lemma inj_f2 : Injective f := by
-  intro x y hf
-  unfold f at hf
-
-example : Function.Bijective f := by
+example : Bijective f := by
   constructor
-  · apply inj_f
-  · apply sur_f
+  · intro a b
+    simp [f]
+  · intro b
+    use ((1/2) * b)
+    simp [f]
+
+example : Injective g ∧ ¬ Surjective g := by
+  constructor
+  · intro a b h
+    dsimp [g] at h
+    rwa [← Real.exp_eq_exp]
+  · --
+    simp [Surjective, g]
+    push_neg
+    use (0)
+    intro x
+    simp
+
+example : ¬ Injective h ∧ ¬ Surjective h := by
+  constructor
+  · dsimp [Injective, h]
+    push_neg
+    use -1, 1
+    norm_num
+  · dsimp [Surjective, h]
+    push_neg
+    use -1
+    intro a ha
+    nlinarith
 
 end solution
 
 end Example_1_2_20
+
+namespace try1
+-- refer to https://math.stackexchange.com/questions/3217507
+-- noncomputable def f (x : ℝ) := x ^ 3
+
+
+lemma bij1 (a b : ℝ) (h : a ^ 3 - b ^ 3 = 0) :
+  (a - b) * (a ^ 2 + a * b + b ^ 2) = 0 := by linarith
+
+lemma bij2 (a b : ℝ) :
+  a ^ 2 + a * b + b ^ 2 = (1 / 2) * ((a + b) ^ 2 + a ^ 2 + b ^ 2) := by linarith
+
+-- should be doable with odd denominators?
+example (a b : ℝ) (c : ℚ) (hc : Odd c.den) : (a * b).rpow c = a.rpow c * b.rpow c := by
+  let v := c.num
+  let w := c.den
+  have : c = v / w := by exact Eq.symm (Rat.num_div_den c)
+  rw [this]
+  sorry
+
+example (b : ℝ) : ∃ a, a ^ 3 = b := by
+  use (b ^ (3⁻¹:ℝ))
+  obtain h|h|h := lt_trichotomy b 0
+  · --
+    let c := (3⁻¹ : ℝ)
+    have h₁ : b = -1 * |b| := by sorry
+    rw [h₁]
+    have h₂ :=
+    calc ((-1 * |b|) ^ c) ^ 3
+      _= (((-1) ^ c) * (|b| ^ c)) ^ 3 := by sorry
+
+  · rw [h]; simp
+  · sorry
+
+
+example : Function.Bijective (fun (x : ℝ) => x ^ 3) := by
+  constructor
+  · --
+    intro a b hf
+    simp at *
+    have h₀ := bij1 a b
+    have h₁ := bij2 a b
+    have h₂ : (a ^ 2 + a * b + b ^ 2) = 0 ↔ a = 0 ∧ b = 0 := by
+      constructor
+      · --
+        intro ht
+        by_contra hc
+        push_neg at hc
+        obtain h|h|h := lt_trichotomy a 0
+        · nlinarith
+        · apply (hc h)
+          rw [h] at hf
+          nlinarith
+        · nlinarith
+      · --
+        intro ⟨ha, hb⟩
+        rw [ha, hb]
+        norm_num
+    aesop? -- todo
+    linarith
+  · --
+    sorry
+end try1
 
 
 

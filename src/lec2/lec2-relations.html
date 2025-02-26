@@ -1,79 +1,79 @@
-    <page title="Relations" path="lecture2/relations">
-        <vid desc="lecture2" youtubeid="TG7y7V13Gbg" start="00:00" end="16:42"/>
+<page title="Relations" path="lecture2/relations">
+    <vid desc="lecture2" youtubeid="TG7y7V13Gbg" start="00:00" end="16:42"/>
 
-        <h3>Definition 1.2.14</h3>
-        <p>
-            A relation `R` between the sets `A` and `B` is a subset of their Cartesian product, that is, 
-            `R \subseteq A \times B`. For elements `a \in A` and `b \in B`, we say that 
-            `a` is related to `b` with respect to `R`, denoted `a R b`, if and only if 
-            `(a, b) \in R`.
-        </p>
-        <p>
-            We say that a relation `f \subseteq A \times B` is a <strong>function</strong> or mapping from set `A` to set `B`, denoted 
-            `f: A \to B` or 
-            \[A \stackrel{f}{\longrightarrow} B,\]
-            if each element `a \in A` occurs in exactly one ordered pair of the form `(a, b)` in `f`; that is, each `a \in A`
-            is related to exactly one `b \in B`. This unique element `b` is called the <strong>image</strong> of `a` with respect to `f`, and this
-            unique relationship is expressed as `f(a) = b` or `f: a \mapsto b`. The set `A` is called the <strong>domain</strong> of `f`, the set `B` is called the <strong>codomain</strong> of `f`, and the set 
-        </p>
-        
-        <p class="formula"> \[f(A) = \{ f(a) \mid a \in A \}\] </p>
-        
-        <p>
-            is called the <strong>image</strong> (or range) of `f`. For any subset `X \subseteq B`, the set
-        </p>
-        <p class="formula">
-            \[f^{-1}(X) = \{ a \in A \mid f(a) \in X \}\]
-        </p>
-        <p>
-            is called the <strong>pre-image</strong> of `X` with respect to `f`.
-        </p>
-        <p>
-            Let `B^A` denote the set of all functions of the form `f: A \to B`. This notation is used because if `|A| = a`
-            and `|B| = b`, then `|B^A| = b^a`, where `|S|` denotes the cardinality of the set `S`.
-        </p>
+    <h3>Definition 1.2.14</h3>
+    <p>
+        A relation `R` between the sets `A` and `B` is a subset of their Cartesian product, that is, 
+        `R \subseteq A \times B`. For elements `a \in A` and `b \in B`, we say that 
+        `a` is related to `b` with respect to `R`, denoted `a R b`, if and only if 
+        `(a, b) \in R`.
+    </p>
+    <p>
+        We say that a relation `f \subseteq A \times B` is a <strong>function</strong> or mapping from set `A` to set `B`, denoted 
+        `f: A \to B` or 
+        \[A \stackrel{f}{\longrightarrow} B,\]
+        if each element `a \in A` occurs in exactly one ordered pair of the form `(a, b)` in `f`; that is, each `a \in A`
+        is related to exactly one `b \in B`. This unique element `b` is called the <strong>image</strong> of `a` with respect to `f`, and this
+        unique relationship is expressed as `f(a) = b` or `f: a \mapsto b`. The set `A` is called the <strong>domain</strong> of `f`, the set `B` is called the <strong>codomain</strong> of `f`, and the set 
+    </p>
+    
+    <p class="formula"> \[f(A) = \{ f(a) \mid a \in A \}\] </p>
+    
+    <p>
+        is called the <strong>image</strong> (or range) of `f`. For any subset `X \subseteq B`, the set
+    </p>
+    <p class="formula">
+        \[f^{-1}(X) = \{ a \in A \mid f(a) \in X \}\]
+    </p>
+    <p>
+        is called the <strong>pre-image</strong> of `X` with respect to `f`.
+    </p>
+    <p>
+        Let `B^A` denote the set of all functions of the form `f: A \to B`. This notation is used because if `|A| = a`
+        and `|B| = b`, then `|B^A| = b^a`, where `|S|` denotes the cardinality of the set `S`.
+    </p>
 
-        <h4>Example 1.2.15</h4>
-        <p>
-            In calculus, functions between real numbers are often defined using formulas such as `f(x) = x^3` or `g(x) = e^x`. Such function expressions are to be understood as meaning the mapping 
-            `f: x \mapsto f(x)` is given by substitution—for example, `f(2) = 2^3 = 8` and `g(0) = e^0 = 1`.
-        </p>
-        <p>
-            In this context, the domain and codomain are usually not stated, but the convention is to set them as the maximal subsets of `\mathbb{R}` such that `f(x) \in \mathbb{R}` for each `x \in \text{dom } f`. For example, if 
-            `f_1(x) = 1/x` and `f_2(x) = \sqrt{x}`,
-        </p>
-        <p>
-            then `f_1(0)` and `f_2(-1)` do not evaluate to be real numbers. Therefore, the convention is to restrict the sets so that
-        </p>
-        
-        <p class="formula">
-            \[f_1: ((-\infty, 0) \cup (0, \infty)) \to ((-\infty, 0) \cup (0, \infty))\]
-        </p>
-        <p class="formula">
-            \[f_2: [0, \infty) \to [0, \infty)\]
-        </p>
-        <p>
-            On the other hand, the functions above have the form 
-            `f: \mathbb{R} \to \mathbb{R}` and `g: \mathbb{R} \to (0, \infty)`.
-        </p>
+    <h4>Example 1.2.15</h4>
+    <p>
+        In calculus, functions between real numbers are often defined using formulas such as `f(x) = x^3` or `g(x) = e^x`. Such function expressions are to be understood as meaning the mapping 
+        `f: x \mapsto f(x)` is given by substitution—for example, `f(2) = 2^3 = 8` and `g(0) = e^0 = 1`.
+    </p>
+    <p>
+        In this context, the domain and codomain are usually not stated, but the convention is to set them as the maximal subsets of `\mathbb{R}` such that `f(x) \in \mathbb{R}` for each `x \in \text{dom } f`. For example, if 
+        `f_1(x) = 1/x` and `f_2(x) = \sqrt{x}`,
+    </p>
+    <p>
+        then `f_1(0)` and `f_2(-1)` do not evaluate to be real numbers. Therefore, the convention is to restrict the sets so that
+    </p>
+    
+    <p class="formula">
+        \[f_1: ((-\infty, 0) \cup (0, \infty)) \to ((-\infty, 0) \cup (0, \infty))\]
+    </p>
+    <p class="formula">
+        \[f_2: [0, \infty) \to [0, \infty)\]
+    </p>
+    <p>
+        On the other hand, the functions above have the form 
+        `f: \mathbb{R} \to \mathbb{R}` and `g: \mathbb{R} \to (0, \infty)`.
+    </p>
 
-        <h4>Example 1.2.16</h4>
-        <p>
-            Consider the relation `f: \mathbb{Q} \to \mathbb{Z}` given
-            by `f(p/q) = p`. We know that
+    <h4>Example 1.2.16</h4>
+    <p>
+        Consider the relation `f: \mathbb{Q} \to \mathbb{Z}` given
+        by `f(p/q) = p`. We know that
 
-            \[ \frac{1}{2} = \frac{2}{4}, \]
+        \[ \frac{1}{2} = \frac{2}{4}, \]
 
-            but is `f(\frac{1}{2}) = 1` or `2?`
+        but is `f(\frac{1}{2}) = 1` or `2?`
 
-            <show-hide>
-                This relation cannot be a mapping because it is not
-                well‑defined. A relation is well‑defined if each element
-                in the domain is assigned to a unique element in the
-                range. This is particularly a problem when "mappings" are
-                defined on sets of equivalence classes† according to
-                representatives from the classes. If not carefully
-                defined, such “mappings” might not be functions.
-            </show-hide>
-        </p>
-    </page>
+        <show-hide msg="proof">
+            This relation cannot be a mapping because it is not
+            well‑defined. A relation is well‑defined if each element
+            in the domain is assigned to a unique element in the
+            range. This is particularly a problem when "mappings" are
+            defined on sets of equivalence classes† according to
+            representatives from the classes. If not carefully
+            defined, such “mappings” might not be functions.
+        </show-hide>
+    </p>
+</page>

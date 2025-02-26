@@ -12,12 +12,7 @@
             <link rel="icon" href="../../media/images/favicon.png">
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            
-            <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-                  rel="stylesheet">
 
-			<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
-			
             <link rel="stylesheet" 
                   href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.css" 
                   integrity="sha384-K1E1xaIzoWihlXfiT5fcmLNabsnrl+dqc0errnRwtMX14tKRA9cCYNDGnXiHEZMs" 
@@ -27,6 +22,7 @@
                   href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" 
                   integrity="sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww" 
                   crossorigin="anonymous">
+
             
             <script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.js" 
                     integrity="sha384-IolEJdmwZJpJkyCvXBnmGt8wXcP3nvRjxBjPv7/PWW7oODJhZ+qiY1sDpwgjcKLT" 
@@ -39,15 +35,10 @@
                     crossorigin="anonymous"></script>
             
             <script src="../../media/js/main.js"></script>
-            <!-- <script src="../../media/js/cube.js" type="module"></script> -->
-            
             <script src="https://cdn.jsdelivr.net/npm/iframe-resizer@4.3.11/js/iframeResizer.min.js"></script>
-            
-            <script src="https://cdn.jsdelivr.net/npm/lucide@latest"></script>
-
             <script type="importmap"> { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.173.0/build/three.module.js" } }</script>
-    
-  </script>
+            
+            </script>
         </head>        
     </define-macro>
     
@@ -63,17 +54,15 @@
         <outfile path="[[path]].html"> 
 	        <html lang="en">
                 <lecture-head title="[[title]]"></lecture-head>
-                
 	            <body>
 		            <layout title="[[title]]">	
                         <div id="page-[[title]]" class="page" title="[[title]]" path="[[path]]">
-		                    <h3> <a href="#page-[[title]]">§</a> [[title]] </h3>
+		                    <h3> <a href="#"> [[title]] </a>  </h3>
 		                    <contents/>
                             <hr/>                            
                             <patchup func="nav_prev_next" class="nav-prev-next"/>        
-                            <div class="git-hash"> (course git hash <patchup func="git_hash"/>) </div>
                             <discussion topic="[[title]]" id="[[title]]"/>
-                            
+                            <div class="git-hash"> (course git hash <patchup func="git_hash"/>) </div>
 	                    </div>		                
 		            </layout>
 
@@ -85,17 +74,13 @@
     <define-macro name="layout" vars="title">
 	    <div class="layout">      
 		    <sidebar/>
-		    <div class="main">
-		        <div class="layout-content">
-			        <!-- <center> <h2> [[title]] </h2> </center> -->
-			        <contents/>
-		        </div>
-		    </div>
+			<contents/>
 	    </div>
 	</define-macro>
 
 	<define-macro name="discussion" vars="topic, id">
         <div class="giscussion">
+            <p><i> note: Please do not share complete solutions</i> </p>
             <script src="https://giscus.app/client.js"
                     data-repo="drhodes/pb700"
                     data-repo-id="R_kgDONZDcuw"
@@ -121,11 +106,12 @@
 
     
 	<define-macro name="sidebar">
-	    <div class="sticky-top">
-            <div> 🛠️ under construction 🛠️ </div>
-            <h3> A derived work </h3>
-            <div class="logo-title"> Abstract Algebra  </div>
-            <div class="lecture-menu"></div>
+        <div class="sidebar">
+            <div class="course-title"> Abstract Algebra: </div>
+            <div class="formalized"> <i>formalized</i> </div>
+	        <div class="sticky-top">
+                <div class="lecture-menu"/>
+            </div>
         </div>
 	</define-macro>
     
@@ -141,8 +127,6 @@
             </div>
         </div>
     </define-macro>
-
-
     
     <define-macro name="ex" vars="num, name">
         <div class="ex">
@@ -158,7 +142,6 @@
     </define-macro>
 
     <define-macro name="vid-cite" vars="author, youtubeid, start, end">
-        <!-- <vid-cite desc="binary-operation" author="Andrew Misseldine" youtubeid="SIdPG_CJ-G0" start="01:23" end="13:45"/> -->
         <div class="vid-cite">
             <div>
                 <span class="vid-cite-author">video author: [[author]], </span>
@@ -169,22 +152,32 @@
     </define-macro>
     
     <define-macro name="mylib" vars="file, from, to">
-        <div>
-            <pre>
-                <patchup func="mylib_source" file="[[file]]" from="[[from]]" to="[[to]]"/>
-            </pre>
-        </div>
+        <pre>
+            <patchup func="mylib_source" file="[[file]]" from="[[from]]" to="[[to]]"/>
+        </pre>
     </define-macro>
     
     <define-macro name="lean-example" vars="file, namespace">
-        
+        <patchup func="include_namespace" file="[[file]]" namespace="[[namespace]]"/>
+    </define-macro>
+
+    <define-macro name="lean-solution" vars="file, namespace">
         <div>
-            <pre>
-                <patchup func="include_namespace" file="[[file]]" namespace="[[namespace]]"/>
-            </pre>
+            <show-hide msg="solution">
+                <code>
+                    <patchup func="include_solution" file="[[file]]" namespace="[[namespace]]"/>
+                </code>
+            </show-hide>
         </div>
     </define-macro>
 
+    <define-macro name="ex-sol" vars="file, namespace">
+        <div>
+            <lean-example file="[[file]]" namespace="[[namespace]]"/>
+            <b>Note: if you have a better solution, please send it!</b>
+            <lean-solution file="[[file]]" namespace="[[namespace]]"/>
+        </div>
+    </define-macro>
     
     <define-macro name="mathlib" vars="file, from, to">
         <div>
@@ -196,9 +189,6 @@
             </pre>
         </div>
     </define-macro>
-
-
-
     
     <define-macro name="undef">
         <div id="[[this]]" class="undef">
@@ -218,7 +208,9 @@
             <iframe id="iframe-[[this]]" type="text/html"
                     class="vidframe"
                     src="about:blank"
-                    frameborder="0"></iframe>
+                    allow="fullscreen"
+                    frameborder="0"
+                    allowfullscreen></iframe>
 
             
 		    <div class="seek-text">
@@ -233,9 +225,12 @@
 	    </div>
 	</define-macro>
 
-    <define-macro name="prob" vars="n">
-        <div> <b>Problem [[n]]</b>: <contents/> </div>
-    </define-macro>
+    <!-- <define-macro name="prob" vars="n">
+         <div>
+         <b>Problem [[n]]</b>:
+         <contents/>
+         </div>
+         </define-macro> -->
 
     <define-macro name="note">
         <div> <contents/> </div>
@@ -347,15 +342,20 @@
     </define-macro>
 
     <define-macro name="hw" vars="psetnum, prob">
-        <page title="HW / Problem [[prob]]" path="lecture2/P[[prob]]">
-            <!-- <h1>P[[psetnum]].[[prob]]</h1> -->
-            <contents/>
+        <page title="⌂ HW / Prob [[psetnum]]-[[prob]]" path="lecture[[psetnum]]/P[[prob]]">
+            <contents/>            
         </page>
     </define-macro>
 
+    <define-macro name="hw1" vars="prob"> <hw psetnum="1" prob="[[prob]]"> <contents/> </hw> </define-macro>
     <define-macro name="hw2" vars="prob"> <hw psetnum="2" prob="[[prob]]"> <contents/> </hw> </define-macro>
-
-    
+    <define-macro name="hw3" vars="prob"> <hw psetnum="3" prob="[[prob]]"> <contents/> </hw> </define-macro>
+    <define-macro name="hw4" vars="prob"> <hw psetnum="4" prob="[[prob]]"> <contents/> </hw> </define-macro>
+    <define-macro name="hw5" vars="prob"> <hw psetnum="5" prob="[[prob]]"> <contents/> </hw> </define-macro>
+    <define-macro name="hw6" vars="prob"> <hw psetnum="6" prob="[[prob]]"> <contents/> </hw> </define-macro>
+    <define-macro name="hw7" vars="prob"> <hw psetnum="7" prob="[[prob]]"> <contents/> </hw> </define-macro>
+    <define-macro name="hw8" vars="prob"> <hw psetnum="8" prob="[[prob]]"> <contents/> </hw> </define-macro>
+    <define-macro name="hw9" vars="prob"> <hw psetnum="9" prob="[[prob]]"> <contents/> </hw> </define-macro>
     
     <!-- replace anything in an ignore tag with an empty div -->
 	<define-macro name="ignore">
@@ -398,14 +398,19 @@
 	</define-macro>
 
 
-	<define-macro name="show-hide">
+    <define-macro name="hint">
+        <show-hide msg="hint"> <contents/> </show-hide>
+    </define-macro>
+
+    
+	<define-macro name="show-hide" vars="msg">
         <div>
             <button id="[[this]]-toggle-btn">
-                👁  Show
+                👁  [[msg]]
             </button>
 
             <div id="[[this]]-proof" class="hidden">
-                <contents/> <qed/>
+                <contents/> 
             </div>
 
             <script>
@@ -413,8 +418,8 @@
                  const proof = document.getElementById("[[this]]-proof");
                  proof.classList.toggle("hidden");
                  this.innerHTML = proof.classList.contains("hidden") 
-                                ? '👁 Show Proof' 
-                                : '🙈 Hide Proof';
+                                ? '👁 Show [[msg]]' 
+                                : '🙈 Hide [[msg]]';
              });
             </script>
         </div>        
@@ -442,6 +447,25 @@
 	    </div>
 	</define-macro>
 
+	<define-macro name="todo" args="todo">
+        <div>
+            <div class="todo-label"> todo </div>            
+	        <div class="todo">
+		        <contents/>
+	        </div>
+        </div>
+	</define-macro>
+
+    <define-macro name="center-code">
+        <div class="outer-center-code">
+            <div class="inner-center-code">
+                <code><contents/></code>
+            </div>
+        </div>
+    </define-macro>
+
+    
+    
 	<define-macro name="term">
 	    <span class="term">
 		    <contents/>
@@ -470,9 +494,9 @@
 	    </div>
 	</define-macro>
 
-	<define-macro name="ref-mil" vars="url, chapter">
+	<define-macro name="ref-mil" vars="url">
 	    <div>
-		    <ref url="[[url]]"> <span> Mathematics in Lean, chapter [[chapter]] </span> </ref>
+            <ref url="[[url]]"> <span> <contents/> </span> </ref>
 	    </div>
 	</define-macro>
 
@@ -545,5 +569,11 @@
         </div>
     </define-macro>
 
+    <define-macro name="sep">
+        <div>
+            <br/><br/>
+        </div>
+    </define-macro>
 
+    
 </macros>

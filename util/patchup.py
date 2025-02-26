@@ -1,6 +1,7 @@
 import copy
 import os
 from lxml import etree
+import re
 
 # patchup file.
 
@@ -14,7 +15,6 @@ def include_namespace(tree, el):
     if not os.path.isfile(filename):
         raise Exception(f"Could not find lean source {{filename}}")
 
-    import re
     text = open(filename).read()
 
     pattern = rf'(namespace\s+{re.escape(ns)}.*?end\s+{re.escape(ns)})'    
@@ -27,6 +27,39 @@ def include_namespace(tree, el):
     else:        
         print("No match found")
     
+    return tree
+
+
+def include_solution(tree, el):
+    el.tag = "pre"
+    filename = el.get("file")
+    ns = el.get("namespace")
+
+    print(ns)
+    print(filename)
+    if not os.path.isfile(filename):
+        raise Exception(f"Could not find lean source {filename}")
+
+    text = open(filename).read()
+
+    # Extract the namespace content
+    ns_pattern = rf'namespace\s+{re.escape(ns)}(.*?)end\s+{re.escape(ns)}'
+    ns_match = re.search(ns_pattern, text, re.DOTALL)
+    
+    if ns_match:
+        ns_content = ns_match.group(1).strip()
+        
+        # Extract only the solution section
+        solution_pattern = r'section\s+solution(.*?)end\s+solution'
+        solution_match = re.search(solution_pattern, ns_content, re.DOTALL)
+        
+        if solution_match:
+            el.text = solution_match.group(1).strip()
+        else:
+            el.text = "No solution section found"
+    else:
+        el.text = "No matching namespace found"
+ 
     return tree
 
 

@@ -43,9 +43,9 @@ function vid_helper(elid, youtubeid, start, end) {
     `&end=` + et,
   ].join("");
 
-  console.log(u)
-  myframe.src=u
   
+  console.log(u)
+  myframe.src=u  
 }
 
 function youtubeSeekTo(iframeId, startTime) {
