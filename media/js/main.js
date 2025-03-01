@@ -137,3 +137,25 @@ function adjust_iframe_height(frameId) {
   console.log("my leancode iframe's id is: " + iframe)
   iframe.addEventListener('load', resizeIframe);
 }
+
+
+function copyText(id) {
+  console.log(id);
+  const content = document.getElementById(id);
+  const range = document.createRange();
+  range.selectNode(content);
+  window.getSelection().removeAllRanges();
+  window.getSelection().addRange(range);
+  
+  try {
+    document.execCommand('copy');
+    content.classList.add('copied');  // Add the 'copied' class to trigger the animation
+    setTimeout(() => {
+      content.classList.remove('copied'); // Remove it after the animation finishes
+    }, 500); // Duration of the animation (2 seconds)
+  } catch (err) {
+    alert('Failed to copy text.');
+  }
+
+  window.getSelection().removeAllRanges();
+}

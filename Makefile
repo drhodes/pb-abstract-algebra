@@ -25,7 +25,7 @@ SITE=../builds/pb701-build/site
 LECTURE_BUILD_DIR=${SITE}/lectures
 
 .PHONY: lectures 
-lectures: 
+lectures: media
 	$(shell mkdir -p ${SITE}/lectures)
 	mkdir -p ${SITE}
 	${VENV} auxml \
@@ -33,12 +33,17 @@ lectures:
 	-d ${SITE} \
 	-m ./src/macros.html \
 	-m ./src/common-macros.html \
-	--patchup ./util/patchup.py
+	--patchup ./util/patchup.py	
+
+.PHONY: notes
+notes: 
+	$(shell mkdir -p ${SITE})
+	rsync -rv material/4220/notes ${SITE}
 
 .PHONY: media
 media: ${SITE}/media
-${SITE}/media: media/css/* media/js/* 
-	cp -av media ${SITE}
+${SITE}/media: media/css/* media/js/* notes
+	rsync -rv media ${SITE}
 
 # -----------------------------------------------------------------------------
 # Section: Build server

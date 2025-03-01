@@ -23,7 +23,7 @@ func main() {
 	http.Handle("/", fileServer)
 
 	// Define the addr for the server
-	addr := "127.0.0.1:9080"
+	addr := "127.0.0.1:9088"
 
 	// Start the server
 	log.Printf("Serving %s on HTTP port %s\n", path, addr)

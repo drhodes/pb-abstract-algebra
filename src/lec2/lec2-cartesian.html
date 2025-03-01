@@ -11,34 +11,40 @@
         
         <h2>1.2. Sets and Equivalence Relations (Cartesian Products) </h2>
 
-        <h3>Definition 1.2.12</h3>
-        <p>
-            Given sets `A` and `B`, we can define a new set 
-            `A \times B`, called the Cartesian product of `A` and `B`, as a set of ordered pairs. That is,
-        </p>
-        <p class="formula">
-            \[ A \times B = \{ (a, b) \mid a \in A \text{ and } b \in B \}. \]
-        </p>
-        <p>
-            We define the Cartesian product of `n` sets to be
-        </p>
-        <p class="formula">
-            \[\prod_{i=1}^{n} A_i = A_1 \times \dots \times A_n = \{ (a_1, \dots, a_n) \mid a_i \in A_i \text{ for } i = 1, \dots, n \}.\]
-        </p>
-        <p>
-            If `A = A_1 = A_2 = \dots = A_n`, we often write `A^n` for
-            `A \times \dots \times A` (with `A` written `n`
-            times). For example, the set `\mathbb{R}^3` consists of
-            all 3‑tuples of real numbers.
-        </p>
+        <def num="1.2.12" name="Cartesian Product">
+            <p>
+                Given sets `A` and `B`, we can define a new set `A
+                \times B`, called the Cartesian product of `A` and
+                `B`, as a set of ordered pairs. That is,
+                
+                \[ A \times B = \{ (a, b) \mid a \in A \text{ and } b \in B \}. \]
+                
+                We define the Cartesian product of `n` sets to be
 
-        <h4>Example 1.2.13</h4>
-        <p>
+                \[
+                \prod_{i=1}^{n} A_i = A_1 \times \dots \times A_n =
+                \{ (a_1, \dots, a_n) \mid a_i \in A_i \text{ for } i = 1, \dots, n \}.
+                \]
+            </p>
+            <p>
+                If `A = A_1 = A_2 = \dots = A_n`, we often write `A^n` for
+                `A \times \dots \times A` (with `A` written `n`
+                times). For example, the set `\mathbb{R}^3` consists of
+                all 3‑tuples of real numbers.
+            </p>
+        </def>
+
+        
+        <ex num="1.2.13" name="Cartesian Product">
             If `A = \{x, y\}`, `B = \{1, 2, 3\}`, and `C = \varnothing`, then 
             `A \times B` is the set
             
-            \[A \times B = \{ (x, 1), (x, 2), (x, 3), (y, 1), (y, 2), (y, 3) \} \quad \text{and} \quad A \times C = \varnothing.\]
-        </p>
+            \[A \times B = \{ (x, 1), (x, 2), (x, 3), (y, 1), (y, 2), (y, 3) \} \]
+
+            and
+            
+            \[ A \times C = \varnothing.\]
+        </ex>
 
         <hr/>
         

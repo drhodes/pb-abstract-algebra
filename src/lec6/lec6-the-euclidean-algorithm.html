@@ -2,37 +2,64 @@
     <vid desc="lecture6" youtubeid="wBqmgN43Kow" start="00:00" end="17:16"/>
 
 
-    <div class="definition">
-        <div class="definition-title">Definition 2.2.2</div>
-        <p>Let `a` and `b` be integers. If `b = ak` for some integer `k`, we write `a \mid b`. An integer `d` is called a <em>common divisor</em> of `a` and `b` if `d \mid a` and `d \mid b`.</p>
-        <p>The <em>greatest common divisor</em> of integers `a` and `b`, denoted `\gcd(a, b)`, is a positive integer `d` such that `d` is a common divisor of `a` and `b` and if `d'` is any other common divisor of `a` and `b`, then `d' \mid d`. We say that two integers `a` and `b` are <em>relatively prime</em> if `\gcd(a, b) = 1`.</p>
-    </div>
+    <def num="2.2.2" name="Greatest Common Divisor, Relatively Prime">
+        <p>
+            Let `a` and `b` be integers. If `b = ak` for some integer
+            `k`, we write `a \mid b`. An integer `d` is called a <em>common divisor</em>
+            of `a` and `b` if `d \mid a` and `d \mid b`.
+        </p>
+        <p>
+            The <em>greatest common divisor</em> of integers `a` and
+            `b`, denoted `\gcd(a, b)`, is a positive integer `d` such
+            that `d` is a common divisor of `a` and `b` and if `d'` is
+            any other common divisor of `a` and `b`, then `d' \mid
+            d`. We say that two integers `a` and `b` are <bu>relatively prime</bu>
+            if `\gcd(a, b) = 1`.
+        </p>
+    </def>
 
-    <div class="theorem">
-        <div class="theorem-title">Theorem 2.2.3 (Greatest Common Divisor Linear Combination)</div>
+    <thm num="2.2.3" name ="Greatest Common Divisor Linear Combination">
         <p>Let `a` and `b` be nonzero integers. Then there exist integers `r` and `s` such that</p>
         <p>\[ \gcd(a, b) = ar + bs \]</p>
         <p>Furthermore, the greatest common divisor of `a` and `b` is unique.</p>
-    </div>
+    </thm>
 
     <p>Again, the greatest common divisor linear combination theorem can be proven using the well-ordering principle on the set
         `\{am + bn \mid m,n \in \mathbb{Z},\; am + bn > 0\}`, but this proof is non-constructive. Typically, the Euclidean algorithm is used to construct these values, as is demonstrated in the next example.</p>
 
-    <div class="example">
-        <div class="example-title">Example 2.2.4 (Euclidean Algorithm)</div>
-        <p>Write the greatest common divisor of `a = 945` and `b = 2415` as a linear combination of `a` and `b`.</p>
-        <p>The Euclidean algorithm begins by finding `\gcd(a, b)`, which is accomplished by repeated use of the division algorithm:</p>
-        <pre>
-2415 = 945 · 2 + 525
-945  = 525 · 1 + 420
-525  = 420 · 1 + 105
-420  = 105 · 4 + 0
-        </pre>
+    <ex num="2.2.4" name="Eucliden Algorithm">
+        <p>
+            Write the greatest common divisor of `a = 945` and `b =
+            2415` as a linear combination of `a` and `b`.
+        </p>
+        <p>
+            The Euclidean algorithm begins by finding `\gcd(a, b)`,
+            which is accomplished by repeated use of the division
+            algorithm:
+        </p>
+        
+        <align>
+            2415 &= 945 \cdot 2 + 525 \\
+            945  &= 525 \cdot 1 + 420 \\
+            525  &= 420 \cdot 1 + 105 \\
+            420  &= 105 \cdot 4 + 0  \\
+        </align>
+        
         <p>Therefore, `\gcd(2415, 945) = 105`.</p>
-        <p>Next we can use the equations above to express `105` as a linear combination of `a` and `b`, working backward. We start at the second to last line:</p>
-        <p>`105 = 525 - 420`</p>
-        <p>`= 525 - (945 - 525) = 2 \cdot 525 - 945`</p>
-        <p>`= 2 \cdot (2415 - 2 \cdot 945) - 945 = 2 \cdot 2415 - 5 \cdot 945`</p>
+
+        <p>
+            Next we can use the equations above to express `105` as a
+            linear combination of `a` and `b`, working backward. We start
+            at the second to last line:
+        </p>
+        <align>
+            105 &= 525 - 420 \\
+            &= 525 - (945 - 525) \\
+            &= 2 \cdot 525 - 945 \\
+            &= 2 \cdot (2415 - 2 \cdot 945) - 945 \\
+            &= 2 \cdot 2415 - 5 \cdot 945 \\
+        </align>
+            
         <p>Therefore, `105 = 2a - 5b`.</p>
     </div>
 </page>

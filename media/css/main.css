@@ -29,12 +29,10 @@ html {
 body {
     font-family: "Computer Modern", sans-serif;
     /* font-family: "PT Serif"; */
-    font-size: 14pt;
+    font-size: 16pt;
     background-color: #f9f9f4;
     color: #333;
     width: 100%;
-    
-    
 }
 
 
@@ -166,6 +164,8 @@ pre {
   min-width: 0;
   box-sizing: border-box;
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -196,7 +196,7 @@ pre {
 
 
 .vid {
-    margin: auto;
+    /* margin: auto; */
 }
 
 .vid iframe {
@@ -213,21 +213,26 @@ pre {
 
 /* Section: definition */
 
-.definition {
-    padding-top:10px;
+.sec {
+    font-size: 1.1em;
+    font-weight: bold;    
 }
 
-.definition-link {
-    text-decoration: none;
-    font-weight: 600;
-    color: black;                    
+.def {
+    background-color: orange;
 }
 
-.definition-number {
-    padding-left: .7em;
-    padding-right: .7em;
+.ex {
+    background-color: pink;
+}
+
+
+
+.header {
+    font-size: 1.2em;
     font-weight: bold;
 }
+
 
 .theorem {
     padding-top:10px;
@@ -440,6 +445,7 @@ iframe.vidframe {
 
 .lecture-menu {
     width: 300px; /* Set your desired width */
+
 }
 
 .lecture-menu a {    
@@ -464,13 +470,21 @@ iframe.vidframe {
     padding: .2em;
 }
 
+li:hover {
+    background-color: white;
+}
+
+
 summary::marker {
     color: #ccc;
 }
 
 li.cur-page {
-    text-decoration: underline;
-    background-color: white;
+    background-color: grey;
+}
+li.cur-page a {
+    color: white;
+    /* font-weight: bold;    */
 }
 
 
@@ -548,5 +562,67 @@ a {
 .contrib {
     background-color: #eee;
     padding: 10px;
-    
+    margin-bottom: 20px;
+}
+
+.source {
+    background-color: #eee;
+    padding: 10px;
+    margin-left: auto;
+}
+
+.misseldine {
+    display: flex;
+    background-color: #eee
+    padding: 100px;
+    border-right: 2x solid black;
+    flex-direction: column;
+}
+
+
+
+.mycode {
+    white-space: pre-wrap;    
+    display: flex;
+    font-family: "Courier New", monospace;
+    flex-direction: column;
+    padding: 20px;
+    font-size: 13pt;
+    background-color: #333;
+    color: #efefef;
+
+}
+
+
+.copy-btn {
+    /* top: 10px; */
+    /* right: 10px; */
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    z-index: 10;
+    margin-left: auto;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.copy-btn:hover {
+  transform: scale(1.2);  /* Slightly enlarge the icon on hover */
+  color: #007bff;  /* Change color when hovered */
+}
+
+@keyframes backgroundChange {
+  0% { background: #777; }
+  100% { background: #333; }  
+}
+
+.mycode.copied {
+    background: #4caf50;
+    animation: backgroundChange 500ms forwards;
+}
+
+.button-bar {
+    display: flex;
+    margin-left: auto;
 }

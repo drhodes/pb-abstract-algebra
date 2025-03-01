@@ -6,7 +6,7 @@ import re
 # patchup file.
 
 def include_namespace(tree, el):
-    el.tag = "pre"
+    el.tag = "div"
     filename = el.get("file")
     ns = el.get("namespace")
 
@@ -82,7 +82,8 @@ def mylib_source(tree, el):
     txt = open(path).readlines()[idx1:idx2]
     el.text = ''.join(txt)
     
-def build_the_sidebar(tree, curpage_title):
+def build_the_sidebar(tree, curpage):
+    
     lectures = tree.xpath('//*[@class="lecture"]')
     sb = etree.Element("ul")
     for lec in lectures:
@@ -100,7 +101,7 @@ def build_the_sidebar(tree, curpage_title):
         node_lec_details.append(node_lec_summary)
         
         lec_title = lec.get("title")
-        node_lec_link = etree.Element("a") #, title=lec_title)
+        node_lec_link = etree.Element("a")
         node_lec_link.text = lec_title
         
         node_lec_summary.append(node_lec_link)
@@ -119,7 +120,7 @@ def build_the_sidebar(tree, curpage_title):
             node_page_ul.append(node_page_li)
             node_page_li.append(pagelink)
             pagelink.text = page.get("title")
-            if page.get("title") == curpage_title:
+            if page.get("path") == curpage.get("path"):
                 node_page_li.set("class", "cur-page")
                 node_lec_details.set("open", "true")
                 
@@ -132,7 +133,7 @@ def insert_sidebars(tree, el):
     
     for page in tree.xpath('//*[@class="page"]'):        
         lecture_menu = page.getparent().getparent().getparent().xpath('.//*[@class="lecture-menu"]')
-        sb = build_the_sidebar(tree, page.get("title"))
+        sb = build_the_sidebar(tree, page) #.get("title"))
         lecture_menu[0].append(sb)
     return tree
 

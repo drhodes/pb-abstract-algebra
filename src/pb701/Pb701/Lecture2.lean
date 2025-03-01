@@ -1,9 +1,7 @@
 import Lean
---import Mathlib
+import Mathlib
 
 namespace Lecture2
-
-
 
 -----------------------------------------------------------------
 namespace Definition_1_2_12
@@ -21,7 +19,6 @@ example : Π i : ℕ, A = {} := by
 end Definition_1_2_12
 
 
-
 -----------------------------------------------------------------
 namespace Example_1_2_13
 open Set
@@ -35,7 +32,7 @@ variable
 
 -- Note: For sets in Mathlib, the cartesian product uses a superscript: (×ˢ)
 
-example : A ×ˢ B = {(x,1),(x,2),(x,3),(y,1),(y,2),(y,3)} := by sorry
+example : A ×ˢ B = {(x, 1), (x,2), (x, 3), (y, 1), (y, 2), (y, 3)} := by sorry
 example : A ×ˢ C = ∅ := by sorry
 
 section solution
@@ -66,13 +63,16 @@ noncomputable def f (x : ℝ) := 2 * x
 noncomputable def g (x : ℝ) := Real.exp x
 noncomputable def h (x : ℝ) := x ^ 2
 
-example : Bijective f := by sorry
-example : Injective g ∧ ¬ Surjective g := by sorry
-example : ¬ Injective h ∧ ¬ Surjective h := by sorry
+
+example: f.Bijective = Bijective f := rfl
+
+example : f.Bijective := by sorry
+example : g.Injective ∧ ¬ g.Surjective := by sorry
+example : ¬ h.Injective ∧ ¬ h.Surjective := by sorry
 
 section solution
 
-example : Bijective f := by
+example : f.Bijective := by
   constructor
   · intro a b
     simp [f]
@@ -80,7 +80,7 @@ example : Bijective f := by
     use ((1/2) * b)
     simp [f]
 
-example : Injective g ∧ ¬ Surjective g := by
+example : g.Injective ∧ ¬ g.Surjective := by
   constructor
   · intro a b h
     dsimp [g] at h
