@@ -1,21 +1,21 @@
 @font-face {
     font-family: "Computer Modern";
-    src: url('/media/font/cmunss.otf');
+    src: url('../font/cmunss.otf');
 }
 
 @font-face {
     font-family: "Computer Modern";
-    src: url('/media/font/cmunsx.otf');
+    src: url('../font/cmunsx.otf');
     font-weight: bold;
 }
 @font-face {
     font-family: "Computer Modern";
-    src: url('/media/font/cmunsi.otf');
+    src: url('../font/cmunsi.otf');
     font-style: italic;
 }
 @font-face {
     font-family: "Computer Modern";
-    src: url('/media/font/cmunbxo.otf');
+    src: url('../font/cmunbxo.otf');
     font-weight: bold;
     font-style: italic;
 }
@@ -26,16 +26,14 @@ html {
     justify-content: center;
 }
 
+
 body {
     font-family: "Computer Modern", sans-serif;
-    /* font-family: "PT Serif"; */
     font-size: 16pt;
     background-color: #f9f9f4;
     color: #333;
     width: 100%;
 }
-
-
 
 .git-hash {
     font-size: .7em;
@@ -104,7 +102,7 @@ pre {
 
 }
 
-.katex { font-size: 1.2em !important; } 
+.katex { font-size: 1.01em !important; } 
 
 
 .nav-prev-next {
@@ -168,6 +166,13 @@ pre {
   flex-direction: column;
 }
 
+.page-inner {
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
 
 /* .page { */
 /*     background-color: #fff; */
@@ -215,15 +220,19 @@ pre {
 
 .sec {
     font-size: 1.1em;
-    font-weight: bold;    
+    font-weight: bold;
 }
 
 .def {
-    background-color: orange;
+    background-color: #eee;
+    padding: 1em;
+    margin-bottom: 1em;
 }
 
 .ex {
-    background-color: pink;
+    background-color: #eee;
+    padding: 1em;
+    margin-bottom: 1em;
 }
 
 
@@ -464,7 +473,7 @@ iframe.vidframe {
 
 .lecture-menu li {
     font-size: .9em;
-    /* list-style-image: url('/media/images/by-nc-sa.png'); */
+    /* list-style-image: url('../media/images/by-nc-sa.png'); */
     list-style-type: none;
     list-style: none;
     padding: .2em;
@@ -566,9 +575,8 @@ a {
 }
 
 .source {
-    background-color: #eee;
-    padding: 10px;
-    margin-left: auto;
+    font-size: .8em;
+    padding: 5px;
 }
 
 .misseldine {
@@ -626,3 +634,18 @@ a {
     display: flex;
     margin-left: auto;
 }
+
+.hw {
+    display: flex;
+    flex-direction: column;
+}
+
+.from-book {
+    display: flex;
+}
+
+.from-book-contents {
+    margin-left: auto;
+    flex-grow: 1;
+}
+

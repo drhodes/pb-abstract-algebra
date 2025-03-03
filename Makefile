@@ -18,7 +18,11 @@ venv: util/requirements.txt ## establish a virtual environment for python
 # -----------------------------------------------------------------------------
 # Section: Lectures
 
+COMMON=./common
+COMMON_MACROS=${COMMON}/macros/common-macros.html
 MACROS=src/macros.html
+
+
 BUILD=../builds/pb701-build
 SITE=../builds/pb701-build/site
 
@@ -31,8 +35,8 @@ lectures: media
 	${VENV} auxml \
 	-i ./src/course.html \
 	-d ${SITE} \
-	-m ./src/macros.html \
-	-m ./src/common-macros.html \
+	-m ${MACROS} \
+	-m ${COMMON_MACROS} \
 	--patchup ./util/patchup.py	
 
 .PHONY: notes

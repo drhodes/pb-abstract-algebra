@@ -1,54 +1,47 @@
 <div>
-    <hw2 prob="4">
+    <hw1 prob="4">
         <p>
-		    Prove `A \cup \varnothing = A` and `A \cap \varnothing = \varnothing`.
+		    Prove: `A \cup \varnothing = A` and `A \cap \varnothing = \varnothing`.
         </p>
-	    <lean-example file="src/pb701/Pb701/pset2.lean" namespace="P2"/>
-    </hw2>
-
-    <hw2 prob="5" xml:id="sets-exercise-union-intersection-commute">
-        
-        <p>
-		    Prove `A \cup B = B \cup A` and `A \cap B = B \cap A`.
-        </p>
-        
         <hr/>
-        <todo> translate problem to Lean </todo>
-    </hw2>
+    </hw1>
 
-    <hw2 prob="6" xml:id="sets-exercise-union-distributes">
+    <hw1 prob="5" xml:id="sets-exercise-union-intersection-commute">        
+        <p>
+		    Prove: `A \cup B = B \cup A` and `A \cap B = B \cap A`.
+        </p>        
+    </hw1>
+
+    <hw1 prob="6" xml:id="sets-exercise-union-distributes">
         
         <p>
 		    Prove `A \cup (B \cap C) = (A \cup B) \cap (A \cup C)`.
-        </p>
         
         <hint>
             <p>
 			    Observe that `x \in A \cup B` if and only if `x \in A` or `x \in B`.
+                
 			    Equivalently, `x \in B` or `x \in A`, which is the same as `x \in B \cup A`.
+                
 			    Therefore, `A \cup B = B \cup A`.
             </p>
         </hint>
+        </p>
         
-        <hr/>
-        <todo> translate problem to Lean </todo>
-    </hw2>
+    </hw1>
 
-    <hw2 prob="7" xml:id="sets-exercise-intersection-distributes">   
+    <hw1 prob="7" xml:id="sets-exercise-intersection-distributes">   
         <p> Prove `A \cap (B \cup C) = (A \cap B) \cup (A \cap C)`. </p>
-        
-        <hr/>
-        <todo> translate problem to Lean </todo>
-    </hw2>
+    </hw1>
+    
 
-    <hw2 prob="8" xml:id="sets-exercise-subset-iff-intersection">
+    <hw1 prob="8" xml:id="sets-exercise-subset-iff-intersection">
+        <scribe> note: <u><aata/></u> uses `\subset` to indicate <term>subset</term>, not proper subset. </scribe>
         <p> Prove `A \subset B` if and only if `A \cap B = A`. </p>
-        
         <hr/>
-        <todo> translate problem to Lean </todo>
-    </hw2>
+    </hw1>
 
-    <hw2 prob="9" xml:id="sets-exercise-demorgan">
+    <hw1 prob="9" xml:id="sets-exercise-demorgan">
         
         <p>
 		    Prove `(A \cap B)' = A' \cup B'`.
@@ -56,9 +49,9 @@
         
         <hr/>
         <todo> translate problem to Lean </todo>
-    </hw2>
+    </hw1>
 
-    <hw2 prob="10" xml:id="sets-exercise-set-minus-union">
+    <hw1 prob="10" xml:id="sets-exercise-set-minus-union">
         
         <p>
 		    Prove
@@ -80,56 +73,56 @@
         
         <hr/>
         <todo> translate problem to Lean </todo>
-    </hw2>
+    </hw1>
 
     https://github.com/drhodes/aata/blob/master/src/sets.xml
 
 
 
-    <hw2 prob="12" xml:id="sets-exercise-set-minus-empty-set">
-      
+    <hw1 prob="12" xml:id="sets-exercise-set-minus-empty-set">
+        
         <p>
-          Prove `(A \cap B) \setminus B = \varnothing`.
+            Prove `(A \cap B) \setminus B = \varnothing`.
         </p>
-      
-    </hw2>
+        
+    </hw1>
 
-    <hw2 prob="13" xml:id="sets-exercise-union-set-minus">
-      
+    <hw1 prob="13" xml:id="sets-exercise-union-set-minus">
+        
         <p>
-          Prove `(A \cup B) \setminus B = A \setminus B`.
+            Prove `(A \cup B) \setminus B = A \setminus B`.
         </p>
-      
-    </hw2>
+        
+    </hw1>
 
-    <hw2 prob="14" xml:id="sets-exercise-set-minus-distribute">
-      
+    <hw1 prob="14" xml:id="sets-exercise-set-minus-distribute">
+        
         <p>
-          Prove `A \setminus (B \cup C) = (A \setminus B) \cap (A \setminus C)`.
+            Prove `A \setminus (B \cup C) = (A \setminus B) \cap (A \setminus C)`.
         </p>
-      
-      <hint>
-        <p>
-            `A \setminus (B \cup C) = A \cap (B \cup C)' = (A \cap A)
-            \cap (B' \cap C') = (A \cap B') \cap (A \cap C') = (A
-            \setminus B) \cap (A \setminus C)`.
-        </p>
-      </hint>
-    </hw2>
+        
+        <hint>
+            <p>
+                `A \setminus (B \cup C) = A \cap (B \cup C)' = (A \cap A)
+                \cap (B' \cap C') = (A \cap B') \cap (A \cap C') = (A
+                \setminus B) \cap (A \setminus C)`.
+            </p>
+        </hint>
+    </hw1>
 
-    <hw2 prob="15" xml:id="sets-exercise-a-cap-b-setminus-c">
-      
+    <hw1 prob="15" xml:id="sets-exercise-a-cap-b-setminus-c">
+        
         <p>
-          Prove `A \cap (B \setminus C) = (A \cap B) \setminus (A \cap C)`.
+            Prove `A \cap (B \setminus C) = (A \cap B) \setminus (A \cap C)`.
         </p>
-      
-    </hw2>
+        
+    </hw1>
 
-    <hw2 prob="16" xml:id="sets-exercise-a-csetminus-b-cup-b-setminus-a">
-      
+    <hw1 prob="16" xml:id="sets-exercise-a-csetminus-b-cup-b-setminus-a">
+        
         <p>
-          Prove `(A \setminus B) \cup (B \setminus A) = (A \cup B) \setminus (A \cap B)`.
+            Prove `(A \setminus B) \cup (B \setminus A) = (A \cup B) \setminus (A \cap B)`.
         </p>
-      
-    </hw2>
+        
+    </hw1>
 </div>

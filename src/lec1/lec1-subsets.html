@@ -2,18 +2,13 @@
 <page title="Subsets" path="lecture1/subsets">	
 	<vid desc="lecture1" youtubeid="Khu_fHMbe6Y"  start="00:00" end="10:20"/>
 
-	<div class="definition">
-		<p>
-            <b>Definition 1.2.4.</b>
-
-            Let `A` and `B` be two sets. If `A` and `B` have exactly
-			the same elements as each other, then `A = B`. If every
-			element of `A` is an element of `B`, then `A` is a subset
-			of `B`, denoted by `A \subseteq B`. For example, `\{1, 2\}
-			\subseteq \{1, 2, 3\}`.
-            
-        </p>
-	</div>
+	<def num=1.2.3 name=Subset>
+        Let `A` and `B` be two sets. If `A` and `B` have exactly
+		the same elements as each other, then `A = B`. If every
+		element of `A` is an element of `B`, then `A` is a <term>subset</term>
+		of `B`, denoted by `A \subseteq B`. For example, `\{1, 2\}
+		\subseteq \{1, 2, 3\}`.
+	</def>
 
 	<p>
         Note that it is always true that `\varnothing \subseteq A`
@@ -27,8 +22,7 @@
 		is a proper subset of `B`.
     </p>
     
-	<p>
-        <b>Example 1.2.5.</b>
+    <ex num=1.2.5 name="subset">
 
         Consider the three sets: let `A` be the set of all even
 		numbers, `B = \{2, 4, 6\}`, and `C = \{2, 3, 4,
@@ -37,7 +31,7 @@
 		\notin B`, so `B \subset A`. It is also true that `B
 		\subset C`. On the other hand, `C \not\subseteq A` since
 		`3 \in C` but `3 \notin A`.
-    </p>
+    </ex>
 
     <hr/>
 

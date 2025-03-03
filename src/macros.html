@@ -8,9 +8,10 @@
             <meta name="viewport" content="width=device-width, initial-scale=1">
             
             <title>[[title]]</title>
+
             
-            <link rel="stylesheet" href="../../media/css/main.css">
-            <link rel="icon" href="../../media/images/favicon.png">
+            <link rel="stylesheet" href="../media/css/main.css">
+            <link rel="icon" href="../media/images/favicon.png">
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -35,7 +36,7 @@
                     integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" 
                     crossorigin="anonymous"></script>
             
-            <script src="../../media/js/main.js"></script>
+            <script src="../media/js/main.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/iframe-resizer@4.3.11/js/iframeResizer.min.js"></script>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
             <script type="importmap"> { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.173.0/build/three.module.js" } }</script>
@@ -61,13 +62,11 @@
                         <div id="page-[[title]]" class="page" title="[[title]]" path="[[path]]">
 		                    <h3> <a href="#"> [[title]] </a>  </h3>
 		                    <contents/>
-                            <hr/>                            
                             <patchup func="nav_prev_next" class="nav-prev-next"/>        
                             <discussion topic="[[title]]" id="[[title]]"/>
                             <div class="git-hash"> (course git hash <patchup func="git_hash"/>) </div>
 	                    </div>		                
 		            </layout>
-
 	            </body>
 	        </html>            
         </outfile>
@@ -84,7 +83,7 @@
         <div class="giscussion">
             <p><i> note: Please do not share complete solutions</i> </p>
             <script src="https://giscus.app/client.js"
-                    data-repo="drhodes/pb700"
+                    data-repo="drhodes/pb701"
                     data-repo-id="R_kgDONZDcuw"
                     data-category="General"
                     data-category-id="DIC_kwDONZDcu84Clk9b"
@@ -374,11 +373,21 @@
 
     <define-macro name="hw" vars="psetnum, prob">
         <page title="⌂ HW / Prob [[psetnum]]-[[prob]]" path="lecture[[psetnum]]/P[[prob]]">
-            <contents/>
+            <div class="hw">
+                <contents/>
+            </div>
         </page>
     </define-macro>
 
-    <define-macro name="hw1" vars="prob"> <hw psetnum="1" prob="[[prob]]"> <contents/> </hw> </define-macro>
+    <define-macro name="hw1" vars="prob">
+        <hw psetnum="1" prob="[[prob]]">
+            <from-book url="http://abstract.ups.edu/aata/sets-exercises.html">
+                <contents/>
+            </from-book>
+	        <lean-example file="src/pb701/Pb701/pset1.lean" namespace="P[[prob]]"/>        
+        </hw>
+    </define-macro>
+    
     <define-macro name="hw2" vars="prob"> <hw psetnum="2" prob="[[prob]]"> <contents/> </hw> </define-macro>
     <define-macro name="hw3" vars="prob"> <hw psetnum="3" prob="[[prob]]"> <contents/> </hw> </define-macro>
     <define-macro name="hw4" vars="prob"> <hw psetnum="4" prob="[[prob]]"> <contents/> </hw> </define-macro>
@@ -551,56 +560,20 @@
     
 	<define-macro name="fig" vars="text, fname">
 	    <div class="fig">
-		    <center><img src="/media/images/[[fname]]" width="75%" alt="[[text]]" /></center>
+		    <center><img src="../media/images/[[fname]]" width="75%" alt="[[text]]" /></center>
 		    <center><span class="fig-text">[[text]]</span></center>
 	    </div>
 	</define-macro>
 
     <define-macro name="im" vars="src">
-	    <img src="/media/images/[[src]]" width="75%"/>
+	    <img src="../media/images/[[src]]" width="75%"/>
     </define-macro>
-    
-	<!-- <lebl page="15"/> -->
-	<define-macro name="lebl" vars="page">
-	    <div class="book-ref">
-		    <a href="https://www.jirka.org/ra/realanal.pdf">
-		        ⮺ pg [[page]], Introduction to Real Analysis, Volume I
-		    </a>
-	    </div>
-	</define-macro>
 	
 	<define-macro name="warning">
 	    <div class="warning">
 		    <contents/>
 	    </div>
 	</define-macro>
-
-    <define-macro name="credit">
-        <div>
-            <img src="/media/images/by-nc-sa.png" width=100/>
-            <p class="reference">
-                These lecture notes are derived from <em>Abstract Algebra: Theory and Applications</em>
-                by Tom Judson, used under a GNU Free Documentation
-                License.
-            </p>
-            <p class="reference">
-                Video links: 
-                <a href="https://youtu.be/JZB5_fKd2C8" target="_blank">https://youtu.be/JZB5_fKd2C8</a>, 
-                <a href="https://youtu.be/8PX2Wi2apfI" target="_blank">https://youtu.be/8PX2Wi2apfI</a>, 
-                <a href="https://youtu.be/1gQfUT6NDbI" target="_blank">https://youtu.be/1gQfUT6NDbI</a>
-            </p>
-            <p class="reference">
-                More info:
-                
-                <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>, 
-                <a href="http://abstract.ups.edu/" target="_blank">http://abstract.ups.edu/</a>, 
-                <a href="http://abstract.ups.edu/aata/appendix-gfdl.html" target="_blank">GNU FDL Appendix</a>
-            </p>
-            <p class="reference">
-                &copy; Andrew Misseldine
-            </p>
-        </div>
-    </define-macro>
 
     <define-macro name="sep">
         <div>
@@ -618,6 +591,13 @@
         <div class="misseldine">
             <a class="source" href="[[url]]">source 🔎︎</a>
             <contents/>
+        </div>
+    </define-macro>
+
+    <define-macro name="from-book" vars="url">           
+        <div class="from-book">
+            <div class="from-book-contents"> <contents/> </div>
+            <a class="source" href="[[url]]">source 🔎︎</a>
         </div>
     </define-macro>
 

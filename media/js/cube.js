@@ -18,7 +18,7 @@ let cube;
 let tweenx;
 
 loader.load(
-  '../../media/mathlets/cube-group/assets/cube.glb',  
+  '../media/mathlets/cube-group/assets/cube.glb',  
   (gltf) => {
     const model = gltf.scene;
     cube = model;

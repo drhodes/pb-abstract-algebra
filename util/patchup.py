@@ -23,7 +23,8 @@ def include_namespace(tree, el):
     if match:
         text = match.group(1).strip()
         cleaned_text = re.sub(r'\n*\s*section solution.*?end solution', '\n', text, flags=re.DOTALL)
-        el.text = cleaned_text
+        cleaned_text.strip()
+        el.text = re.sub(r'\n{3,}', '\n\n', cleaned_text)
     else:        
         print("No match found")
     
@@ -116,7 +117,7 @@ def build_the_sidebar(tree, curpage):
                 on_first_page = False
             node_page_li = etree.Element("li")
             pagelink = etree.Element("a", title=lec_title)
-            pagelink.set("href", url)
+            pagelink.set("href" , url)
             node_page_ul.append(node_page_li)
             node_page_li.append(pagelink)
             pagelink.text = page.get("title")

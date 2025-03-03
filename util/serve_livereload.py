@@ -77,10 +77,12 @@ def shell(cmd, output=None, mode='w', cwd=None, shell=False):
 server = Server() 
 server.watch('./src/*', shell('make lectures')) 
 server.watch('./src/course.html', shell('make lectures')) 
+server.watch('./src/pb701/Pb701/*', shell('make lectures'))
 
 for i in range(9):
     server.watch(f'./src/lec{i}/*', shell('make lectures'))
     server.watch(f'./src/psets/pset{i}/*', shell('make lectures'))
+
     
 server.watch('./util/patchup.py', shell('make lectures')) 
 server.watch('./media/css/main.css', shell('make media')) 
