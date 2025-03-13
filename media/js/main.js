@@ -13,15 +13,32 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-
 function timeToSeconds(timeString) {
-  // Split the time string into hours, minutes, and seconds
-  const [hours, minutes, seconds] = timeString.split(':').map(Number);
-  
-  // Calculate the total time in seconds
-  const totalTimeInSeconds = hours * 3600 + minutes * 60 + seconds;
-  
-  return totalTimeInSeconds;
+  if (!timeString) return 0; // Handle empty or null timeString
+
+  const parts = timeString.split(':');
+  if (parts.length === 1) {
+    // Assume it's just seconds (e.g., "30")
+    const seconds = parseInt(parts[0], 10);
+    if (isNaN(seconds)) {
+      console.error("Invalid time format. Use minutes:seconds (e.g., '1:30') or just seconds (e.g., '30')");
+      return 0;
+    }
+    return seconds;
+  } else if (parts.length === 2) {
+    // minutes:seconds format (e.g., "1:30")
+    const minutes = parseInt(parts[0], 10);
+    const seconds = parseInt(parts[1], 10);
+
+    if (isNaN(minutes) || isNaN(seconds)) {
+      console.error("Invalid time format. Use minutes:seconds (e.g., '1:30')");
+      return 0;
+    }
+    return (minutes * 60) + seconds;
+  } else {
+    console.error("Invalid time format. Use minutes:seconds (e.g., '1:30') or just seconds (e.g., '30')");
+    return 0; // Or handle error as needed
+  }
 }
 
 // vid_helper("[[this]]", "[[youtubeid]]", "[[start]]", "[[end]]");
@@ -47,6 +64,41 @@ function vid_helper(elid, youtubeid, start, end) {
   console.log(u)
   myframe.src=u  
 }
+
+
+// function timeToSeconds(timeString) {
+//   // Split the time string into hours, minutes, and seconds
+//   const [hours, minutes, seconds] = timeString.split(':').map(Number);
+  
+//   // Calculate the total time in seconds
+//   const totalTimeInSeconds = hours * 3600 + minutes * 60 + seconds;
+  
+//   return totalTimeInSeconds;
+// }
+
+// // vid_helper("[[this]]", "[[youtubeid]]", "[[start]]", "[[end]]");
+// function vid_helper(elid, youtubeid, start, end) {
+//   mydiv = document.getElementById(elid);
+//   console.log("mydiv has element id: " + elid);
+//   myframe = mydiv.querySelector("iframe");
+//   console.log("myframe", myframe);
+  
+//   var st = timeToSeconds(start);
+//   var et = timeToSeconds(end);
+
+//   console.log("vid_helper got youtubeid: " + youtubeid);
+//   var u = [
+//     `https://www.youtube.com/embed/`, youtubeid,
+//     `?autoplay=0`,
+//     `&enablejsapi=1`,
+//     `&start=` + st,
+//     `&end=` + et,
+//   ].join("");
+
+  
+//   console.log(u)
+//   myframe.src=u  
+// }
 
 function youtubeSeekTo(iframeId, startTime) {
   var player;
@@ -159,3 +211,5 @@ function copyText(id) {
 
   window.getSelection().removeAllRanges();
 }
+
+

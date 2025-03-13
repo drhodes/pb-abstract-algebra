@@ -135,9 +135,182 @@ end P8
 
 
 
+-- -------------------------------------------------------------
+namespace P9
+open Set
+
+variable (α : Type) (A B : Set α)
+
+example : (A ∩ B)ᶜ = Aᶜ ∪ Bᶜ := by
+  sorry
+
+section solution
+
+example : (A ∩ B)ᶜ = Aᶜ ∪ Bᶜ := by
+  exact compl_inter A B
+
+end solution
+
+end P9
 
 
-theorem Like_Example_6_1_2 (n : ℕ) : 3 ∣ n^3 + 2 * n := by
+-- -------------------------------------------------------------
+namespace P10
+open Set
+
+variable (α : Type) (A B : Set α)
+
+example : A ∪ B = (A ∩ B) ∪ (A \ B) ∪ (B \ A) := by
+  sorry
+
+section solution
+
+example : A ∪ B = (A ∩ B) ∪ (A \ B) ∪ (B \ A) := by
+  rw [Set.diff_eq_compl_inter]
+  nth_rw 2 [Set.inter_comm]
+  rw [inter_union_compl]
+  rw [union_diff_self]
+
+end solution
+
+end P10
+
+
+-- -------------------------------------------------------------
+namespace P12
+open Set
+
+variable (α : Type) (A B : Set α)
+
+example : (A ∩ B) \ B = ∅ := by
+  sorry
+
+section solution
+
+example : (A ∩ B) \ B = ∅ := by
+  rw [Set.diff_eq_compl_inter]
+  nth_rw 2 [Set.inter_comm]
+  rw [← Set.inter_assoc]
+  rw [compl_inter_self]
+  rw [empty_inter]
+
+end solution
+
+end P12
+
+-- -------------------------------------------------------------
+
+namespace P13
+open Set
+
+variable (α : Type) (A B : Set α)
+
+example : (A ∪ B) \ B = A \ B := by
+  sorry
+
+section solution
+
+example : (A ∪ B) \ B = A \ B := by
+  exact union_diff_right
+
+
+end solution
+
+end P13
+
+
+-- -------------------------------------------------------------
+namespace P14
+open Set
+
+variable (α : Type) (A B C : Set α)
+
+example : A \ (B ∪ C) = (A \ B) ∩ (A \ C) := by
+  sorry
+
+section solution
+
+example : A \ (B ∪ C) = (A \ B) ∩ (A \ C) := by
+  -- todo, figure out where to draw the lines with lemmas.
+  exact Eq.symm diff_inter_diff
+
+end solution
+
+end P14
+
+
+-- -------------------------------------------------------------
+namespace P15
+open Set
+
+variable (α : Type) (A B C : Set α)
+
+example : A ∩ (B \ C) = (A ∩ B) \ (A ∩ C) := by
+  sorry
+
+section solution
+
+example : A ∩ (B \ C) = (A ∩ B) \ (A ∩ C) := by
+  exact inter_diff_distrib_left A B C
+
+
+end solution
+
+end P15
+
+
+-- -------------------------------------------------------------
+namespace P16
+open Set
+
+variable (α : Type) (A B C : Set α)
+
+example : (A \ B) ∪ (B \ A) = (A ∪ B) \ (A ∩ B) := by
+  sorry
+
+section solution
+
+example : (A \ B) ∪ (B \ A) = (A ∪ B) \ (A ∩ B) := by
+  -- got a better proof!? pull requests welcome!
+  repeat rw [Set.diff_eq_compl_inter]
+  rw [Set.compl_inter]
+  ext x
+  constructor
+  · --
+    rintro ⟨hx₁, hx₂⟩
+    constructor
+    · right; exact hx₁
+    · left; exact hx₂
+    · constructor
+      · rename_i h
+        obtain ⟨h₁, h₂⟩ := h
+        left; exact h₁
+      · rename_i h
+        obtain ⟨h₁, h₂⟩ := h
+        right; exact h₂
+  · --
+    rintro ⟨hx₁, hx₂⟩
+    cases hx₁ with
+    | inl h =>
+      cases hx₂ with
+        | inl ha => contradiction
+        | inr hb => right; refine ⟨h, hb⟩
+    | inr h =>
+      cases hx₂ with
+        | inl ha => left; refine ⟨h, ha⟩
+        | inr hb => left; refine ⟨h, by contradiction⟩
+
+end solution
+
+end P16
+
+
+
+
+
+
+-- -----------------------------------------------------------------
+theorem Like_Example_6_1_2 (n : ℕ) : 3 ∣ n ^ 3 + 2 * n := by
   induction' n  with k hk
   · -- Base case: n = 0
     norm_num

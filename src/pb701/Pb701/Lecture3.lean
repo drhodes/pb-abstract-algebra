@@ -6,6 +6,33 @@ open Function
 
 
 -----------------------------------------------------------------
+namespace interval_examples
+open Set
+
+example : {x | 0 < x ∧ x < 1} = Ioo 0 1 := rfl
+
+-- replace these sorries with one of the appropriate intervals.
+
+example : {x | 0 ≤ x ∧ x < 1} = sorry := sorry
+example : {x | 0 < x ∧ x ≤ 1} = sorry := sorry
+example : {x | 0 < x} = sorry := sorry
+example : {x | x < 0} = sorry := sorry
+
+section solution
+
+example : {x | 0 ≤ x ∧ x < 1} = Ico 0 1 := rfl
+example : {x | 0 < x ∧ x ≤ 1} = Ioc 0 1 := rfl
+example : {x | 0 < x} = Ioi 0 := rfl
+example : {x | x < 0} = Iio 0 := rfl
+
+
+end solution
+
+
+end interval_examples
+
+
+-----------------------------------------------------------------
 namespace Definition_1_2_23
 open Function
 
@@ -98,8 +125,9 @@ end Example_1_24_1_3
 
 -- Mathlib.Data.Set.Operations
 
-namespace Example_1_24_1_3_easier
+namespace Example_1_2_24_1_3_easier
 open Set Real
+
 
 lemma lft_inv : LeftInvOn Real.log Real.exp (Ioi 0) := by
   simp [LeftInvOn]
@@ -111,5 +139,40 @@ example : InvOn log exp (Ioi 0) (Ioi 0) := by
   refine ⟨lft_inv, rht_inv⟩
 
 
-end Example_1_24_1_3_easier
+end Example_1_2_24_1_3_easier
 end Lecture3
+
+-- ---------------------------------------------------------------------------
+-- Permutations
+
+namespace Lab1
+open Function Equiv
+
+inductive Color where | Red | Green | Purple
+open Color
+
+@[simp]
+def color_cycle : Color → Color
+  | Red => Green
+  | Green => Purple
+  | Purple => Red
+
+@[simp]
+def color_cycle_inv : Color → Color
+  | Green => Red
+  | Purple => Green
+  | Red => Purple
+
+-- prove that color_cycle is a permutation
+
+-- #check Mathlib.GroupTheory.Perm
+
+instance : Equiv.Perm Color where
+  toFun := color_cycle
+  invFun := color_cycle_inv
+  left_inv := by simp [LeftInverse]; aesop -- todo
+  right_inv := by
+    simp [Function.RightInverse, LeftInverse]
+    aesop -- todo
+
+end Lab1

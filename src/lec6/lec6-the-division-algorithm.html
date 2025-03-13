@@ -1,50 +1,79 @@
 <page title="Divisibility of Integers" path="lecture6/lec6-the-division-algorithm">
     <vid desc="lecture6" youtubeid="iuxgyDNIrS4" start="00:00" end="16:17"/>
-    <h2>2.2. The Division Algorithm</h2>
+    <misseldine url="../notes/lec-06-division.pdf">
 
-    <div class="theorem">
-        <h3>Theorem 2.2.1 (The Division Algorithm)</h3>
-        <p>If `a, b \in \mathbb{Z}` and if `b > 0`, then there are unique integers `q` and `r` such that</p>
-        <p>\[ a = qb + r \]</p>
-        <p>where</p>
-        <p>\[ 0 \le r < b \]</p>
-    </div>
+        <h2>2.2. The Division Algorithm</h2>
 
-    <p><b>Proof.</b>
-        Let `S = \{a - bk \mid k \in \mathbb{Z},\; a - bk \ge 0\}`,
-        which is a subset of the natural numbers. If `a \ge 0`, then `a
-        - b \cdot 0 \in S`. If `a < 0`, then `a - b(2a) = a(1- 2b) \ge
-        0`, so `a - b(2a) \in S`. In either case, `S` is not empty. By
-        the well-ordering principle, there is a minimal element of `S`,
-        call it `r`. Let `q` be an integer for which `r = a - bq`.
-    </p>
+        <div class="theorem">
+            <h3>Theorem 2.2.1 (The Division Algorithm)</h3>
+            <p>If `a, b \in \mathbb{Z}` and if `b > 0`, then there are unique integers `q` and `r` such that</p>
+            <p>\[ a = qb + r \]</p>
+            <p>where</p>
+            <p>\[ 0 \le r < b \]</p>
+        </div>
 
-    <p>
-        We claim that `0 \le r < b`. By definition of `S`, it must be
-        that `r \ge 0`. Consider the number `a - b(q + 1)`, which is
-        smaller than `r`. Since `r` is minimal in `S`, we conclude
-        that `a - b(q + 1) < 0`, which implies that
+        <p><b>Proof.</b>
+            Let `S = \{a - bk \mid k \in \mathbb{Z},\; a - bk \ge 0\}`,
+            which is a subset of the natural numbers. If `a \ge 0`, then `a
+            - b \cdot 0 \in S`. If `a < 0`, then `a - b(2a) = a(1- 2b) \ge
+            0`, so `a - b(2a) \in S`. In either case, `S` is not empty. By
+            the well-ordering principle, there is a minimal element of `S`,
+            call it `r`. Let `q` be an integer for which `r = a - bq`.
+        </p>
 
-        \[ r - b < 0 \quad \text{or} \quad r < b.  \]
+        <p>
+            We claim that `0 \le r < b`. By definition of `S`, it must be
+            that `r \ge 0`. <br> Consider the number `a - b(q + 1)`, which is
+            smaller than `r`. Since `r` is minimal in `S`, we conclude
+            that `a - b(q + 1) < 0`, which implies that
 
-        Therefore, there exist integers `q` and `r` such that `a = bq
-        + r` and `0 \le r < b`.
-    </p>
+            \[ r - b < 0 \quad \text{or} \quad r < b.  \]
 
-    <p>
-        To show that these numbers are unique, suppose that
+            Therefore, there exist integers `q` and `r` such that `a = bq
+            + r` and `0 \le r < b`.
+        </p>
 
-        \[ a = bq + r \quad \text{and} \quad a = bq' + r', \]
+        <p>
+            To show that these numbers are unique, suppose that
 
-        with `0 \le r, r' < b`. Without loss of generality, assume
-        that `r' \ge r`. Then,
+            \[ a = bq + r \quad \text{and} \quad a = bq' + r', \]
 
-        \[ bq + r = bq' + r' \quad \Rightarrow \quad b(q - q') = r' -
-        r \ge 0. \]
+            with `0 \le r, r' < b`. Without loss of generality, assume
+            that `r' \ge r`. Then,
+
+            \[ bq + r = bq' + r' \quad \Rightarrow \quad b(q - q') = r' -
+            r \ge 0. \]
+            
+            Thus, `b` divides `r' - r` and since `r' - r < b` the only
+            possibility is `r' - r = 0`, so `r' = r` and consequently `q =
+            q'`.
+        </p>
+    </misseldine>
+    
+    <hr>
+    
+    <scribe>
+        <p>
+            <b> Lean proof translation breakdown </b>. This is where the proof above is picked apart sentence by sentence.
+        </p>
         
-        Thus, `b` divides `r' - r` and since `r' - r < b` the only
-        possibility is `r' - r = 0`, so `r' = r` and consequently `q =
-        q'`.
-    </p>
+        <line> Let `S = \{a - bk \mid k \in \mathbb{Z},\; a - bk \ge 0\}`, which is a subset of the natural numbers. </line>
 
+        <p> Caution, if `S` is not defined with care, then entire proof will be infected with type coercions. </p>
+
+        <line> If `a \ge 0`, then `a - b \cdot 0 \in S`. </line>
+
+        <code> have hsb : 0 < a → a - b * 0 ∈ S </code>
+        
+        <line> If `a < 0`, then `a - b(2a) = a(1- 2b) \ge 0`, so `a - b(2a) \in S`. </line>
+
+        <line> In either case, `S` is not empty. </line>
+        
+        <line> By the well-ordering principle, there is a minimal element of `S`, call it `r`. Let `q` be an integer for which `r = a - bq`. </line>
+        
+    </scribe>
+    
 </page>
+
+
+

@@ -47,8 +47,6 @@
 		    Prove `(A \cap B)' = A' \cup B'`.
         </p>
         
-        <hr/>
-        <todo> translate problem to Lean </todo>
     </hw1>
 
     <hw1 prob="10" xml:id="sets-exercise-set-minus-union">
@@ -72,12 +70,9 @@
         </hint>
         
         <hr/>
-        <todo> translate problem to Lean </todo>
     </hw1>
 
-    https://github.com/drhodes/aata/blob/master/src/sets.xml
-
-
+    <!-- https://github.com/drhodes/aata/blob/master/src/sets.xml -->
 
     <hw1 prob="12" xml:id="sets-exercise-set-minus-empty-set">
         
@@ -102,11 +97,13 @@
         </p>
         
         <hint>
-            <p>
-                `A \setminus (B \cup C) = A \cap (B \cup C)' = (A \cap A)
-                \cap (B' \cap C') = (A \cap B') \cap (A \cap C') = (A
-                \setminus B) \cap (A \setminus C)`.
-            </p>
+            <align>
+                A \setminus (B \cup C)
+                &= A \cap (B \cup C) \\
+                &= (A \cap A) \cap (B' \cap C') \\
+                &= (A \cap B') \cap (A \cap C') \\
+                &= (A \setminus B) \cap (A \setminus C).
+            </align>
         </hint>
     </hw1>
 

@@ -5,6 +5,39 @@ import re
 
 # patchup file.
 
+# def include_namespace(tree, el):
+#     el.tag = "div"
+#     filename = el.get("file")
+#     ns = el.get("namespace")
+
+#     print(ns)
+#     print(filename)
+#     if not os.path.isfile(filename):
+#         raise Exception(f"Could not find lean source {{filename}}")
+
+#     text = open(filename).read()
+
+#     pattern = rf'(namespace\s+{re.escape(ns)}.*?end\s+{re.escape(ns)})'    
+#     match = re.search(pattern, text, re.DOTALL)
+    
+#     if match:
+#         text = match.group(1).strip()
+#         cleaned_text = re.sub(r'\n*\s*section solution.*?end solution', '\n', text, flags=re.DOTALL)
+#         cleaned_text.strip()
+#         el.text = re.sub(r'\n{3,}', '\n\n', cleaned_text)
+#     else:
+#         el.text = f"Could not find namespace {ns}"
+#         print("No match found")
+    
+#     return tree
+
+def get_line_number(text, start_pos):
+    """
+    Returns the line number of the start position in the text.
+    """
+    lines_before = text[:start_pos].splitlines()  # All lines before the match
+    return len(lines_before) + 1  # Line numbers are 1-based
+
 def include_namespace(tree, el):
     el.tag = "div"
     filename = el.get("file")
@@ -12,23 +45,35 @@ def include_namespace(tree, el):
 
     print(ns)
     print(filename)
+    
     if not os.path.isfile(filename):
-        raise Exception(f"Could not find lean source {{filename}}")
+        raise Exception(f"Could not find lean source {filename}")
 
-    text = open(filename).read()
+    with open(filename, 'r') as f:
+        text = f.read()
 
     pattern = rf'(namespace\s+{re.escape(ns)}.*?end\s+{re.escape(ns)})'    
     match = re.search(pattern, text, re.DOTALL)
     
     if match:
+        # Get the start of the match and calculate the line number using the helper function
+        start_pos = match.start()
+        line_number = get_line_number(text, start_pos)
+        el.set("line-number", str(line_number))
+        print(f"Namespace {ns} starts at line {line_number}")
+        
+        # Clean up the solution section and strip the result
         text = match.group(1).strip()
-        cleaned_text = re.sub(r'\n*\s*section solution.*?end solution', '\n', text, flags=re.DOTALL)
-        cleaned_text.strip()
+        cleaned_text = re.sub(r'\n*\s*section solution.*?end solution', '\n', text, flags=re.DOTALL).strip()
         el.text = re.sub(r'\n{3,}', '\n\n', cleaned_text)
-    else:        
+    else:
+        el.text = f"Could not find namespace {ns}"
         print("No match found")
     
     return tree
+
+
+
 
 
 def include_solution(tree, el):

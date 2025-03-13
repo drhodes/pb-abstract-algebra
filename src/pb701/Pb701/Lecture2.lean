@@ -3,6 +3,9 @@ import Mathlib
 
 namespace Lecture2
 
+
+
+
 -----------------------------------------------------------------
 namespace Definition_1_2_12
 
@@ -12,8 +15,6 @@ variable
   (h : A = {{1}, {2}})
 
 example : Π i : ℕ, A = {} := by
-
-
   sorry
 
 end Definition_1_2_12
@@ -23,14 +24,13 @@ end Definition_1_2_12
 namespace Example_1_2_13
 open Set
 
+
 variable
   (x y : ℝ)
   (A B C : Set ℝ)
   (ha : A = {x, y})
   (hb : B = {1, 2, 3})
   (hc : C = ∅)
-
--- Note: For sets in Mathlib, the cartesian product uses a superscript: (×ˢ)
 
 example : A ×ˢ B = {(x, 1), (x,2), (x, 3), (y, 1), (y, 2), (y, 3)} := by sorry
 example : A ×ˢ C = ∅ := by sorry
@@ -171,8 +171,27 @@ example : Function.Bijective (fun (x : ℝ) => x ^ 3) := by
     sorry
 end try1
 
+-- ------------------------------------------------------------------------------
+namespace Example_1_2_16
+variable (f : ℚ → ℚ) (p q : ℚ)
+
+local infix:50 "∼" => fun p q => f (p / q) = p.numer
+
+example : Reflexive (· ∼ ·) := by
+  dsimp [Reflexive]
+  apply Int.ModEq.refl
+
+-- example : Symmetric (· ∼ ·) := by
+--   dsimp [Symmetric]
+--   apply Int.ModEq.symm
+
+-- example : Transitive (· ∼ ·) := by
+--   dsimp [Transitive]
+--   apply Int.ModEq.trans
 
 
+
+end Example_1_2_16
 end Lecture2
 
 

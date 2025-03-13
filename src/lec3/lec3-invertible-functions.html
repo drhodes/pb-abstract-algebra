@@ -1,71 +1,75 @@
 <page title="Invertible Functions" path="lecture3/inv-func">
-    <quote who="Michael J. Fox" context="">
-        My happiness grows in direct proportion to my acceptance, and in inverse proportion to my expectations.
-    </quote>
-	
-    <vid desc="lecture3" youtubeid="r-IPV76_WkQ" start="00:00" end="12:46"/>
-    
+  <quote who="Michael J. Fox" context="">
+    My happiness grows in direct proportion to my acceptance, and in inverse
+    proportion to my expectations.
+  </quote>
+
+  <vid desc="lecture3" youtubeid="r-IPV76_WkQ" start="00:00" end="12:46" />
+
+  <misseldine url="../notes/lec3-inverse-functions.pdf">
     <h3>1.2. Sets and Equivalence Relations</h3>
 
-    <p><strong>Example 1.2.22.</strong> Consider the mapping 
-        `f : A \to A`, with `A \neq \varnothing`, defined by the rule 
-        `f(a) = a` for all `a \in A`. This mapping is known as the identity function, is denoted 
-        `\operatorname{id}_A`, and is always bijective.
-    </p>
+    <ex num="1.2.22" name="`\text{id}_A`">
+      Consider the mapping `f : A \to A`, with `A \neq \varnothing`, defined
+      by the rule `f(a) = a` for all `a \in A`. This mapping is known as the
+      identity function, is denoted `\operatorname{id}_A`, and is always
+      bijective.
+    </ex>
 
-    <p><strong>Definition 1.2.23.</strong> Let 
-        `f : A \to B` be a function. We say that `f` is invertible if there exists a function 
-        `f^{-1} : B \to A`, called the inverse of `f`, such that
-    </p>
+    <def num="1.2.23" name="invertible">
+      Let `f : A \to B` be a function. We say that `f` is
+      <term>invertible</term> if there exists a function `f^{-1} : B \to A`,
+      called the <term>inverse</term> of `f`, such that
 
-    <p class="center">
-        `f^{-1} \circ f = \operatorname{id}_A` and `f \circ f^{-1} = \operatorname{id}_B`.
-    </p>
 
-    <p>When an inverse exists, it is unique. We will see that this is a property true for all groups.</p>
+      \[ f^{-1} \circ f = \text{id}_A\quad \text{and}\quad f \circ f^{-1} = \text{id}_B. \]
 
-    <p><strong>Example 1.2.24.</strong> The functions 
-        `f(x) = x^3` and `g(x) = e^x` are invertible, real-valued functions since 
-        `f^{-1}(x) = \sqrt[3]{x}` and `g^{-1}(x) = \ln x`. Note that 
+      <p>When an inverse exists, it is unique. We will see that this is a property true for all groups.</p>
+    </def>
+
+    <ex num="1.2.24" name="invertible">
+      <p>
+        The functions `f(x) = x^3` and `g(x) = e^x` are invertible, real-valued functions since
+        `f^{-1}(x) = \sqrt[3]{x}` and `g^{-1}(x) = \ln x`. Note that
         `f^{-1} : \mathbb{R} \to \mathbb{R}` and `g^{-1} : (0,\infty) \to \mathbb{R}`.
-    </p>
+      </p>
 
-    <p>On the other hand, the function 
-        `h_1 : \mathbb{R} \to [0,\infty)` given by `h_1(x) = x^2` is <strong>NOT</strong> invertible. It is tempting to believe that 
+      <p>
+        On the other hand, the function
+        `h_1 : \mathbb{R} \to [0,\infty)` given by `h_1(x) = x^2` is <b>NOT</b> invertible. It is tempting to
+        believe that
         `h_1^{-1}(x) = \sqrt{x}`, but this is where the domain/codomain conventions of calculus can be ambiguous.
+      </p>
+
+      <p>
+        Note that although `\sqrt{x^2} = x` for all `x \ge 0`, we have
+        `\sqrt{x^2} = |x|`, which does not equal `x` for `x < 0`. On the other hand, the mapping `h_2 : [0,\infty) \to
+          [0,\infty)` given by `h_2(x)=x^2` is invertible with `h_2^{-1}(x)=\sqrt{x}`. It is important to recognize that
+          as functions `h_1 \neq h_2` even though they are defined by the same mathematical formula. </p>
+    </ex>
+  </misseldine>
+
+  <hr />
+
+  <scribe>
+    <p>
+      I couldn't find a definition in Mathlib for plain old inverse, but MoP
+      <a href="https://hrmacbeth.github.io/math2001/08_Functions.html#id24">has
+        one</a>. Mathlib does have definitions for left and right inverses, so
+      I've reused those. Inverses with restricted domains uses different
+      definitions as shown below.
     </p>
 
-    <p>Note that although 
-        `\sqrt{x^2} = x` for all `x \ge 0`, we have 
-        `\sqrt{x^2} = |x|`, which does not equal `x` for `x < 0`. On the other hand, the mapping 
-        `h_2 : [0,\infty) \to [0,\infty)` given by `h_2(x) = x^2` is invertible with 
-        `h_2^{-1}(x) = \sqrt{x}`.
-        It is important to recognize that as functions `h_1 \neq h_2` even though they are defined by the same mathematical formula.
+    <lean-example file="src/pb701/Pb701/Lecture3.lean" namespace="Definition_1_2_23" />
+
+    <p>
+      It's worth mentioning the naming convention for the Interval type with the
+      three letter name prefixed with "I" as seen below.
     </p>
 
-    <hr/>
+    <todo> build a lecture outlining how the family of intervals (Ixy) work. </todo>
 
-	
-    <scribe>
-        <p> I couldn't find a definition in Mathlib for plain old inverse, but MoP
-            <a href="https://hrmacbeth.github.io/math2001/08_Functions.html#id24">has one</a>. Mathlib
-            does have definitions for left and right inverse, so I've
-            used those instead of using composition. In cases with
-            restricted domains there are other definitions.
-        </p>
-        
-        <lean-example file="src/pb701/Pb701/Lecture3.lean" namespace="Definition_1_2_23"/>
+    <lean-example file="src/pb701/Pb701/Lecture3.lean" namespace="Example_1_2_24_1_3_easier" />
+  </scribe>
 
-        <p>
-            It's worth mentioning the naming convention for the
-            Interval type with the three letter name prefixed with "I"
-            as seen below.
-        </p>
-        
-        <lean-example file="src/pb701/Pb701/Lecture3.lean" namespace="Example_1_24_1_3_easier"/>
-
-		
-		
-    </scribe>
-    
 </page>

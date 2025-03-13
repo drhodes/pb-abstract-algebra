@@ -1,0 +1,45 @@
+<lab-page title="Mathlib: Intervals " path="lecture3/mathlib-intervals">
+    <p>
+        Mathlib has a number of convenient theorems for working with intervals,
+        for example, here is definition of <code>Ioo</code>.
+    </p>
+    <pre>
+variable {α : Type*} [Preorder α] {a b x : α}
+
+/-- Ioo a b is the left-open right-open interval (a, b). -/
+def Ioo (a b : α) := { x | a < x ∧ x < b }
+    </pre>
+
+    <p>
+        <code>Ioo</code> takes two values of type: `\alpha` that implements Preorder
+        and constructs an open set that represents the interval, as the mathlib docs say:
+    </p>
+
+    <b>mathlib docs</b><br>
+
+    In any preorder <code> α </code>, we define intervals
+    (which on each side can be either infinite, open, or closed)
+    using the following naming conventions:<br>
+
+    <ul>
+        <li><code>i</code>: infinite</li>
+        <li><code>o</code>: open</li>
+        <li><code>c</code>: closed</li>
+    </ul>
+    </p>
+
+    <p>
+        Each interval has the name <code>I</code> + letter for left side + letter for right side.
+        For instance,<code>Ioc a b</code> denotes the interval <code>(a, b]</code>.
+
+        <!-- We also define a typeclass <code>Set.OrdConnected</code> saying that a
+        set includes<code>Set.Icc a b</code>whenever it contains
+        both<code>a</code>and<code>b`</code>. -->
+
+    </p>
+
+
+    <lean-example file="src/pb701/Pb701/Lecture3.lean" namespace="interval_examples" />
+
+
+</lab-page>
