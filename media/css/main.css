@@ -34,6 +34,11 @@ body {
     width: 100%;
 }
 
+p {
+    margin-top: .2em;
+    margin-bottom: .4em;
+}
+
 .git-hash {
     font-size: .7em;
     color: grey;
@@ -61,8 +66,10 @@ body {
 
 code {
     font-size: .8em;
-    background-color: white;
-    border: 1px solid purple;
+    background-color: #efe;
+    border: 1px solid #0f0;
+    padding-left: .2em;
+    padding-right: .2em;
 }
 
 .undef {
@@ -194,19 +201,34 @@ pre {
 
 /* Section: definition */
 
-.sec {
-    font-size: 1.1em;
-    font-weight: bold;
+.sec-header {
+    font-size: 1em;
+    font-weight: bold;    
+    margin-right: .5em;
 }
+
+.sec {
+    font-size: 1em;        
+    margin-bottom: 1em;      
+}
+
 
 .def {
-    background-color: #fff;    
-    margin-bottom: 1em;
+    background-color: #faf;
 }
 
+.thm {
+    background-color: #aaf;
+}
+
+
+.corollary {
+    background-color: #aff;
+}
+
+
 .ex {
-    background-color: #fff;    
-    margin-bottom: 1em;
+    background-color: #ffa;        
 }
 
 .header {
@@ -397,17 +419,6 @@ iframe.vidframe {
     font-size: .9em;
     font-style: italic;
 }
-
-/* .sidebar-sections a {     */
-/*     display: block; */
-/*     padding-bottom: 5px;     */
-/*     text-decoration: none; */
-/*     display: inline-block; */
-/*     /\* width: 150px; /\\* Set your desired width *\\/ *\/ */
-/*     white-space: nowrap; /\* Prevent text wrapping *\/ */
-/*     overflow: hidden; /\* Hide any overflowing text *\/ */
-/*     text-overflow: ellipsis; /\* Show an ellipsis (...) for truncated text *\/ */
-/* } */
 
 .warning {
     background-color: #ffff0033;

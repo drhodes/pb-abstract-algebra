@@ -172,26 +172,21 @@ example : Function.Bijective (fun (x : ℝ) => x ^ 3) := by
 end try1
 
 -- ------------------------------------------------------------------------------
-namespace Example_1_2_16
-variable (f : ℚ → ℚ) (p q : ℚ)
 
-local infix:50 "∼" => fun p q => f (p / q) = p.numer
+namespace Example_ASDFASDF
 
-example : Reflexive (· ∼ ·) := by
-  dsimp [Reflexive]
-  apply Int.ModEq.refl
+def Relation (α β : Type) := Set (α × β)
 
--- example : Symmetric (· ∼ ·) := by
---   dsimp [Symmetric]
---   apply Int.ModEq.symm
+-- MoP uses lean4 functions as functions.
+def square (n : ℕ) : ℕ := n ^ 2
 
--- example : Transitive (· ∼ ·) := by
---   dsimp [Transitive]
---   apply Int.ModEq.trans
+
+#check Function.Bijective
 
 
 
-end Example_1_2_16
+end Example_ASDFASDF
+
 end Lecture2
 
 

@@ -88,7 +88,7 @@
     </define-macro>
 
     <define-macro name="lab-page" vars="title, path">
-        <page title="🧪 [[title]]" path="[[path]]">
+        <page title="⏣ [[title]]" path="[[path]]">
             <contents />
         </page>
     </define-macro>
@@ -121,18 +121,17 @@
 
     <define-macro name="sidebar">
         <div class="sidebar">
-            <div class="course-title"> Formalizing </div>
-            <div class="course-title"> Abstract Algebra I </div>
+            <div class="course-title"> Hacking </div>
+            <div class="course-title"> Abstract Algebra</div>
+            <div class="course-title"> with Lean</div>
             <div class="sticky-top">
-                <div class="lecture-menu" />
+                <div class="lecture-menu"/>
             </div>
         </div>
     </define-macro>
 
     <define-macro name="bu">
-        <b><u>
-                <contents />
-            </u></b>
+        <b><u> <contents /> </u></b>
     </define-macro>
 
     <define-macro name="def" vars="num, name">
@@ -144,9 +143,11 @@
     </define-macro>
 
     <define-macro name="thm" vars="num, name">
-        <sec num="[[num]]" name="[[name]]" header="Theorem">
-            <contents />
-        </sec>
+        <div class="thm">
+            <sec num="[[num]]" name="[[name]]" header="Theorem">
+                <contents />
+            </sec>    
+        </div>
     </define-macro>
 
     <define-macro name="ex" vars="num, name">
@@ -157,14 +158,36 @@
         </div>
     </define-macro>
 
-    <define-macro name="sec" vars="num, name, header">
-        <div>
-            <span class="sec"> [[header]] [[num]]. ([[name]]) </span>
-            <p>
+    <define-macro name="ex" vars="num">
+        <div class="ex">
+            <sec num="[[num]]" header="Example">
                 <contents />
-            </p>
+            </sec>
         </div>
     </define-macro>
+
+    <define-macro name="corollary" vars="n">
+        <div class="corollary">
+            <sec num="[[n]]" header="Corollary">
+                <contents />
+            </sec>
+        </div>
+    </define-macro>
+
+    <define-macro name="sec" vars="num, name, header">
+        <div class="sec">
+            <span class="sec-header"> [[header]] [[num]]. ([[name]]) </span>
+            <contents />
+        </div>
+    </define-macro>
+
+    <define-macro name="sec" vars="num, header">
+        <div class="sec">
+            <span class="sec-header"> [[header]] [[num]]. </span>
+            <contents />
+        </div>
+    </define-macro>
+
 
     <define-macro name="vid-cite" vars="author, youtubeid, start, end">
         <div class="vid-cite">
@@ -384,11 +407,17 @@
             <contents />
         </hw>
     </define-macro>
+
     <define-macro name="hw7" vars="prob">
         <hw psetnum="7" prob="[[prob]]">
-            <contents />
+            <from-book url="http://abstract.ups.edu/aata/groups-exercises.html">
+                <contents />
+            </from-book>
+            <lean-example file="src/pb701/Pb701/pset7.lean" namespace="P[[prob]]" />
         </hw>
     </define-macro>
+
+
     <define-macro name="hw8" vars="prob">
         <hw psetnum="8" prob="[[prob]]">
             <contents />

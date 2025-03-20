@@ -8,6 +8,6 @@ notes:
 	rsync -rv material/4220/notes ${SITE}
 
 .PHONY: media
-media: ${SITE}/media
-${SITE}/media: media/css/* media/js/* notes
+media: ${SITE}/media notes
+${SITE}/media: media/css/* media/js/* 
 	rsync -rv media ${SITE}

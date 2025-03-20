@@ -1,5 +1,24 @@
 video-lectures/
 material/books/temp
+web/webserve
+
+.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+.prettierrc
+
+material/formalising-mathematics-2024/
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

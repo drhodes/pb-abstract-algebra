@@ -1,26 +1,26 @@
 <page title="Sets and Membership" path="lecture1/sets">
-  <vid desc="lecture1" youtubeid="GLDPH62L72M" start="00:00" end="15:58" />
+  <vid youtubeid="GLDPH62L72M" start="00:00" end="15:58" />
 
 
   <scribe>
     This lecture includes an introduction to Prof. Misseldine's course, and was
-    included for the sake of completeness. Since there is <a
-    href="./intro.html">so much available material</a> for formalizing sets in
-    lean, I'm not going to add any exercises here. However, there is problem set
-    if you're feeling up to it.
-
+    included for the sake of completeness. Since there is 
+    <a href="./intro.html">so much available material</a> regarding the
+    formalization of sets in Lean, I'm not going to add any exercises here.
+    However, there is problem set if you're feeling up to it.
   </scribe>
 
   <misseldine url="../notes/lec1-sets.pdf">
     <h3>1.2. Sets and Membership</h3>
 
     <def num="1.2.1" name="Set">
-      A set is a well-defined collection of distinct objects. The
+
+      A <term>set</term> is a well-defined collection of distinct objects. The
       objects of a set are called its elements. By "well-defined" we
       mean that there is a rule that enables one to determine whether
       a given object is an element of the set or not. If a set has no
       elements, it is called the empty set and is denoted
-      `\varnothing` or `\{\}`.
+      `\varnothing` or `\{\}`.      
     </def>
 
     <p>
@@ -61,7 +61,7 @@
       an element of."
     </def>
 
-    <ex num="1.2.3" name="Membership">
+    <ex num="1.2.3">
       Let `A = \{1, 2, 3, 4\}`. To denote that `2` is an element of
       the set `A`, we write `2 \in A`. To denote that `5` is not an
       element of `A`, we write `5 \notin A`.

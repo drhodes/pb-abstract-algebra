@@ -1,0 +1,44 @@
+<lab-page title="Mathlib: Closure" path="lecture7/mathlib-closure">
+    <p>
+        Since we're mainly working with types and not sets, closure for binary
+        operations is naturally expressed by the type `{α → α → α}`, and
+        is strictly enforced by the type system.
+    </p>
+    <p>
+        In the previous lecture, examples of binary operations were given, such
+        as addition and subtraction. A number of type classes are available in
+        mathlib that provide common interfaces for defining these binary
+        operations.
+    </p>
+
+    <p>
+        <br>
+        <b>Example: Add</b>
+
+    <pre>
+class Add (α : Type u) where
+  /-- `a + b` computes the sum of `a` and `b`. See `HAdd`. -/
+  add : α → α → α
+    </pre>
+
+    </p>
+
+    <p>
+        If we're working with a custom type and would like to define addition
+        for it, then we can implement <code>Add</code> which enable the use of
+        <code>+</code>.  Analogously, the same is true for <code>Sub</code> with
+        the caveats mention in lecture on closure.
+`    </p>
+
+
+    <p>
+        Please see the following chapter to learn more about doing math with
+        custom types:<br>
+
+        <ref url="https://leanprover-community.github.io/mathematics_in_lean/C06_Structures.html">
+            Mathematic in Lean: Ch 6, Structures
+        </ref>
+    </p>
+
+    
+</lab-page>

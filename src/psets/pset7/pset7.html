@@ -1,197 +1,172 @@
 <!-- Judson 3.5 : 1, Pick 2 (7, 10, 12–14), Pick 2 (19–24) -->
 <div>
-    <hw7 prob="1" note="groups-exercise-find-x-modn">
-        <p>
-          Find all `x \in {\mathbb Z}` satisfying each of the following equations.
+  <hw7 prob="1">
+    <p> Find all `x \in {\mathbb Z}` satisfying each of the following equations.</p>
 
-          <ol type="a" cols="2">
-            <li>
-              <p>
-                  `3x \equiv 2 \pmod{7}`
-              </p>
-            </li>
-
-            <li>
-              <p>
-                `5x + 1 \equiv 13 \pmod{23}`
-              </p>
-            </li>
-
-            <li>
-              <p>
-                `5x + 1 \equiv 13 \pmod{26}`
-              </p>
-            </li>
-
-            <li>
-              <p>
-                `9x \equiv 3 \pmod{5}`
-              </p>
-            </li>
-
-            <li>
-              <p>
-                `5x \equiv 1 \pmod{6}`
-              </p>
-            </li>
-
-            <li>
-              <p>
-                `3x \equiv 1 \pmod{6}`
-              </p>
-            </li>
-          </ol>
-        </p>
-      <hint>
-          <p>
-              (a) `3 + 7 \mathbb Z = \{ \ldots, -4, 3, 10, \ldots \}`<br/>
-              (c) `18 + 26 \mathbb Z`<br/>
-              (e) `5 + 6 \mathbb Z`.
-        </p>
-      </hint>
-    </hw7>
+    <ol type="a" cols="2">
+      <li> `3x \equiv 2 \pmod{7}` </li>
+      <li> `5x + 1 \equiv 13 \pmod{23}` </li>
+      <li> `5x + 1 \equiv 13 \pmod{26}` </li>
+      <li> `9x \equiv 3 \pmod{5}` </li>
+      <li> `5x \equiv 1 \pmod{6}`  </li>
+      <li> `3x \equiv 1 \pmod{6}` </li>
+    </ol>
     
-    <hw7 prob="7" note="groups-exercise-group-operation-on-R-except-minus1">
-        <p>
-            Let `S = {\mathbb R} \setminus \{ -1 \}` and define a binary operation on `S` by `a \ast b = a + b + ab`.
-            Prove that `(S, \ast)` is an abelian group.
-        </p>
-        
-    </hw7>
-    
-    <hw7 prob="10" note="groups-exercise-heisenberg-group">
-        
-        <p>
-            Prove that the set of matrices of the form
-            \[
-            \begin{pmatrix}
-            1 &amp; x &amp; y \\
-            0 &amp; 1 &amp; z \\
-            0 &amp; 0 &amp; 1
-            \end{pmatrix}
-            \]
-            is a group under matrix multiplication.
-            This group, known as the
-            <term>Heisenberg group</term>,
-            is important in quantum physics.
-            Matrix multiplication in the Heisenberg group is defined by
-            \[
-            \begin{pmatrix}
-            1 &amp; x &amp; y \\
-            0 &amp; 1 &amp; z \\
-            0 &amp; 0 &amp; 1
-            \end{pmatrix}
-            \begin{pmatrix}
-            1 &amp; x' &amp; y' \\
-            0 &amp; 1 &amp; z' \\
-            0 &amp; 0 &amp; 1
-            \end{pmatrix}
-            =
-            \begin{pmatrix}
-            1 &amp; x+x' &amp; y+y'+xz' \\
-            0 &amp; 1 &amp; z+z' \\
-            0 &amp; 0 &amp; 1
-            \end{pmatrix}
-            \].
-        </p>
-        
-    </hw7>
+    <hint>
+      <p>
+        (a) `3 + 7 \mathbb Z = \{ \ldots, -4, 3, 10, \ldots \}`<br />
+        (c) `18 + 26 \mathbb Z`<br />
+        (e) `5 + 6 \mathbb Z`.
+      </p>
+    </hint>
 
-    <hw7 prob="12" note="groups-exercise-Zn-group">
-        
-        <p>
-            Let `{\mathbb Z}_2^n = \{ (a_1, a_2, \ldots,
-            a_n) : a_i \in {\mathbb Z}_2 \}`.
-            Define a binary operation on `{\mathbb Z}_2^n` by
-            \[
-            (a_1, a_2, \ldots, a_n) + (b_1, b_2, \ldots, b_n) = (a_1 + b_1, a_2 + b_2, \ldots, a_n + b_n)
-            \].
-            Prove that `{\mathbb Z}_2^n` is a group under this operation.
-            This group is important in algebraic coding theory.
-        </p>
-        
-    </hw7>
 
-    <hw7 prob="13" note="groups-exercise-R-star">
-        
-        <p>
-            Show that `{\mathbb R}^{\ast} = {\mathbb R} \setminus \{0 \}` is a group under the operation of multiplication.
-        </p>
-        
-    </hw7>
 
-    <hw7 prob="14" note="groups-exercise-product-R-star-Z">
-        
-        <p>
-            Given the groups `{\mathbb R}^{\ast}` and `{\mathbb Z}`,
-            let `G = {\mathbb R}^{\ast} \times {\mathbb Z}`.
-            Define a binary operation `\circ` on `G` by `(a,m) \circ (b,n) = (ab,
-            m + n)`.
-            Show that `G` is a group under this operation.
-        </p>
-        
-    </hw7>
-    
 
-    <hw7 prob="19" note="groups-exercise-additive-identity-Zn">
-        
-        <p>
-            Show that
-            \[
-            0 + a  \equiv a + 0  \equiv a \pmod{ n }
-            \]
-            for all `a \in {\mathbb Z}_n`.
-        </p>
-        
-    </hw7>
+  </hw7>
 
-    <hw7 prob="20" note="groups-exercise-multiplicative-identity-Zn">
-        
-        <p>
-            Prove that there is a multiplicative identity for the integers modulo `n`:
-            \[
-            a \cdot  1   \equiv  a \pmod{n}.
-            \]
-        </p>
-        
-    </hw7>
+  <hw7 prob="7">
+    <p>
+      Let `S = {\mathbb R} \setminus \{ -1 \}` and define a binary operation on `S` by `a \ast b = a + b + ab`.
+      Prove that `(S, \ast)` is an abelian group.
+    </p>
 
-    <hw7 prob="21" note="groups-exercise-addition-commutative-Zn">
-        
-        <p>
-            For each `a \in {\mathbb Z}_n` find an element `b \in {\mathbb Z}_n` such that
-            \[
-            a + b \equiv b + a  \equiv 0 \pmod{ n}.
-            \]
-        </p>
-        
-    </hw7>
+  </hw7>
 
-    <hw7 prob="22" note="groups-exercise-Zn-operations-well-defined">
-        
-        <p>
-            Show that addition and multiplication mod `n` are well defined operations.
-            That is, show that the operations do not depend on the choice of the representative from the equivalence classes mod `n`.
-        </p>
-        
-    </hw7>
+  <hw7 prob="10">
 
-    <hw7 prob="23" note="groups-exercise-Zn-associative">
-        
-        <p>
-            Show that addition and multiplication mod `n` are associative operations.
-        </p>
-        
-    </hw7>
+    <p>
+      Prove that the set of matrices of the form
+      \[
+      \begin{pmatrix}
+      1 & x & y \\
+      0 & 1 & z \\
+      0 & 0 & 1
+      \end{pmatrix}
+      \]
+      is a group under matrix multiplication.
+      This group, known as the
+      <term>Heisenberg group</term>,
+      is important in quantum physics.
+      Matrix multiplication in the Heisenberg group is defined by
+      \[
+      \begin{pmatrix}
+      1 & x & y \\
+      0 & 1 & z \\
+      0 & 0 & 1
+      \end{pmatrix}
+      \begin{pmatrix}
+      1 & x' & y' \\
+      0 & 1 & z' \\
+      0 & 0 & 1
+      \end{pmatrix}
+      =
+      \begin{pmatrix}
+      1 & x+x' & y+y'+xz' \\
+      0 & 1 & z+z' \\
+      0 & 0 & 1
+      \end{pmatrix}
+      \].
+    </p>
 
-    <hw7 prob="24" note="groups-exercise-Zn-distribute">
-        
-        <p>
-            Show that multiplication distributes over addition modulo `n`:
-            \[
-            a(b  + c)  \equiv ab + ac  \pmod{n}.
-            \]
-        </p>
-        
-    </hw7>
+  </hw7>
+
+  <hw7 prob="12">
+
+    <p>
+      Let `{\mathbb Z}_2^n = \{ (a_1, a_2, \ldots,
+      a_n) : a_i \in {\mathbb Z}_2 \}`.
+      Define a binary operation on `{\mathbb Z}_2^n` by
+      \[
+      (a_1, a_2, \ldots, a_n) + (b_1, b_2, \ldots, b_n) = (a_1 + b_1, a_2 + b_2, \ldots, a_n + b_n)
+      \].
+      Prove that `{\mathbb Z}_2^n` is a group under this operation.
+      This group is important in algebraic coding theory.
+    </p>
+
+  </hw7>
+
+  <hw7 prob="13">
+
+    <p>
+      Show that `{\mathbb R}^{\ast} = {\mathbb R} \setminus \{0 \}` is a group under the operation of multiplication.
+    </p>
+
+  </hw7>
+
+  <hw7 prob="14">
+
+    <p>
+      Given the groups `{\mathbb R}^{\ast}` and `{\mathbb Z}`,
+      let `G = {\mathbb R}^{\ast} \times {\mathbb Z}`.
+      Define a binary operation `\circ` on `G` by `(a,m) \circ (b,n) = (ab,
+      m + n)`.
+      Show that `G` is a group under this operation.
+    </p>
+
+  </hw7>
+
+
+  <hw7 prob="19">
+
+    <p>
+      Show that
+      \[
+      0 + a \equiv a + 0 \equiv a \pmod{ n }
+      \]
+      for all `a \in {\mathbb Z}_n`.
+    </p>
+
+  </hw7>
+
+  <hw7 prob="20">
+
+    <p>
+      Prove that there is a multiplicative identity for the integers modulo `n`:
+      \[
+      a \cdot 1 \equiv a \pmod{n}.
+      \]
+    </p>
+
+  </hw7>
+
+  <hw7 prob="21">
+
+    <p>
+      For each `a \in {\mathbb Z}_n` find an element `b \in {\mathbb Z}_n` such that
+      \[
+      a + b \equiv b + a \equiv 0 \pmod{ n}.
+      \]
+    </p>
+
+  </hw7>
+
+  <hw7 prob="22">
+
+    <p>
+      Show that addition and multiplication mod `n` are well defined operations.
+      That is, show that the operations do not depend on the choice of the representative from the equivalence classes
+      mod `n`.
+    </p>
+
+  </hw7>
+
+  <hw7 prob="23">
+
+    <p>
+      Show that addition and multiplication mod `n` are associative operations.
+    </p>
+
+  </hw7>
+
+  <hw7 prob="24">
+
+    <p>
+      Show that multiplication distributes over addition modulo `n`:
+      \[
+      a(b + c) \equiv ab + ac \pmod{n}.
+      \]
+    </p>
+
+  </hw7>
 </div>
