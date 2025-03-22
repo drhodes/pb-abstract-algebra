@@ -94,9 +94,12 @@
     </define-macro>
 
     <define-macro name="layout" vars="title">
-        <div class="layout">
-            <sidebar />
-            <contents />
+        <div class="outer-layout">
+            <div class="course-title"> Hacking Abstract Algebra with Lean</div>
+            <div class="layout">
+                <sidebar />
+                <contents />
+            </div>
         </div>
     </define-macro>
 
@@ -121,17 +124,16 @@
 
     <define-macro name="sidebar">
         <div class="sidebar">
-            <div class="course-title"> Hacking </div>
-            <div class="course-title"> Abstract Algebra</div>
-            <div class="course-title"> with Lean</div>
             <div class="sticky-top">
-                <div class="lecture-menu"/>
+                <div class="lecture-menu" />
             </div>
         </div>
     </define-macro>
 
     <define-macro name="bu">
-        <b><u> <contents /> </u></b>
+        <b><u>
+                <contents />
+            </u></b>
     </define-macro>
 
     <define-macro name="def" vars="num, name">
@@ -146,7 +148,7 @@
         <div class="thm">
             <sec num="[[num]]" name="[[name]]" header="Theorem">
                 <contents />
-            </sec>    
+            </sec>
         </div>
     </define-macro>
 
@@ -166,6 +168,15 @@
         </div>
     </define-macro>
 
+    <define-macro name="ex" vars="name">
+        <div class="ex">
+            <sec header="Example" name="[[name]]"></sec>
+            <contents />
+            </sec>
+        </div>
+    </define-macro>
+
+
     <define-macro name="corollary" vars="n">
         <div class="corollary">
             <sec num="[[n]]" header="Corollary">
@@ -184,6 +195,13 @@
     <define-macro name="sec" vars="num, header">
         <div class="sec">
             <span class="sec-header"> [[header]] [[num]]. </span>
+            <contents />
+        </div>
+    </define-macro>
+
+    <define-macro name="sec" vars="name, header">
+        <div class="sec">
+            <span class="sec-header"> [[header]] ([[name]]) </span>
             <contents />
         </div>
     </define-macro>
@@ -416,7 +434,16 @@
             <lean-example file="src/pb701/Pb701/pset7.lean" namespace="P[[prob]]" />
         </hw>
     </define-macro>
-
+    
+    <define-macro name="wu" vars="psetnum, prob, namespace">
+        <page title="🔥Warmup for [[psetnum]]-[[prob]]" path="lecture[[psetnum]]/warmup-[[namespace]]">
+            <div class="hw">
+                <contents />
+            </div>
+            <lean-example file="src/pb701/Pb701/pset7.lean" namespace="[[namespace]]" />
+        </page>
+    </define-macro>
+    
 
     <define-macro name="hw8" vars="prob">
         <hw psetnum="8" prob="[[prob]]">
@@ -627,6 +654,10 @@
             <contents />
         </p>
     </define-macro>
+
+    <define-macro name="c">
+        <code><contents/>
+    </code>></define-macro>
 
 
 </macros>

@@ -169,3 +169,124 @@ namespace SolvingEq
 example : ∃ x, 2 * x + 1 ≡ 5 [ZMOD 7] := by exists 2;
 
 end SolvingEq
+
+
+namespace DigitSubtype
+
+def Digits := { x : ℤ // 1 ≤ x ∧ x ≤ 9 }
+
+instance : Add Digits where
+  add x y :=
+    let ⟨a, ha⟩ := x -- destructuring
+    let ⟨b, hb⟩ := y
+    ⟨a + b, by sorry⟩
+  --          -┴---┴- this can't be proven.
+
+end DigitSubtype
+
+namespace AddNotClosed
+
+def Digits := { x : ℤ // 1 ≤ x ∧ x ≤ 9 }
+
+theorem not_closed_under_add : ∃ a b : ℤ, (1 ≤ a ∧ a ≤ 9) ∧
+    (1 ≤ b ∧ b ≤ 9) ∧ ¬ (1 ≤ a + b ∧ a + b ≤ 9) := by
+  use 9, 9 -- 9 + 9 ≤ 9 ?
+  norm_num
+
+end AddNotClosed
+
+
+
+namespace CompositionGroup
+-- needs work.
+
+class UGroup (G : Type) [Mul G] [One G] [Inv G] where
+  mul : G → G → G
+  one : G
+  inv : G → G
+  --
+  one_mul : ∀ x : G, 1 * x = x
+  mul_one : ∀ x : G, x * 1 = x
+  inv_mul_cancel : ∀ x : G, x⁻¹ * x = 1
+  mul_assoc : ∀ x y z : G, x * y * z = x * (y * z)
+
+def F (a : Type) := { x : a → a // Function.HasLeftInverse x }
+
+variable (α : Type)
+
+instance : One (F α)
+  where one := ⟨id, by sorry⟩
+
+instance : Mul (F α)
+  where mul a b := ⟨a.val ∘ b.val, by sorry⟩
+
+instance : Inv (F α) where
+  inv f :=
+    let ⟨g, hg⟩ := f
+    ⟨choose hg, by sorry⟩
+
+
+
+
+
+instance : UGroup (F α) where
+  mul := Mul.mul
+  one := One.one
+  inv := Inv.inv
+  --
+  one_mul := by simp
+  mul_one := by simp
+
+  inv_mul_cancel := by simp
+  mul_assoc := by simp
+
+end -- noncomputable section.
+end CompositionGroup
+
+
+
+namespace testing1
+
+@[ext]
+structure Point where
+  x : ℝ
+  y : ℝ
+  z : ℝ
+
+#check Point.ext
+
+example (a b : Point) (hx : a.x = b.x) (hy : a.y = b.y) (hz : a.z = b.z) : a = b := by
+  ext
+  repeat' assumption
+
+def myPoint1 : Point where
+  x := 2
+  y := -1
+  z := 4
+
+def myPoint2 : Point :=
+  ⟨2, -1, 4⟩
+
+def myPoint3 :=
+  Point.mk 2 (-1) 4
+
+@[simp]
+def addAlt : Point → Point → Point
+  | Point.mk x₁ y₁ z₁, Point.mk x₂ y₂ z₂ => ⟨x₁ + x₂, y₁ + y₂, z₁ + z₂⟩
+
+@[simp]
+def addAlt' : Point → Point → Point
+  | ⟨x₁, y₁, z₁⟩, ⟨x₂, y₂, z₂⟩ => ⟨x₁ + x₂, y₁ + y₂, z₁ + z₂⟩
+
+@[simp]
+theorem addAlt_x (a b : Point) : (addAlt a b).x = a.x + b.x := by
+  rfl
+
+theorem addAlt_comm (a b : Point) : addAlt a b = addAlt b a := by
+  rw [addAlt, addAlt]
+  -- the same proof still works, but the goal view here is harder to read
+  ext <;> dsimp
+  repeat' apply add_comm
+
+
+end testing1

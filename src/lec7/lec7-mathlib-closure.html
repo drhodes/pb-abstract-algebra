@@ -1,4 +1,4 @@
-<lab-page title="Mathlib: Closure" path="lecture7/mathlib-closure">
+<lab-page title="Mathlib: Closure on subtypes" path="lecture7/mathlib-closure">
     <p>
         Since we're mainly working with types and not sets, closure for binary
         operations is naturally expressed by the type `{α → α → α}`, and
@@ -24,21 +24,47 @@ class Add (α : Type u) where
     </p>
 
     <p>
-        If we're working with a custom type and would like to define addition
-        for it, then we can implement <code>Add</code> which enable the use of
-        <code>+</code>.  Analogously, the same is true for <code>Sub</code> with
-        the caveats mention in lecture on closure.
-`    </p>
+        To define addition for a type, implement <code>Add</code>, which enables
+        the use of <code>+</code>. Similarly, <code>Sub</code>
+        can be implemented, subject to the caveats mentioned in the lecture
+        on closure.
+    
+        To reiterate, sometimes subtraction doesn't make sense, as is with the natural
+        numbers, for example:
 
+        \[ 2 - 3 \notin \mathbb{N}. \]
+    </p>
 
+    
+    
+
+    </ex>
+    
     <p>
+        What if we try to implement addition for a subtype of `\mathbb{Z}` called
+        Digits, which only contains the numbers `\{1, 2, \dots 9\}`?
+    </p>
+
+    <lean-example file="src/pb701/Pb701/Lecture7.lean" namespace="DigitSubtype"/>
+
+    <p> 
+        To show it can't be proven, one might use <c>extract_goal</c> in place
+        of <c>sorry</c> to find the following message:
+    </p>
+
+
+    <lean-example file="src/pb701/Pb701/Lecture7.lean" namespace="AddNotClosed"/>
+
+    <todo>Is there a way to show this more effectively?</todo>
+
+    <!-- <p>
         Please see the following chapter to learn more about doing math with
         custom types:<br>
 
         <ref url="https://leanprover-community.github.io/mathematics_in_lean/C06_Structures.html">
             Mathematic in Lean: Ch 6, Structures
         </ref>
-    </p>
+    </p> -->
 
     
 </lab-page>

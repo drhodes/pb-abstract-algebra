@@ -1,20 +1,43 @@
+import Lean
 import Mathlib
 import Duper
 
+namespace U
+
+protected
+class AddGroup (G : Type) extends Add G, Neg G, Zero G where
+  zero_add : ∀ x : G, 0 + x = x
+  add_zero : ∀ x : G, x + 0 = x
+  neg_add_cancel : ∀ x : G, -x + x = 0
+  add_assoc : ∀ x y z : G, x + y + z = x + (y + z)
+
+protected
+class Group (G : Type) [Mul G] [One G] [Inv G] where
+  mul : G → G → G
+  one : G
+  inv : G → G
+  --
+  one_mul : ∀ x : G, 1 * x = x
+  mul_one : ∀ x : G, x * 1 = x
+  inv_mul_cancel : ∀ x : G, x⁻¹ * x = 1
+  mul_assoc : ∀ x y z : G, x * y * z = x * (y * z)
+
+protected
+class CommGroup (G : Type) [Mul G] [One G] [Inv G] where
+  mul : G → G → G
+  one : G
+  inv : G → G
+  --
+  one_mul : ∀ x : G, 1 * x = x
+  mul_one : ∀ x : G, x * 1 = x
+  inv_mul_cancel : ∀ x : G, x⁻¹ * x = 1
+  mul_assoc : ∀ x y z : G, x * y * z = x * (y * z)
+  mul_comm : ∀ a b : G, a * b = b * a
+
+end U
+
+
 namespace P1
-
-def gcd (a b : Nat) : Nat :=
-  if h : b = 0 then
-    a
-  else
-    gcd b (a % b)
-
--- gemini figured out how to show termination
-termination_by (b, a % b)
-decreasing_by
-  apply Prod.Lex.left
-  apply Nat.mod_lt
-  exact Nat.zero_lt_of_ne_zero h
 
 example : ∃ x, 3 * x ≡ 2 [ZMOD 7] := by sorry
 example : ∃ x, 5 * x + 1 ≡ 13 [ZMOD 23] := by sorry
@@ -22,7 +45,6 @@ example : ∃ x, 5 * x + 1 ≡ 13 [ZMOD 26] := by sorry
 example : ∃ x, 9 * x ≡ 3 [ZMOD 5] := by sorry
 example : ∃ x, 5 * x ≡ 1 [ZMOD 6] := by sorry
 example : ¬ ∃ x, 3 * x ≡ 1 [ZMOD 6] := by sorry
-
 
 section solution
 
@@ -43,10 +65,7 @@ example : ¬ ∃ x, 3 * x ≡ 1 [ZMOD 6] := by
     rw [Int.modEq_iff_dvd] at this
     norm_num at this
   }
-
-
 end solution
-
 end P1
 
 namespace P7
@@ -54,16 +73,6 @@ namespace P7
 
 noncomputable section
 
-class UCommGroup (G : Type) [Mul G] [One G] [Inv G] where
-  mul : G → G → G
-  one : G
-  inv : G → G
-  --
-  one_mul : ∀ x : G, 1 * x = x
-  mul_one : ∀ x : G, x * 1 = x
-  inv_mul_cancel : ∀ x : G, x⁻¹ * x = 1
-  mul_assoc : ∀ x y z : G, x * y * z = x * (y * z)
-  mul_comm : ∀ a b : G, a * b = b * a
 
 abbrev R := {x : ℝ // x ≠ -1}
 
@@ -196,7 +205,7 @@ theorem subt_inv_mul_cancel (x : R) : x⁻¹ * x = 1 := by
     linarith
 
 --
-instance : UCommGroup R where
+instance : U.CommGroup R where
   mul := Mul.mul
   one := One.one
   inv := Inv.inv
@@ -216,15 +225,7 @@ end P7
 namespace P13
 noncomputable section
 
-class UGroup (α : Type) [Mul α] [One α] [Inv α] where
-  mul : α → α → α
-  one : α
-  inv : α → α
-  --
-  one_mul : ∀ x : α, 1 * x = x
-  mul_one : ∀ x : α, x * 1 = x
-  inv_mul_cancel : ∀ x : α, x⁻¹ * x = 1
-  mul_assoc : ∀ x y z : α, x * y * z = x * (y * z)
+
 
 --
 
@@ -260,7 +261,7 @@ theorem subt_inv_mul_cancel (x : ℝ₀) : x⁻¹ * x = 1 := by
   simp
   exact inv_mul_cancel₀ ha
 
-instance : UGroup ℝ₀ where
+instance : U.Group ℝ₀ where
   mul := Mul.mul
   one := One.one
   inv := Inv.inv
@@ -273,49 +274,40 @@ instance : UGroup ℝ₀ where
 end -- noncomputable section.
 end P13
 
-
+/-
 namespace ExSubtype
+noncomputable section
 
+abbrev ℝ₀ := {x : ℝ // x ≠ 0}
 
+instance : Mul ℝ₀ where
+  mul a b := ⟨a.val * b.val, mul_ne_zero a.property b.property⟩
 
--- noncomputable section
+instance : Inv ℝ₀ where
+  inv n := ⟨(n.val)⁻¹, by aesop⟩
 
--- abbrev ℝ₀ := {x : ℝ // x ≠ 0}
-
--- instance : Mul ℝ₀ where
---   mul a b := ⟨a.val * b.val, mul_ne_zero a.property b.property⟩
-
--- instance : Inv ℝ₀ where
---   inv n := ⟨1 / n.val, by aesop⟩
-
--- instance : One ℝ₀ where
---   one := ⟨1, by simp⟩
+instance : One ℝ₀ where
+  one := ⟨1, by simp⟩
 
 -- example (m : ℝ₀) : 1 * m = m := by
 --   have ⟨v, hv⟩ := m
 
 
 
-
-
-instance : Group ℝ₀ where
+instance : U.Group ℝ₀ where
   mul := Mul.mul
   one := One.one
   inv := Inv.inv
 
   one_mul (m : ℝ₀) : 1 * m = m := by sorry
-
-
-
   mul_one (a : ℝ₀) : a * 1 = a := by sorry
   mul_assoc (a b c : ℝ₀) : a * b * c = a * (b * c) := by sorry
   inv_mul_cancel (a : ℝ₀) : a⁻¹ * a = ⟨1, _⟩ := by sorry
 
-
-
 end ExSubtype
+-/
 
-
+/-
 namespace P100
 noncomputable section
 -- needs work.
@@ -362,7 +354,7 @@ instance : Group M where
 
 end
 end P100
-
+-/
 
 
 
@@ -427,3 +419,126 @@ instance : Group M where
   inv_mul_cancel (a : M) : a⁻¹ * a = (1 : M) := by sorry
   -/
 end P10
+
+
+namespace WarmupFinGroup
+
+abbrev T (n : ℕ) := (Fin n → ℤ)
+
+variable (m : ℕ) -- (hm : 0 < m)
+
+/-- no matter which index is passed into this zero function the result is always 0. -/
+instance : Zero (T m) where
+  zero := fun _ => (0 : ℤ)
+
+@[simp]
+lemma T.zero {n : ℕ} : (0 : T n) = fun _ => (0 : ℤ) := by rfl
+
+instance : Add (T m) where
+  add v w := fun i => ((v i) + (w i))
+
+@[simp]
+lemma T.add {n : ℕ} (v w : T n) : v + w = fun i => ((v i) + (w i)) := rfl
+
+instance : Neg (T m) where
+    neg v := fun i => - (v i)
+
+@[simp]
+lemma T.neg {n : ℕ} (v : T n) : -v = fun i => - (v i) := rfl
+
+instance : U.AddGroup (T m) where
+  add_assoc := add_assoc
+  zero_add := zero_add
+  add_zero := add_zero
+  neg_add_cancel := neg_add_cancel
+
+end WarmupFinGroup
+
+namespace WarmupZMod2
+
+abbrev T := ZMod 2
+
+instance : U.AddGroup T where
+  zero_add := sorry
+  add_zero := sorry
+  neg_add_cancel := sorry
+  add_assoc := sorry
+
+section solution
+
+instance : U.AddGroup T where
+  zero_add := zero_add
+  add_zero := add_zero
+  neg_add_cancel := neg_add_cancel
+  add_assoc := add_assoc
+
+end solution
+
+
+end WarmupZMod2
+
+
+namespace P12
+
+abbrev T (m : ℕ) := (Fin m → ZMod 2)
+
+variable (n : ℕ)
+instance : U.AddGroup (T n) where
+  zero_add := zero_add
+  add_zero := add_zero
+  neg_add_cancel := neg_add_cancel
+  add_assoc := add_assoc
+
+end P12
+
+
+namespace P14
+open P13
+#check ℝ₀
+
+noncomputable section
+abbrev G := ℝ₀ × ℤ
+
+instance : Mul G where
+  mul x y :=
+    let ⟨a, m⟩ := x
+    let ⟨b, n⟩ := y
+    ⟨a * b, m + n⟩
+
+@[simp]
+lemma G.mul_eq_mul (x y : G) : x * y = ⟨x.1 * y.1, x.2 + y.2⟩ := by rfl
+
+instance : One G where
+  one := ⟨1, 0⟩
+
+@[simp] protected
+lemma G.one_eq_one : (1 : G) = ⟨1, 0⟩ := by rfl
+
+instance : Inv G where
+  inv x :=
+    let ⟨a, m⟩ := x
+    let result : G := ⟨a⁻¹, -m⟩
+    result
+
+@[simp] protected
+lemma G.inv (x : G) : x⁻¹ = ⟨(x.1)⁻¹, -(x.2)⟩ := by rfl
+
+instance : U.Group G where
+  one := One.one
+  mul := Mul.mul
+  inv := Inv.inv
+  --
+  one_mul x := by simp
+
+  mul_one x := by simp
+  inv_mul_cancel := by
+    intro ⟨⟨_, ha1⟩, _⟩
+    simp
+    exact inv_mul_cancel₀ ha1
+
+  mul_assoc a b c := by
+    simp
+    simp [mul_assoc, add_assoc]
+
+end
+end P14
