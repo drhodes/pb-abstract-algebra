@@ -11,7 +11,7 @@ class AddGroup (G : Type) extends Add G, Neg G, Zero G where
   neg_add_cancel : ∀ x : G, -x + x = 0
   add_assoc : ∀ x y z : G, x + y + z = x + (y + z)
 
-protected
+
 class Group (G : Type) [Mul G] [One G] [Inv G] where
   mul : G → G → G
   one : G
@@ -21,6 +21,10 @@ class Group (G : Type) [Mul G] [One G] [Inv G] where
   mul_one : ∀ x : G, x * 1 = x
   inv_mul_cancel : ∀ x : G, x⁻¹ * x = 1
   mul_assoc : ∀ x y z : G, x * y * z = x * (y * z)
+
+
+
+
 
 protected
 class CommGroup (G : Type) [Mul G] [One G] [Inv G] where
@@ -34,8 +38,14 @@ class CommGroup (G : Type) [Mul G] [One G] [Inv G] where
   mul_assoc : ∀ x y z : G, x * y * z = x * (y * z)
   mul_comm : ∀ a b : G, a * b = b * a
 
-end U
+-- `a ≡ b [U.ZMOD n]` when `a % n = b % n`.
+-- def ModEq (n a b : ℤ) :=
+--   a % n = b % n
 
+-- @[inherit_doc]
+-- notation:50 a " ≡ " b " [U.ZMOD " n "]" => ModEq n a b
+
+end U
 
 namespace P1
 
@@ -456,6 +466,7 @@ end WarmupFinGroup
 
 namespace WarmupZMod2
 
+-- possibly redefine ZMod n in the U name space?
 abbrev T := ZMod 2
 
 instance : U.AddGroup T where
@@ -542,3 +553,43 @@ instance : U.Group G where
 
 end
 end P14
+
+
+namespace P19 -- this one is too easy.
+
+variable (n : ℤ)
+
+example (a : ℤ) : 0 + a ≡ a + 0 [ZMOD n] := by
+  simp
+
+end P19
+
+
+namespace P23 -- these are too easy.
+
+variable (n : ℤ)
+
+def U.ZMod.add_assoc (a b c : ℤ) : a + b + c ≡ a + (b + c) [ZMOD n] := by
+  calc a + b + c
+    _= a + (b + c) := by ring
+    _≡ a + (b + c) [ZMOD n] := by exact rfl
+
+def U.ZMod.add_comm (a b : ℤ) : a + b ≡ b + a [ZMOD n] := by
+  calc a + b
+    _= b + a := by ring
+    _≡ b + a [ZMOD n] := by exact rfl
+
+end P23
+
+
+
+namespace P24 -- this one feels empty too.
+
+variable (n : ℤ)
+
+def U.ZMod.distrib (a b c : ℤ) : a * (b + c) ≡ a * b + a * c [ZMOD n] := by
+  calc a * (b + c)
+    _= a * b + a * c := by ring
+    _≡ a * b + a * c [ZMOD n] := by exact rfl
+
+end P24

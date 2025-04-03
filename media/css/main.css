@@ -51,6 +51,11 @@ p {
     margin-top: 0px;
 }
 
+.cols {
+    display: flex;    
+}
+
+
 .course-title {    
     font-size: 1.3em;
     font-weight: bold;
@@ -222,11 +227,11 @@ pre {
 
 
 .def {
-    background-color: #faf;
+    background-color: #faf0;
 }
 
 .thm {
-    background-color: #aaf;
+    background-color: #aaf0;
 }
 
 
@@ -236,7 +241,7 @@ pre {
 
 
 .ex {
-    background-color: #ffa;        
+    background-color: #ffa0;        
 }
 
 .header {
@@ -569,18 +574,22 @@ a {
 }
 
 .source {
-    font-size: .8em;
+    font-size: .7em;
     margin-left: auto;    
+    margin-bottom: 2em;
 }
 
-.misseldine {
+.source-papers {
     display: flex;
     background-color: #fff;    
-    border: 1px solid #bbb;
-    padding: 20px;
+    /* border: 1px solid #bbb; */
+    padding: 20px;    
     padding-top: 10px;
     flex-direction: column;    
+    margin-bottom: 20px;
 }
+
+
 
 .my-button {
     margin-bottom: 5px;
@@ -594,8 +603,7 @@ a {
     padding: 20px;
     font-size: 13pt;
     background-color: #333;
-    color: #efefef;
-
+    color: #efefef;    
 }
 
 
@@ -651,3 +659,41 @@ a {
     background-color: yellow;
     padding-left: 10px;
 }
+
+
+.paper {
+    background: #fff;
+    padding: 30px;
+    position: relative;
+  }
+  
+  .paper,
+  .paper::before,
+  .paper::after {
+    /* Styles to distinguish sheets from one another */
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.35);
+    border: 1px solid #bbb;
+  }
+  
+  .paper::before,
+  .paper::after {
+    content: "";
+    position: absolute;
+    height: 95%;
+    width: 99%;
+    background-color: #eee;
+  }
+  
+  .paper::before {
+    right: 12px;
+    top: 0;
+    transform: rotate(-1deg);
+    z-index: -1;
+  }
+  
+  .paper::after {
+    top: 5px;
+    right: -3px;
+    transform: rotate(1deg);
+    z-index: -2;
+  }

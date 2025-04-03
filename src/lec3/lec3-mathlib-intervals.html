@@ -11,26 +11,31 @@ def Ioo (a b : α) := { x | a < x ∧ x < b }
     </pre>
 
     <p>
-        <code>Ioo</code> takes two values of type: `\alpha` that implements Preorder
-        and constructs an open set that represents the interval, as the mathlib docs say:
+        <code>Ioo</code> constructs an open set that represents the interval two
+        values of type: `\alpha` which implements Preorder. As the mathlib docs
+        say:
+
+
+        <quote who="" context="">
+            In any preorder <code>α</code>, we define intervals
+            (which on each side can be either infinite, open, or closed)
+            using the following naming conventions:<br>
+
+
+            <ul>
+                <li><code>i</code>: infinite</li>
+                <li><code>o</code>: open</li>
+                <li><code>c</code>: closed</li>
+            </ul>
     </p>
-
-    <b>mathlib docs</b><br>
-
-    In any preorder <code> α </code>, we define intervals
-    (which on each side can be either infinite, open, or closed)
-    using the following naming conventions:<br>
-
-    <ul>
-        <li><code>i</code>: infinite</li>
-        <li><code>o</code>: open</li>
-        <li><code>c</code>: closed</li>
-    </ul>
-    </p>
+    </quote>
 
     <p>
-        Each interval has the name <code>I</code> + letter for left side + letter for right side.
-        For instance,<code>Ioc a b</code> denotes the interval <code>(a, b]</code>.
+        The identifier for each interval type has the name has a prefix
+        <code>I</code> follow by one of <code>i|o|c</code> which
+        indicates the left end of the interval, then followed by another
+        <code>i|o|c</code> indicating the right side of the interval. For
+        instance,<code>Ioc a b</code> denotes the interval <code>(a, b]</code>.
 
         <!-- We also define a typeclass <code>Set.OrdConnected</code> saying that a
         set includes<code>Set.Icc a b</code>whenever it contains

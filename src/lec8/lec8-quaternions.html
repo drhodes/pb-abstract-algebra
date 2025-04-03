@@ -1,0 +1,40 @@
+<page title="The Quaternion Group" path="lecture8/quaternions">
+    <vid youtubeid="3_jpueS4fd8" start="00:00" end="00:00" />
+
+    <misseldine url="../notes/lec-08-cayley-tables.pdf">
+        <ex num="3.2.12">
+            <p>
+                The set `M_n(\mathbb{R})` of all `n \times n` matrices with real
+                scalars is <em>not</em> a group, because not every matrix is
+                invertible. However, the set `GL_n(\mathbb{R})` of all
+                nonsingular (invertible), real, `n \times n` matrices
+                <em>is</em> a group known as the general linear group, and its
+                identity element is the `n \times n` identity matrix `I_n`.
+            </p>
+        </ex>
+
+        <ex num="3.2.13">
+            <p>
+                One way to construct groups from subsets of `GL_2(\mathbb{C})`
+                is as follows. Consider the matrices:
+            </p>
+            <align>
+                1 &= \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} \quad\quad\quad
+                I = \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix} \\[10pt]
+                J &= \begin{pmatrix} 0 & i \\ i & 0 \end{pmatrix} \quad\quad\quad
+                K = \begin{pmatrix} i & 0 \\ 0 & -i \end{pmatrix}\\
+
+            </align>
+
+            <p>
+                Then the set
+                \[ Q_8 = \{\, 1, -1, I, -I, J, -J, K, -K \} \]
+                forms a group under matrix multiplication, known as the quaternion group. Note that `Q_8` is non-Abelian
+                since
+                \[ IJ = K \quad \neq \quad -K = JI. \]
+            </p>
+
+        </ex>
+    </misseldine>
+    
+</page>

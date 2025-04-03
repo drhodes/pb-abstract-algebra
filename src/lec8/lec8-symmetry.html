@@ -1,0 +1,96 @@
+<page title="Symmetry and Dihedral Groups" path="lecture7/symmetry">
+    <vid youtubeid="9b2XLWIFTmk" start="00:00" end="13:45" />
+
+    <misseldine url="../notes/lec-08-cayley-tables.pdf">
+        <def num="3.2.14" name="symmetry">
+            <p>
+                A <strong>symmetry</strong> of a geometric figure is a rearrangement
+                of the figure that preserves the arrangement of its sides and
+                vertices as well as its distances and angles. The set of all
+                symmetries of the regular `n`-gon is denoted by `D_n` and is called
+                the <em>dihedral group</em>.
+            </p>
+            </def> 
+    
+            <ex num="3.2.15" name="The Dihedral Group `D_4`">
+            <p>
+                In this example, we explore `D_4`, the group of the eight symmetries of a square.
+            </p>
+            <p>
+                The symmetries can be described as follows:
+            </p>
+            <ul>
+                <li>
+                    <strong>Identity:</strong>
+                    \[ \text{id} = \begin{pmatrix} A & B & C & D \\[5pt] A & B & C & D \end{pmatrix} \]
+                </li>
+                <li>
+                    <strong>Rotation by 90° (counterclockwise):</strong>
+                    \[ \rho_1 = \begin{pmatrix} A & B & C & D \\[5pt] D & A & B & C \end{pmatrix} \]
+                </li>
+                <li>
+                    <strong>Rotation by 180°:</strong>
+                    \[ \rho_2 = \begin{pmatrix} A & B & C & D \\[5pt] C & D & A & B \end{pmatrix} \]
+                </li>
+                <li>
+                    <strong>Rotation by 270°:</strong>
+                    \[ \rho_3 = \begin{pmatrix} A & B & C & D \\[5pt] B & C & D & A \end{pmatrix} \]
+                </li>
+                <li>
+                    <strong>Reflection `\sigma_1`:</strong>
+                    \[ \sigma_1 = \begin{pmatrix} A & B & C & D \\[5pt] A & D & C & B \end{pmatrix} \]
+                </li>
+                <li>
+                    <strong>Reflection `\sigma_2`:</strong>
+                    \[ \sigma_2 = \begin{pmatrix} A & B & C & D \\[5pt] D & C & B & A \end{pmatrix} \]
+                </li>
+                <li>
+                    <strong>Reflection `\sigma_3`:</strong>
+                    \[ \sigma_3 = \begin{pmatrix} A & B & C & D \\[5pt] C & B & A & D \end{pmatrix} \]
+                </li>
+                <li>
+                    <strong>Reflection `\sigma_4`:</strong>
+                    \[ \sigma_4 = \begin{pmatrix} A & B & C & D \\[5pt] B & A & D & C \end{pmatrix} \]
+                </li>
+            </ul>
+            <p>
+                Multiplication of these symmetries (which corresponds to
+                permutation multiplication) is associative. For example:
+            </p>
+            <p>
+                \[ \rho_1 \sigma_2 = \sigma_3 \]
+                and
+                \[ \sigma_4 \sigma_1 = \rho_3. \]
+            </p>
+
+        </ex>
+            <p>
+                In this group, the identity is <em>id</em>, `\rho_1^{-1} = \rho_3`, and every other element is its own
+                inverse. Note that `D_4` is non-Abelian.
+            </p>
+            
+            
+            \[
+            \begin{array}{c|cccccccc}
+            & \text{id} & \rho_1 & \rho_2 & \rho_3 & \sigma_1 & \sigma_2 & \sigma_3 & \sigma_4 \\[5pt]
+            \hline \\[-6pt]
+            \text{id} & \text{id} & \rho_1 & \rho_2 & \rho_3 & \sigma_1 & \sigma_2 & \sigma_3 & \sigma_4 \\[5pt]
+            \rho_1 & \rho_1 & \rho_2 & \rho_3 & \text{id} & \sigma_2 & \sigma_3 & \sigma_4 & \sigma_1 \\[5pt]
+            \rho_2 & \rho_2 & \rho_3 & \text{id} & \rho_1 & \sigma_3 & \sigma_4 & \sigma_1 & \sigma_2 \\[5pt]
+            \rho_3 & \rho_3 & \text{id} & \rho_1 & \rho_2 & \sigma_4 & \sigma_1 & \sigma_2 & \sigma_3 \\[5pt]
+            \sigma_1 & \sigma_1 & \sigma_4 & \sigma_3 & \sigma_2 & \text{id} & \rho_3 & \rho_2 & \rho_1 \\[5pt]
+            \sigma_2 & \sigma_2 & \sigma_1 & \sigma_4 & \sigma_3 & \rho_1 & \text{id} & \rho_3 & \rho_2 \\[5pt]
+            \sigma_3 & \sigma_3 & \sigma_2 & \sigma_1 & \sigma_4 & \rho_2 & \rho_1 & \text{id} & \rho_3 \\[5pt]
+            \sigma_4 & \sigma_4 & \sigma_3 & \sigma_2 & \sigma_1 & \rho_3 & \rho_2 & \rho_1 & \text{id} \\[5pt]
+            \end{array}
+            \]
+    
+    
+    
+            <p><strong>Homework:</strong> Judson 3.5: 2, 3, 4, 6, and one of 15 or 17.</p>
+    
+            </p>
+
+
+    </misseldine>
+</page>

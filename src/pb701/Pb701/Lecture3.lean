@@ -1,4 +1,3 @@
-import Lean
 import Mathlib
 
 namespace Lecture3
@@ -11,12 +10,10 @@ open Set
 
 example : {x | 0 < x ∧ x < 1} = Ioo 0 1 := rfl
 
--- replace these sorries with one of the appropriate intervals.
-
-example : {x | 0 ≤ x ∧ x < 1} = sorry := sorry
-example : {x | 0 < x ∧ x ≤ 1} = sorry := sorry
-example : {x | 0 < x} = sorry := sorry
-example : {x | x < 0} = sorry := sorry
+example : {x | 0 ≤ x ∧ x < 1} = sorry := rfl
+example : {x | 0 < x ∧ x ≤ 1} = sorry := rfl
+example : {x | 0 < x} = sorry := rfl
+example : {x | x < 0} = sorry := rfl
 
 section solution
 
@@ -27,8 +24,6 @@ example : {x | x < 0} = Iio 0 := rfl
 
 
 end solution
-
-
 end interval_examples
 
 
@@ -164,7 +159,6 @@ def color_cycle_inv : Color → Color
   | Red => Purple
 
 -- prove that color_cycle is a permutation
-
 -- #check Mathlib.GroupTheory.Perm
 
 instance : Equiv.Perm Color where
@@ -176,3 +170,12 @@ instance : Equiv.Perm Color where
     aesop -- todo
 
 end Lab1
+
+
+namespace Perm1
+
+#check Equiv.Perm.permGroup
+
+-- this should probably move to lecture 8: group examples,
+
+end Perm1

@@ -153,7 +153,7 @@
     </define-macro>
 
     <define-macro name="ex" vars="num, name">
-        <div class="ex">
+        <div class="ex" id="ex-[[this]]">
             <sec num="[[num]]" name="[[name]]" header="Example">
                 <contents />
             </sec>
@@ -161,7 +161,7 @@
     </define-macro>
 
     <define-macro name="ex" vars="num">
-        <div class="ex">
+        <div class="ex" id="ex-[[this]]">
             <sec num="[[num]]" header="Example">
                 <contents />
             </sec>
@@ -169,10 +169,9 @@
     </define-macro>
 
     <define-macro name="ex" vars="name">
-        <div class="ex">
+        <div class="ex" id="ex-[[this]]">
             <sec header="Example" name="[[name]]"></sec>
             <contents />
-            </sec>
         </div>
     </define-macro>
 
@@ -205,7 +204,6 @@
             <contents />
         </div>
     </define-macro>
-
 
     <define-macro name="vid-cite" vars="author, youtubeid, start, end">
         <div class="vid-cite">
@@ -434,7 +432,7 @@
             <lean-example file="src/pb701/Pb701/pset7.lean" namespace="P[[prob]]" />
         </hw>
     </define-macro>
-    
+
     <define-macro name="wu" vars="psetnum, prob, namespace">
         <page title="🔥Warmup for [[psetnum]]-[[prob]]" path="lecture[[psetnum]]/warmup-[[namespace]]">
             <div class="hw">
@@ -443,13 +441,24 @@
             <lean-example file="src/pb701/Pb701/pset7.lean" namespace="[[namespace]]" />
         </page>
     </define-macro>
-    
+
+    <define-macro name="hw8" vars="prob, src">
+        <hw psetnum="8" prob="[[prob]]">
+            <from-book url="[[src]]">
+                <contents />
+            </from-book>
+            <lean-example file="src/pb701/Pb701/pset8.lean" namespace="P[[prob]]" />
+        </hw>
+    </define-macro>
 
     <define-macro name="hw8" vars="prob">
         <hw psetnum="8" prob="[[prob]]">
             <contents />
+            <lean-example file="src/pb701/Pb701/pset8.lean" namespace="P[[prob]]" />
         </hw>
     </define-macro>
+
+
     <define-macro name="hw9" vars="prob">
         <hw psetnum="9" prob="[[prob]]">
             <contents />
@@ -465,8 +474,7 @@
     <define-macro name="quote" vars="who, context">
         <blockquote>
             <div>
-                ❝
-                <contents />❞
+                <contents />
             </div>
             <footer>—[[who]],
                 <cite>[[context]]
@@ -594,10 +602,12 @@
         </div>
     </define-macro>
 
-    <define-macro name="fig" vars="text, fname">
+    <define-macro name="fig" vars="fname">
         <div class="fig">
             <center><img src="../media/images/[[fname]]" width="75%" alt="[[text]]" /></center>
-            <center><span class="fig-text">[[text]]</span></center>
+            <center><span class="fig-text">
+                    <contents />
+                </span></center>
         </div>
     </define-macro>
 
@@ -623,13 +633,13 @@
         </div>
     </define-macro>
 
-    <define-macro name="flex-source" vars="url">
-        <a class="source" href="[[url]]" target="_blank" rel="noopener noreferrer">source 🔎︎</a>
+    <define-macro name="flex-source" vars="url, src-id">
+        <a class="source" href="[[url]]" target="_blank" rel="noopener noreferrer">source ([[src-id]]) 🔎︎</a>
     </define-macro>
 
     <define-macro name="misseldine" vars="url">
-        <div class="misseldine">
-            <flex-source url="[[url]]" />
+        <div class="source-papers paper">
+            <flex-source url="[[url]]" src-id="Andrew Misseldine's course notes" />
             <contents />
         </div>
     </define-macro>
@@ -641,8 +651,8 @@
     </define-macro>
 
     <define-macro name="from-book" vars="url">
-        <div class="from-book">
-            <flex-source url="[[url]]" />
+        <div class="source-papers paper">
+            <flex-source url="[[url]]" src-id="Abstract Algebra: Theory and Applications" />
             <div class="from-book-contents">
                 <contents />
             </div>

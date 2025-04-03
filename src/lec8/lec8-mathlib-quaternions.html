@@ -1,0 +1,29 @@
+<lab-page title="Mathlib: proving `Q_8` is a group" path="lecture8/mathlib-quaternions">
+    <p>
+        From the previous page:
+    </p>
+    <misseldine url="http://localhost:5500/notes/lec-08-cayley-tables.pdf">
+    <align>
+        1 &= \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} \quad\quad\quad
+        I = \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix} \\[10pt]
+        J &= \begin{pmatrix} 0 & i \\ i & 0 \end{pmatrix} \quad\quad\quad
+        K = \begin{pmatrix} i & 0 \\ 0 & -i \end{pmatrix}\\
+
+    </align>
+
+    <p>
+        Then the set
+        \[ Q_8 = \{\, 1, -1, I, -I, J, -J, K, -K \} \]
+        forms a group under matrix multiplication, known as the quaternion group. Note that `Q_8` is non-Abelian
+        since
+        \[ IJ = K \quad \neq \quad -K = JI. \]
+    </p>
+    </misseldine>
+
+    <hr>
+
+
+    <lean-example file="src/pb701/Pb701/Lecture8-qgroup2.lean" namespace="QuaternionGroupExample2"/>
+    
+
+</lab-page>

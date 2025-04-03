@@ -1,0 +1,66 @@
+<page title="Cayley Tables" path="lecture8/group-examples">
+    <vid youtubeid="9b2XLWIFTmk" start="00:00" end="13:45" />
+
+    <misseldine url="../notes/lec-08-groups.pdf">
+        <h1>Lecture 8: More Groups Examples</h1>
+
+        <h2>3.2 Definitions and Examples</h2>
+
+        <def num="3.2.9" name="Cayley Table">
+            <p>
+                A <term>Cayley table</term> of a group `G` is a table where rows and
+                columns are marked by elements of the group and the interior of the
+                table in row `g` and column `h` is the product `gh`.
+            </p>
+        </def>
+
+        <ex num="3.2.10">
+            <p>
+                The Cayley table for `(\mathbb{Z}_5, +)` is given below.
+            </p>
+            <p>
+                The identity in a group can be identified as the unique element
+                whose row or column exactly matches the group indicators. Every
+                other row or column is simply a rearrangement of the group elements.
+            </p>
+            <p>
+                Also, the inverse of `g` can be found on the Cayley table by
+                locating the column that contains the identity in the row for `g
+                `. That column corresponds to `g^{-1}`. For example, in row 2
+                the identity `0` is in column 3, hence `-2 \equiv 3 \mod 5`.
+            </p>
+
+            \[
+            \begin{array}{c|ccccc}
+            + & 0 & 1 & 2 & 3 & 4 \\
+            \hline\\[-10pt]
+            0 & 0 & 1 & 2 & 3 & 4 \\[3pt]
+            1 & 1 & 2 & 3 & 4 & 0 \\[3pt]
+            2 & 2 & 3 & 4 & 0 & 1 \\[3pt]
+            3 & 3 & 4 & 0 & 1 & 2 \\[3pt]
+            4 & 4 & 0 & 1 & 2 & 3 \\[3pt]
+            \end{array}
+            \]
+
+        </ex>
+
+        <ex num="3.2.11" name="`\mathbb{Z}_8^*, \cdot`">
+            <p>
+                The Cayley table for `(\mathbb{Z}_8^*, \cdot)` is shown below. In an
+                Abelian group, the table is symmetric along the main diagonal.
+            </p>
+
+            \[
+            \begin{array}{c|cccc}
+            \cdot & 1 & 3 & 5 & 7 \\
+            \hline\\[-10pt]
+            1 & 1 & 3 & 5 & 7 \\[4pt]
+            3 & 3 & 1 & 7 & 5 \\[4pt]
+            5 & 5 & 7 & 1 & 3 \\[4pt]
+            7 & 7 & 5 & 3 & 1 \\[4pt]
+            \end{array}
+            \]
+        </ex>
+
+    </misseldine>
+</page>
