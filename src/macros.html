@@ -153,7 +153,7 @@
     </define-macro>
 
     <define-macro name="ex" vars="num, name">
-        <div class="ex" id="ex-[[this]]">
+        <div class=` id="ex-[[this]]">
             <sec num="[[num]]" name="[[name]]" header="Example">
                 <contents />
             </sec>
@@ -175,12 +175,44 @@
         </div>
     </define-macro>
 
+    <define-macro name="prop" vars="num">
+        <div class="prop" id="prop-[[this]]">
+            <sec num="[[num]]" header="Proposition">
+                <contents />
+            </sec>
+        </div>
+    </define-macro>
+
+    <define-macro name="prop" vars="num, name">
+        <div class="prop" id="prop-[[this]]">
+            <sec num="[[num]]" name="[[name]]" header="Proposition">
+                <contents />
+            </sec>
+        </div>
+    </define-macro>
 
     <define-macro name="corollary" vars="n">
         <div class="corollary">
             <sec num="[[n]]" header="Corollary">
                 <contents />
             </sec>
+        </div>
+    </define-macro>
+
+    <define-macro name="proof">
+        <div class="proof" id="proof-[[this]]">
+            <div class="sec">
+                <span class="proof-header"> <i>Proof.</i> </span>
+                <contents />
+                <qed/>
+            </div>
+        </div>
+    </define-macro>
+
+    <define-macro name="sec" vars="header">
+        <div class="sec">
+            <span class="sec-header"> [[header]]. </span>
+            <contents />
         </div>
     </define-macro>
 
@@ -295,6 +327,17 @@
         </div>
     </define-macro>
 
+    <define-macro name="vid" vars="youtubeid">
+        <div id="[[this]]" class="vid">
+            <iframe id="iframe-[[this]]" type="text/html" class="vidframe" src="about:blank" allow="fullscreen"
+                frameborder="0" allowfullscreen></iframe>
+            <br />
+            <script>
+                vid_helper("[[this]]", "[[youtubeid]]", "00:00", "00:00");
+            </script>
+        </div>
+    </define-macro>
+
     <define-macro name="note">
         <div>
             <contents />
@@ -303,7 +346,6 @@
 
     <define-macro name="leancode" vars="filename">
     </define-macro>
-
 
     <define-macro name="starbox">
         <div class="starbox">
@@ -348,14 +390,6 @@
             </script>
         </div>
     </define-macro>
-
-    <!-- 	
-	<define-macro name="wts">
-	    <span>
-		    <u>Want to show:
-		    </u>
-	    </span>
-	</define-macro> -->
 
     <define-macro name="star" vars="n">
         <div> `(\star_[[n]])`
@@ -451,6 +485,17 @@
         </hw>
     </define-macro>
 
+    <define-macro name="hw9" vars="prob, src">
+        <hw psetnum="9" prob="[[prob]]">
+            <from-book url="[[src]]">
+                <contents />
+            </from-book>
+            <lean-example file="src/pb701/Pb701/pset9.lean" namespace="P[[prob]]" />
+        </hw>
+    </define-macro>
+
+
+
     <define-macro name="hw8" vars="prob">
         <hw psetnum="8" prob="[[prob]]">
             <contents />
@@ -483,7 +528,7 @@
         </blockquote>
     </define-macro>
 
-    <define-macro name="proof">
+    <define-macro name="proof-hs">
         <div>
             <button id="[[this]]-toggle-btn">
                 👁 Show Proof
@@ -552,6 +597,10 @@
             <!-- <span class="scribe-note"> <sup> (scribe note) </sup> </span> -->
             <contents />
         </div>
+    </define-macro>
+
+    <define-macro name="go" vars="url">
+        <a href="[[url]]" target="_blank"><contents/></a>    
     </define-macro>
 
     <define-macro name="todo" args="todo">

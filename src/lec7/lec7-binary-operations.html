@@ -1,36 +1,40 @@
 <page title="Binary Operations" path="lecture7/binary-operations">
+ 
   <vid youtubeid="SIdPG_CJ-G0" start="00:00" end="13:45" />
 
   <misseldine url="../notes/lec-07-groups.pdf">
-
-    <h3>3.2. Definitions and Examples</h3>
+    <h1> Lecture 3: Groups </h1>
 
     <p>
       In this chapter we introduce the most fundamental and most important structure in abstract algebra, the group.
     </p>
 
     <def num="3.2.1" name="binary operation">
-      A <term>binary operation</term> `\circ` on a set `G` is a function `\circ : G \times G \to G`.
+      A <term>binary operation</term> `\circ` on a set `G` is a
+      function `{\circ : G \times G \to G}`.
 
-      For an element `(a,b) \in G \times G`, the image of `(a,b)` under `\circ` is
-      denoted `a \circ b` (or just juxtaposition `ab` when the operation is clear
-      from context), that is, `(a,b) \mapsto a \circ b`.
+      For an element `(a,b) \in G \times G`, the image of `(a,b)`
+      under `\circ` is denoted `a \circ b` (or just juxtaposition `ab`
+      when the operation is clear from context), that is, `(a,b)
+      \mapsto a \circ b`.
 
       We will use the notation `(G, \circ)` to denote that `G` is a set and
       `\circ` a binary operation on `G`.
     </def>
 
     <ex num="3.2.2">
-      Addition and multiplication are binary operations on `\mathbb{N}`,
-      `\mathbb{Z}`, `\mathbb{Q}`, `\mathbb{R}`, and `\mathbb{C}`. Addition and
-      multiplication also are binary operations on `\mathbb{Z}_n`, the set of
-      congruence classes modulo `n`.
+      Addition and multiplication are binary operations on
+      `\mathbb{N}`, `\mathbb{Z}`, `\mathbb{Q}`, `\mathbb{R}`, and
+      `\mathbb{C}`. Addition and multiplication also are binary
+      operations on `\mathbb{Z}_n`, the set of congruence classes
+      modulo `n`.
 
       <p>
-        Vector addition is a binary operation on `\mathbb{R}^n`. On the other
-        hand, scalar multiplication of vectors is not a binary operation because
-        it is a product of a scalar and a vector producing a vector, i.e.
-        `\mathbb{R} \times \mathbb{R}^n \to \mathbb{R}^n`. 
+        Vector addition is a binary operation on `\mathbb{R}^n`. On
+        the other hand, scalar multiplication of vectors is not a
+        binary operation because it is a product of a scalar and a
+        vector producing a vector, i.e.  `\mathbb{R} \times
+        \mathbb{R}^n \to \mathbb{R}^n`.
         
         To be a binary operation, the two factors and the product must all be
         elements of the same set. 

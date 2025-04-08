@@ -1,135 +1,139 @@
 
 <page title="Groups" path="lecture7/groups">
-    <vid youtubeid="7ela1_5_0c4" start="00:00" end="20:36"/>
+  <vid youtubeid="7ela1_5_0c4" start="00:00" end="20:36"/>
 
+  <misseldine url="../notes/lec-07-groups.pdf">
     <h4>Definition 3.2.5.</h4>
     <p>
-        We say that `(G, \circ)` is a group if the following three axioms are satisfied by the binary operation:
+      We say that `(G, \circ)` is a group if the following three axioms are satisfied by the binary operation:
     </p>
     <ol type="a">
-        <li>
-            <b>Associativity:</b>
-            For all `g, h, k \in G`, it holds that
-            \[ g \circ (h \circ k) = (g \circ h) \circ k. \]
-        </li>
-        <li>
-            <b>Identity:</b>
+      <li>
+        <b>Associativity:</b>
+        For all `g, h, k \in G`, it holds that
+        \[ g \circ (h \circ k) = (g \circ h) \circ k. \]
+      </li>
+      <li>
+        <b>Identity:</b>
 
-            There exists an element `e \in G` such that for all `g \in
-            G` we have
-            \[ g \circ e = e \circ g = g. \]
-        </li>
-        <li>
-            <b>Inverses:</b>
-            For all `g \in G` there is an element `g^{-1} \in G` such
-            that
-            \[ g \circ g^{-1} = g^{-1} \circ g = e. \]
-        </li>
+        There exists an element `e \in G` such that for all `g \in
+        G` we have
+        \[ g \circ e = e \circ g = g. \]
+      </li>
+      <li>
+        <b>Inverses:</b>
+        For all `g \in G` there is an element `g^{-1} \in G` such
+        that
+        \[ g \circ g^{-1} = g^{-1} \circ g = e. \]
+      </li>
     </ol>
     <p>
-        When the binary operation `\circ` is clear from context, we will say that `G` is a group instead of `(G, \circ)`.
+      When the binary operation `\circ` is clear from context, we will say that `G` is a group instead of `(G, \circ)`.
     </p>
     <p>
-        Furthermore, we say `G` is an Abelian group if `G` is a group which satisfies an additional axiom:
+      Furthermore, we say `G` is an Abelian group if `G` is a group which satisfies an additional axiom:
     </p>
     <ol type="d">
-        <li>
-            <b>Commutativity:</b> For all `g, h \in G`, it holds that
-            <br>
-            \[ g \circ h = h \circ g. \]
-        </li>
+      <li>
+        <b>Commutativity:</b> For all `g, h \in G`, it holds that
+        <br>
+        \[ g \circ h = h \circ g. \]
+      </li>
     </ol>
     <p>
-        For Abelian groups, the operation is often denoted as `+`, the identity as `0`, and the inverse of `a` as `-a`.
+      For Abelian groups, the operation is often denoted as `+`, the identity as `0`, and the inverse of `a` as `-a`.
     </p>
 
     <h4>Example 3.2.6.</h4>
     <p>
-        The structures `(\mathbb{Z}, +)`, `(\mathbb{Q}, +)`,
-        `(\mathbb{R}, +)`, and `(\mathbb{C}, +)` are all Abelian
-        groups, where the identity element is `0` and the inverse of
-        `x` is just `-x`. The structure `(\mathbb{N}, +)` is not a
-        group because not all elements have an additive inverse
-        (e.g. `-1 \notin \mathbb{N}`). The set `\mathbb{Z}^+` of
-        positive integers with addition is also not a group since it
-        has no identity.
+      The structures `(\mathbb{Z}, +)`, `(\mathbb{Q}, +)`,
+      `(\mathbb{R}, +)`, and `(\mathbb{C}, +)` are all Abelian
+      groups, where the identity element is `0` and the inverse of
+      `x` is just `-x`. The structure `(\mathbb{N}, +)` is not a
+      group because not all elements have an additive inverse
+      (e.g. `-1 \notin \mathbb{N}`). The set `\mathbb{Z}^+` of
+      positive integers with addition is also not a group since it
+      has no identity.
     </p>
     <p>
-        Similarly, `(\mathbb{Q}^*, \cdot)`, `(\mathbb{R}^*, \cdot)`,
-        and `(\mathbb{C}^*, \cdot)` are all Abelian groups, where the
-        identity element is `1` and the inverse of `x` is just
-        `\frac{1}{x}`, but `(\mathbb{N}^*, \cdot)` and `(\mathbb{Z}^*,
-        \cdot)` are not because not all elements have inverses.
+      Similarly, `(\mathbb{Q}^*, \cdot)`, `(\mathbb{R}^*, \cdot)`,
+      and `(\mathbb{C}^*, \cdot)` are all Abelian groups, where the
+      identity element is `1` and the inverse of `x` is just
+      `\frac{1}{x}`, but `(\mathbb{N}^*, \cdot)` and `(\mathbb{Z}^*,
+      \cdot)` are not because not all elements have inverses.
     </p>
     <p>
-        The structures `(\mathbb{Z}, -)`, `(\mathbb{Q}, -)`,
-        `(\mathbb{R}, -)`, and `(\mathbb{C}, -)` are not
-        groups. Although each set has an identity and all elements
-        have inverses, the operation is not associative. Note that \[
-        3 - (2 - 1) = 3 - 1 = 2 \neq 0 = 1 - 1 = (3 - 2) - 1. \] Of
-        course, the operation of subtraction is noncommutative.
+      The structures `(\mathbb{Z}, -)`, `(\mathbb{Q}, -)`,
+      `(\mathbb{R}, -)`, and `(\mathbb{C}, -)` are not
+      groups. Although each set has an identity and all elements
+      have inverses, the operation is not associative. Note that \[
+      3 - (2 - 1) = 3 - 1 = 2 \neq 0 = 1 - 1 = (3 - 2) - 1. \] Of
+      course, the operation of subtraction is noncommutative.
     </p>
     <p>
-        The structure `(X^X, \circ)` where `\circ` is just function
-        composition and `(S_X, \circ)` with permutation multiplication
-        (function composition) are both non-Abelian groups since their
-        binary operation is noncommutative. The group `S_X` is called
-        the symmetric group on `X`.
+      The structure `(X^X, \circ)` where `\circ` is just function
+      composition and `(S_X, \circ)` with permutation multiplication
+      (function composition) are both non-Abelian groups since their
+      binary operation is noncommutative. The group `S_X` is called
+      the symmetric group on `X`.
     </p>
 
     <h4>Example 3.2.7.</h4>
     <p>
-        The set of congruence classes modulo `n`, `\mathbb{Z}_n =
-        \{[0], [1], [2], \dots, [n-1]\}`, is an Abelian group under
-        addition.
+      The set of congruence classes modulo `n`, `\mathbb{Z}_n =
+      \{[0], [1], [2], \dots, [n-1]\}`, is an Abelian group under
+      addition.
 
-        The identity element of `\mathbb{Z}_n` is the congruence class
-        of all multiples of `n`, namely `[0]`.
+      The identity element of `\mathbb{Z}_n` is the congruence class
+      of all multiples of `n`, namely `[0]`.
 
-        For a congruence class `[k]`, the inverse is the class `[-k]`.
+      For a congruence class `[k]`, the inverse is the class `[-k]`.
 
-        The fact that addition is associative and commutative is an
-        immediate consequence of associativity and commutativity on
-        `(\mathbb{Z}, +)` and the division algorithm.
+      The fact that addition is associative and commutative is an
+      immediate consequence of associativity and commutativity on
+      `(\mathbb{Z}, +)` and the division algorithm.
     </p>
     <p>
-        When working with `\mathbb{Z}_n`, it is common to identify a
-        class `[k]` with its unique representative between `0` and
-        `n`, that is, `\mathbb{Z}_n = \{0, 1, 2, \dots, n-1\}` and `k
-        + \ell` is the unique representative of `[k+\ell]` between `0`
-        and `n`.
+      When working with `\mathbb{Z}_n`, it is common to identify a
+      class `[k]` with its unique representative between `0` and
+      `n`, that is, `\mathbb{Z}_n = \{0, 1, 2, \dots, n-1\}` and `k
+      + \ell` is the unique representative of `[k+\ell]` between `0`
+      and `n`.
 
-        With this notation, the identity of `\mathbb{Z}_n` is `0` and
-        the inverse of `k` is `n-k`.
+      With this notation, the identity of `\mathbb{Z}_n` is `0` and
+      the inverse of `k` is `n-k`.
     </p>
     <p>
-        Let `\mathbb{Z}_n^* = \{ k \in \mathbb{Z}_n \mid \gcd(k, n) =
-        1 \}` (the book uses the notation `U(n)` to denote the set of
-        units in `\mathbb{Z}_n`).
+      Let `\mathbb{Z}_n^* = \{ k \in \mathbb{Z}_n \mid \gcd(k, n) =
+      1 \}` (the book uses the notation `U(n)` to denote the set of
+      units in `\mathbb{Z}_n`).
 
-        Then `(\mathbb{Z}_n^*, \cdot)` is also an Abelian group where
-        the identity is `1`.
+      Then `(\mathbb{Z}_n^*, \cdot)` is also an Abelian group where
+      the identity is `1`.
 
-        The Euclidean algorithm is used to compute inverses in this
-        group because it computes a linear combination `ak + bn = 1`
-        which implies that `ak = 1 - bn`, that is, `ak \equiv 1 \
-        (\text{mod } n)`. Thus, `a = k^{-1}`.
+      The Euclidean algorithm is used to compute inverses in this
+      group because it computes a linear combination `ak + bn = 1`
+      which implies that `ak = 1 - bn`, that is, `ak \equiv 1 \
+      (\text{mod } n)`. Thus, `a = k^{-1}`.
     </p>
     <p>
-        <em>Note:</em> These algebraic structures only have a right
-        identity, that is, an element `e` such that `g \circ e = g`
-        for all `g \in G`.
+      <em>Note:</em> These algebraic structures only have a right
+      identity, that is, an element `e` such that `g \circ e = g`
+      for all `g \in G`.
 
-        Similarly, one can define a left identity as an element `e`
-        such that `e \circ g = g` for all `g \in G`. A left- or
-        right-identity is called a one-sided identity.
+      Similarly, one can define a left identity as an element `e`
+      such that `e \circ g = g` for all `g \in G`. A left- or
+      right-identity is called a one-sided identity.
     </p>
     <p>
-        It can be proven that with an associative operation, a
-        one-sided identity is necessarily a two-sided identity and is
-        unique.
+      It can be proven that with an associative operation, a
+      one-sided identity is necessarily a two-sided identity and is
+      unique.
 
-        Analogous definitions and statements hold for one- and
-        two-sided inverses.
+      Analogous definitions and statements hold for one- and
+      two-sided inverses.
     </p>
+    
+    </misseldine>
+
 </page>

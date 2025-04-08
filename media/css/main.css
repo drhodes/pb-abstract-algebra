@@ -29,7 +29,7 @@ html {
 body {
     font-family: "Computer Modern", sans-serif;
     font-size: 16pt;
-    background-color: #f9f9f4;
+    background-color: #f9f9f4; 
     color: #333;
     width: 100%;
 }
@@ -179,7 +179,7 @@ pre {
   margin: 0 10px 100px 10px;
   filter: drop-shadow(0px 0px 1px #aaa);
   border: 1px solid white;
-  max-width: 1000px;
+  max-width: 1200px;
   width: 100%;
   min-width: 0;
   box-sizing: border-box;
@@ -211,6 +211,12 @@ pre {
 .problem-title {
     padding-bottom: 10px;
 }
+
+.proof-header {
+    font-size: 1em;    
+    margin-right: .5em;
+}
+
 
 /* Section: definition */
 
