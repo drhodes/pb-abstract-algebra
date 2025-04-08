@@ -79,7 +79,7 @@ server.watch('./src/*', shell('make lectures'))
 server.watch('./src/course.html', shell('make lectures')) 
 server.watch('./src/pb701/Pb701/*', shell('make lectures'))
 
-for i in range(9):
+for i in range(10):
     server.watch(f'./src/lec{i}/*', shell('make lectures'))
     server.watch(f'./src/psets/pset{i}/*', shell('make lectures'))
 
