@@ -1,0 +1,257 @@
+<div>
+    <page title="Introduction" path="lecture9/intro">
+        <h1>LECTURE 9</h1>
+        <h2>GROUPS PROPERTIES</h2>
+
+        <h3>Suggested reading and exercises</h3>
+
+        <ref
+            url="https://leanprover-community.github.io/mathematics_in_lean/C08_Groups_and_Rings.html#monoids-and-groups">
+            Mathematics in Lean: Chapter 8.1, Monoids and Groups
+        </ref>
+
+        <blockquote>
+            Never doubt that a small group of thoughtful, committed citizens can change the world; indeed, it's the only
+            thing that ever has. -- Margaret Mead
+        </blockquote>
+
+    </page>
+
+    <page title="Order of a Group" path="lecture9/group-order">
+        <vid youtubeid="lkjykXnUqCY" />
+
+        <misseldine url="../notes/lec-09-group-properties.pdf">
+            <h3>3.2. Definitions and Examples</h3>
+
+            <def num="3.2.16" name="order">
+                <p>
+                    The <term>order</term> of a group `(G, \circ)` is the
+                    cardinality of the set `|G|`.
+                </p>
+            </def>
+
+
+            <ex num="3.2.17">
+                The group `{\mathbb{Z}_n}` under addition has order
+                `{\vert\mathbb{Z}_n\vert = n}` and the group `{S_n}` has order
+                `{\vert S_n\vert = n!}`. These are both examples of <term>finite
+                    groups</term>. The groups `{\mathbb{N}}`, `{\mathbb{Z}}`,
+                `{\mathbb{Q}}`, `{\mathbb{R}}`, and `{\mathbb{C}}` under
+                addition are all examples of groups with infinite order, which
+                we call <term>infinite groups</term>.
+            </ex>
+
+            <p>
+                We will now prove some very important properties about all
+                groups. When working with generic groups, multiplicative
+                structure is used almost always. For example, we will denote
+                `{g\circ h}` in `{G}` simply as `{gh}` and the inverse of `{g}`
+                as `{g^{-1}}`. Also, we will use exponential notation to
+                represent iterated products: `{g^n = \underbrace{g\cdot g\cdots
+                g}_{n\text{ times}}}` and `{g^{-n} = \underbrace{g^{-1}\cdot
+                g^{-1}\cdots g^{-1}}_{n\text{ times}}}`. Although we will
+                primarily use `{e}` for the identity of `{G}`, we might
+                sometimes use `{1\in G}` as the identity element. In fact, we
+                are justified in saying "the" identity element because it is
+                unique.
+            </p>
+        </misseldine>
+
+        <p>
+            <i>Note</i>: The etymology of `e` used for group identity can be found on
+            this
+            <go url="https://mathoverflow.net/questions/87794/why-is-the-identity-element-of-a-group-denoted-by-e">
+                mathoverflow page
+            </go>
+            with the accepted answer:
+            <quote who="user2035" context="mathoverflow">
+                Heinrich Weber uses Einheit and e in his
+                <go
+                    url="https://archive.org/details/lehrbuchderalgeb01weberich/page/n615/mode/2up?ref=ol&view=theater&q=einheit">
+                    Lehrbuch der Algebra (1896)
+                </go>.
+            </quote>
+        </p>
+        <p>
+            Furthermore, "Einheit" translates to "unit" or
+            "unity", <go url="https://en.langenscheidt.com/german-english/einheit">(langenscheidt.com)</go>
+        </p>
+
+    </page>
+
+    <page title="Uniqueness of Identities and Inverses" path="lecture9/group-uniq-of-id-inv">
+        <vid youtubeid="Pj-yLgjoD94" />
+        <misseldine url="../notes/lec-09-group-properties.pdf">
+
+            <prop num="3.2.18">
+                The identity element in a group `{G}` is
+                unique; that is, there exists only one element `{e\in G}` such that
+                `{eg=ge=g}` for all `{g\in G}`.
+            </prop>
+
+            <proof>
+                Let `{e'}` and `{e''\in G}` such that `{ge' = e'g = g}` and
+                `{ge'' = e''g = g}` for all `{g\in G}`. Then
+                \[ e' = e'e'' = e''. \]
+            </proof>
+
+            <p>
+                Likewise, we can say "the" inverse of `{g\in G}` since inverses are also unique.
+            </p>
+
+            <prop num="3.2.19"> If `{g}` is any element in a group `{G}`, then the
+                inverse of `{g}` is unique.
+            </prop>
+
+            <proof>
+                Let `{g'}` and `{g''\in G}` such that
+                \[ gg' = g'g = e \quad\text{and}\quad gg'' = g''g = e. \]
+                Then
+                \[ g' = g'e = g'(gg'') = (g'g)g'' = eg'' = g''. \]
+            </proof>
+
+            <prop num="3.2.20">
+                Let `{G}` be a group. For any `{g,h\in G}`, then \[(gh)^{-1} =
+                h^{-1}g^{-1}.\]
+            </prop>
+
+            <proof>
+                Since inverses are unique in groups, as shown above, it
+                suffices to show that `{h^{-1}g^{-1}}` acts like an inverse to `{gh}`. Note that
+                \[ (gh)(h^{-1}g^{-1}) = g(hh^{-1})g^{-1} = g(e)g^{-1} = gg^{-1} = e, \]
+                and similarly,
+                \[ (h^{-1}g^{-1})(gh) = e. \]
+                Therefore, `{h^{-1}g^{-1}}` is the inverse of `{gh}`.
+            </proof>
+
+            <prop num="3.2.21">
+                Let `{G}` be a group. For any `{g\in G}`,
+                \[(g^{-1})^{-1}=g.\]
+            </prop>
+
+            <proof>
+                Since inverses are unique in groups, as shown above, it
+                suffices to show that `{g}` acts like an inverse to `{g^{-1}}`.
+                Note that \[ gg^{-1} = e = g^{-1}g. \]
+            </proof>
+
+            <p>Therefore, `{g}` is the inverse of `{g^{-1}}`.</p>
+
+        </misseldine>
+    </page>
+
+    <page title="The Cancellation Laws" path="lecture9/group-cancellation-laws">
+        <vid youtubeid="6kmhKE6KWjo" />
+        <misseldine url="../notes/lec-09-group-properties.pdf">
+
+            <prop num="3.2.22" name="Cancellation Laws">
+                If `{G}` is a group and `{a,b,c\in G}`, then `{ba=ca}`
+                implies `{b=c}` and `{ab=ac}` implies `{b=c}`.
+            </prop>
+
+            <proof>
+                We will prove the case that `{ab=ac}` implies that `{b=c}`.
+                Multiplying both sides of the equation on the left by `{a^{-1}}`
+                then gives
+
+                \[ a^{-1}(ab)=a^{-1}(ac) \quad\Rightarrow\quad
+                (a^{-1}a)b=(a^{-1}a)c \quad\Rightarrow\quad
+                eb=ec \quad\Rightarrow\quad b=c.
+                \]
+
+                The case of `{ba=ca}` is handled similarly.
+            </proof>
+
+            <p>
+                This proposition tells us that the <term>right-</term> and
+                <term>left-cancellation</term>
+                laws are true in all groups. In fact, the above proof used all
+                three axioms of group theory: associativity, identity, and
+                inverses, to prove the cancellation laws. In some regard, any
+                algebraic object with cancellation must be group-like.
+            </p>
+
+
+            <prop num="3.2.23">
+                Let `{G}` be a group and `{a,b\in G}`. Then the equations
+                `{ax=b}` and `{xa=b}` have unique solutions in `{G}`.
+            </prop>
+
+            <proof>
+                We will prove the case that `{ax=b}` has a unique solution in
+                `{G}`. Note that `{x=a^{-1}b}` is a solution to the equation
+                since \[ a(a^{-1}b) = (aa^{-1})b = eb = b. \] This shows the
+                existence of a solution. For uniqueness, if `{x}` and `{y}` are
+                both solutions to the above equation, then `{ax=b=ay}`.
+                Canceling `{a}` on the left gives `{x=y}`. Thus, `{ax=b}` has a
+                unique solution in `{G}`. The case of `{xa=b}` is handled
+                similarly.
+            </proof>
+
+            <p>
+                Again, we should emphasize that in the above proof we used all three axioms of group
+                theory to solve equations. Groups are exactly the setting where we solve equations in
+                the manner we first learned in algebra class.
+            </p>
+
+        </misseldine>
+
+    </page>
+
+    <page title="Exponent Laws" path="lecture9/group-exponent-laws">
+        <vid youtubeid="pwwfIm5iKxE" />
+        <misseldine url="../notes/lec-09-group-properties.pdf#page=2">
+            <prop num="3.2.24" name="Exponent Laws">
+                <p>
+                    In a group `{G}`, the usual exponent laws hold; that is, for
+                    all `{g,h\in G}` and `{m,n\in\mathbb{Z}}`:
+                </p>
+            </prop>
+
+            <align>
+                g^m g^n &= g^{m+n} \tag{a} \\
+                (g^m)^n &= g^{mn} \tag{b} \\
+                (gh)^n &= (h^{-1}g^{-1})^{-n} \tag{c}
+            </align>
+
+            <p>
+                Furthermore, if `{G}` is Abelian, then `{(gh)^n = g^n h^n}`.
+            </p>
+
+            <p>
+                The proof of the above exponent laws follows from the associativity of the group and a
+                (double) induction argument. It should be emphasized that, in general,
+                `{(gh)^n \neq g^n h^n}` in groups and commutativity in some form is needed for equality.
+            </p>
+
+            <p>
+                In fact, when a group is Abelian, additive notation is often
+                used instead of multiplicative notation. For example, we will
+                denote `{g\circ h}` in `{G}` simply as `{g+h}` and the inverse
+                of `{g}` as `{-g}`. Also, we will use additive notation to
+                represent iterated sums:
+
+                \[ ng = \underbrace{g+g+\cdots+g}_{n\text{ times}} \]
+
+                and
+
+                \[ -ng = \underbrace{-g+(-g)+\cdots+(-g)}_{n\text{ times}}. \]
+
+                Although we will primarily use `{e}` for the identity of `{G}`,
+                we might sometimes use `{0\in G}` as the identity element. The
+                three "exponent laws" look like distributive laws for additive
+                groups: for `{g,h\in G}` and `{m,n\in\mathbb{Z}}`, we have
+            </p>
+
+            <align>
+                mg+ng &= (m+n)g \tag{a} \\
+                m(ng) &= (mn)g \tag{b} \\
+                m(g+h) &= mg+mh \tag{c} \\
+            </align>
+
+            <p>
+                <strong>Homework:</strong> Judson 3.5: Pick 3 (27-30, 49), Pick 2 (31-33, 51)
+            </p>
+        </misseldine>
+    </page>
+</div>
