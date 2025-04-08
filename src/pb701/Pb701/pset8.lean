@@ -448,6 +448,13 @@ example : ¬ ∀ a b : Sixers, a * b = b * a := by
 end P15
 
 
+namespace P17
+
+-- todo
+
+
+end P17
+
 -- namespace woot
 
 -- structure Telescope (α : Type) [LinearOrderedField α] where
@@ -479,11 +486,23 @@ end P15
 
 -- end woot
 
-namespace Telescopic
+-- namespace Telescopic
+-- -- telescopic sequences are ones that collapse
 
--- telescopic sequences are ones that collapse because of
+-- abbrev α := ℤ -- α would be Type or more generic.
 
-end Telescopic
+-- def myseq (n : ℕ) := 1 + n + (n - 1)
+
+-- -- `dissect` prepares sequences for term cancelling.
+
+-- def dissect (S : ℕ → α) : ℕ → (ℕ → α) := sorry
+
+
+
+-- -- after a sequence is dissected
+
+-- -- `mask` identifies the dissected terms that cancel
+-- end Telescopic
 
 
 namespace object
